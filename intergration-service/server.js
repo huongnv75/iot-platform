@@ -18,12 +18,12 @@ cron.schedule(config.app.cronJob, () => {
         // cronJobFunction.synchroUsersDatabase();
         // cronJobFunction.synchroDashboardsDatabase();
     } catch (error) {
-        log.error('cron error: ' + error);
+        log.error('cron error: ' + error.message);
     }
 });
 
-//resource cho các plugin add vào thư viện
-app.use(express.static(path.join(__dirname, 'public')));
+//resources cho các plugin add vào thư viện
+app.use('/resources', express.static(path.join(__dirname, 'resources')));
 
 //IP-SERVER:IP-PORT là redirect tới Oauth2 của hệ thống
 app.get('/', (req, res) => {
