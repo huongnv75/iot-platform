@@ -1,5 +1,6 @@
 const db = require("../../db");
 const Product = db.Product;
+const GroupProduct = db.GroupProduct;
 const Op = db.Sequelize.Op;
 
 module.exports = {
@@ -50,7 +51,12 @@ module.exports = {
 
   getById(req, res) {
     return Product
-      .findByPk(req.params.id)
+      .findByPk(req.params.id, {
+        include: [{
+          model: GroupProduct,
+          as: 'group_products'
+        }],
+      })
       .then((data) => {
         if (!data) {
           return res.status(404).send({
