@@ -1,5 +1,6 @@
 const db = require("../../db");
 const Stage = db.Stage;
+const Error = db.Error;
 const Op = db.Sequelize.Op;
 
 module.exports = {
@@ -50,7 +51,12 @@ module.exports = {
 
   getById(req, res) {
     return Stage
-      .findByPk(req.params.id)
+      .findByPk(req.params.id, {
+        include: [{
+          model: Error,
+          as: 'errors'
+        }],
+      })
       .then((data) => {
         if (!data) {
           return res.status(404).send({
@@ -106,4 +112,78 @@ module.exports = {
       })
       .catch((error) => res.status(400).send(error));
   },
+
+  addWithErrors(req, res){
+    return Stage
+    .create(req.body,{
+      include: [{
+        model: Error,
+        as: 'errors'
+      }]
+    })
+    .then((data) => res.status(201).send(data))
+    .catch((error) => res.status(400).send(error));
+  },
+
+  addError(req, res) {
+    return Stage
+    .findByPk(req.body.id)
+    .then((stage) => {
+      if (!stage) {
+        return res.status(404).send({
+          message: 'Data Not Found',
+        });
+      }
+      Error
+      .findByPk(req.body.stage_id)
+      .then((error) => {
+        if (!error) {
+          return res.status(404).send({
+            message: 'Data Not Found',
+          });
+        }
+        stage.addError(error);
+        return res.status(200).send(stage);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).send(error);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(400).send(error);
+    });
+  },
+  
+  removeError(req, res){
+    return Stage
+    .findByPk(req.body.id)
+    .then((stage) => {
+      if (!stage) {
+        return res.status(404).send({
+          message: 'Data Not Found',
+        });
+      }
+      Error
+      .findByPk(req.body.stage_id)
+      .then((error) => {
+        if (!error) {
+          return res.status(404).send({
+            message: 'Data Not Found',
+          });
+        }
+        stage.removeError(error);
+        return res.status(200).send(stage);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).send(error);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(400).send(error);
+    });
+  }
 };
