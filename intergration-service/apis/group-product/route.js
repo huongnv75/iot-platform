@@ -6,6 +6,7 @@ router.get('/', controller.list)
     .post('/', controller.add)
     .put('/:id', controller.update)
     .delete('/:id', controller.delete)
+    .post('/add-with-stages', controller.addWithStages)
     .put('/add-stage', controller.addStage)
     .put('/remove-stage', controller.removeStage)
     ;

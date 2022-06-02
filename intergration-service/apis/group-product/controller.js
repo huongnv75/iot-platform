@@ -51,7 +51,12 @@ module.exports = {
 
   getById(req, res) {
     return GroupProduct
-      .findByPk(req.params.id)
+      .findByPk(req.params.id, {
+        include: [{
+          model: Stage,
+          as: 'stages'
+        }],
+      })
       .then((data) => {
         if (!data) {
           return res.status(404).send({
@@ -107,6 +112,19 @@ module.exports = {
       })
       .catch((error) => res.status(400).send(error));
   },
+  
+  addWithStages(req, res){
+    return GroupProduct
+    .create(req.body,{
+      include: [{
+        model: Stage,
+        as: 'stages'
+      }]
+    })
+    .then((data) => res.status(201).send(data))
+    .catch((error) => res.status(400).send(error));
+  },
+
   addStage(req, res) {
     return GroupProduct
     .findByPk(req.body.id)
@@ -137,6 +155,7 @@ module.exports = {
       res.status(400).send(error);
     });
   },
+  
   removeStage(req, res){
     return GroupProduct
     .findByPk(req.body.id)
