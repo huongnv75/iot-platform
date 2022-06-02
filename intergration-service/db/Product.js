@@ -1,30 +1,22 @@
 module.exports = (sequelize, Sequelize) => {
     return sequelize.define("product", {
-        camera_name: {
+        name: {
             type: Sequelize.STRING
         },
-        source_url: {
+        code: {
             type: Sequelize.STRING
         },
-        address: {
+        description: {
             type: Sequelize.STRING
         },
-        lat: {
-            type: Sequelize.STRING
-        },
-        lng: {
-            type: Sequelize.STRING
-        },
-        configs: {
-            type: Sequelize.STRING(10000)
-        },
-        infomations: {
-            type: Sequelize.STRING(10000)
+        status: {
+            type: Sequelize.INTEGER
         },
         createdBy: {
             type: Sequelize.INTEGER
+        },
+        updatedBy: {
+            type: Sequelize.INTEGER
         }
-    }, {
-        tableName: 'i_product'
     });
 };

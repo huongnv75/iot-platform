@@ -1,7 +1,9 @@
 const controller = require("./controller");
 var router = require('express').Router();
 
-router.get('/', controller.getAllUsers)
-    .get('/:id', controller.getAllUsers)
-    .post('/', controller.createUser);
+router.get('/', controller.list)
+    .get('/:id', controller.getById)
+    .post('/', controller.add)
+    .put('/:id', controller.update)
+    .delete('/:id', controller.delete);
 module.exports = router;

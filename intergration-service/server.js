@@ -12,11 +12,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const cron = require('node-cron');
+const scada = require('./cron-job/scada-api');
 
 cron.schedule(config.app.cronJob, () => {
     try {
         // cronJobFunction.synchroUsersDatabase();
         // cronJobFunction.synchroDashboardsDatabase();
+        cronJobFunction.test();
     } catch (error) {
         log.error('cron error: ' + error.message);
     }
@@ -33,7 +35,11 @@ app.get('/', (req, res) => {
 });
 
 //intergration apis
-db.sequelize.sync();
+try{
+    db.sequelize.sync();
+} catch (error) {
+    log.error('db error: ' + error.message);
+}
 app.use('/api', require('./apis'));
 
 app.listen(config.app.port, () => {

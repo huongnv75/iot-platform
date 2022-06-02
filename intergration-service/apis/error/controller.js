@@ -1,58 +1,109 @@
 const db = require("../../db");
 const Error = db.Error;
-const getAllUsers = async(req, res) => {
-    let page = req.query.page;
-    let pageSize = req.query.size;
+const Op = db.Sequelize.Op;
+
+module.exports = {
+  list(req, res) {
+    let page = req.query._page;
+    let pageSize = req.query._size;
     if (!pageSize) pageSize = 10;
     if (!page) page = 0;
     const offset = page * pageSize;
     let searchOptions = {
-        order: [
-            ['id', 'DESC']
-        ],
-        where: {},
-        limit: pageSize,
-        offset: offset,
-        include: [],
+      order: [
+        ['id', 'DESC']
+      ],
+      where: {},
+      limit: pageSize,
+      offset: offset,
+      include: [],
     };
-    if (req.query.cameraName) {
-        searchOptions.where.camera_name = {
-            [Op.like]: `%${req.query.cameraName}%`
-        }
+    if (req.query.name) {
+      searchOptions.where.name = {
+        [Op.like]: `%${req.query.name}%`
+      }
     }
-    Error.findAndCountAll(searchOptions).then(data => {
-            if (data) {
-                // searchOptions.include = [{
-                //         model: Configs,
-                //         as: "camera_configs",
-                //         include: [{
-                //             model: Config_Tasks,
-                //             as: "config_tasks"
-                //         }],
-                //         order: [
-                //             [Config_Tasks, 'id', 'DESC'],
-                //         ]
-                //     },
+    if (req.query.code) {
+      searchOptions.where.code = {
+        [Op.like]: `%${req.query.code}%`
+      }
+    }
+    if (req.query.status) {
+      searchOptions.where.status = {
+        [Op.eq]: req.query.status
+      }
+    }
+    if (req.query.label) {
+      searchOptions.where.label = {
+        [Op.like]: `%${req.query.label}%`
+      }
+    }
+    if (req.query.checked) {
+      searchOptions.where.checked = {
+        [Op.eq]: req.query.checked
+      }
+    }
+    return Error.findAndCountAll(searchOptions)
+      .then((data) => res.status(200).send(data))
+      .catch((error) => { res.status(400).send(error); });
+  },
 
-                // ];
-                searchOptions.order = [
-                    ["camera_configs", 'id', 'DESC'],
-                ]
-                Error.findAndCountAll(searchOptions).then(function(result) {
-                    // let json = helper.utilsRespone(constant.SUCCESS_CODE_200, "FRS", constant.MESSAGE_SUCCESS, result.rows, data.count);
-                    res.send({ result });
-                })
+  getById(req, res) {
+    return Error
+      .findByPk(req.params.id)
+      .then((data) => {
+        if (!data) {
+          return res.status(404).send({
+            message: 'Data Not Found',
+          });
+        }
+        return res.status(200).send(data);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).send(error);
+      });
+  },
 
-            }
-        })
-        .catch(err => {
-            let message =
-                err.message || "Some error occurred while creating the Tutorial."
-                // let json = helper.utilsRespone(constant.ERROR_CODE_500, "FRS", message, null, null);
-            res.status('500').send({ message });
-        });
+  add(req, res) {
+    return Error
+      .create(req.body)
+      .then((data) => res.status(201).send(data))
+      .catch((error) => res.status(400).send(error));
+  },
+
+  update(req, res) {
+    return Error
+      .findByPk(req.params.id, {
+      })
+      .then(data => {
+        if (!data) {
+          return res.status(404).send({
+            message: 'Data Not Found',
+          });
+        }
+        return data
+          .update(req.body)
+          .then(() => res.status(200).send(data))
+          .catch((error) => res.status(400).send(error));
+      })
+      .catch((error) => res.status(400).send(error));
+  },
+
+  delete(req, res) {
+    return Error
+      .findByPk(req.params.id)
+      .then(data => {
+        if (!data) {
+          return res.status(400).send({
+            message: 'Data Not Found',
+          });
+        }
+        return data
+          .destroy()
+          .then(() => res.status(204).send())
+          .catch((error) => res.status(400).send(error));
+      })
+      .catch((error) => res.status(400).send(error));
+  },
 };
-module.exports = {
-    getAllUsers: getAllUsers,
-    createUser: getAllUsers
-}

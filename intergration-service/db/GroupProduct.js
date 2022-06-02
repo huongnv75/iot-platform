@@ -1,27 +1,22 @@
 module.exports = (sequelize, Sequelize) => {
     return sequelize.define("group_product", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false
+        name: {
+            type: Sequelize.STRING
         },
-        personId: {
-            type: Sequelize.INTEGER
+        code: {
+            type: Sequelize.STRING
         },
-        faceTokens: {
-            type: Sequelize.ARRAY(Sequelize.STRING)
+        description: {
+            type: Sequelize.STRING
         },
-        imageUrls: {
-            type: Sequelize.ARRAY(Sequelize.STRING)
-        },
-        facesetId: {
-            type: Sequelize.INTEGER
+        status: {
+            type: Sequelize.BOOLEAN
         },
         createdBy: {
-            type: Sequelize.STRING
+            type: Sequelize.INTEGER
+        },
+        updatedBy: {
+            type: Sequelize.INTEGER
         }
-    }, {
-        tableName: 'i_group_product'
     });
 };

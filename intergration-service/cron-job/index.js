@@ -133,7 +133,11 @@ function synchroDashboardsDatabase() {
     });
 }
 
+function test(){
+    console.log('test');
+}
 module.exports = {
     synchroUsersDatabase: synchroUsersDatabase,
-    synchroDashboardsDatabase: synchroDashboardsDatabase
+    synchroDashboardsDatabase: synchroDashboardsDatabase,
+    test:test
 }
