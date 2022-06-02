@@ -5,5 +5,8 @@ router.get('/', controller.list)
     .get('/:id', controller.getById)
     .post('/', controller.add)
     .put('/:id', controller.update)
-    .delete('/:id', controller.delete);
+    .delete('/:id', controller.delete)
+    .put('/add-stage', controller.addStage)
+    .put('/remove-stage', controller.removeStage)
+    ;
 module.exports = router;

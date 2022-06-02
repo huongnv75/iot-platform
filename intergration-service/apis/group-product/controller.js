@@ -1,5 +1,6 @@
 const db = require("../../db");
 const GroupProduct = db.GroupProduct;
+const Stage = db.Stage;
 const Op = db.Sequelize.Op;
 
 module.exports = {
@@ -106,4 +107,64 @@ module.exports = {
       })
       .catch((error) => res.status(400).send(error));
   },
+  addStage(req, res) {
+    return GroupProduct
+    .findByPk(req.body.id)
+    .then((groupProduct) => {
+      if (!groupProduct) {
+        return res.status(404).send({
+          message: 'Data Not Found',
+        });
+      }
+      Stage
+      .findByPk(req.body.stage_id)
+      .then((stage) => {
+        if (!stage) {
+          return res.status(404).send({
+            message: 'Data Not Found',
+          });
+        }
+        groupProduct.addStage(stage);
+        return res.status(200).send(groupProduct);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).send(error);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(400).send(error);
+    });
+  },
+  removeStage(req, res){
+    return GroupProduct
+    .findByPk(req.body.id)
+    .then((groupProduct) => {
+      if (!groupProduct) {
+        return res.status(404).send({
+          message: 'Data Not Found',
+        });
+      }
+      Stage
+      .findByPk(req.body.stage_id)
+      .then((stage) => {
+        if (!stage) {
+          return res.status(404).send({
+            message: 'Data Not Found',
+          });
+        }
+        groupProduct.removeStage(stage);
+        return res.status(200).send(groupProduct);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).send(error);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(400).send(error);
+    });
+  }
 };
