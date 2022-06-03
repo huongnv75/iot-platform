@@ -113,10 +113,7 @@ module.exports = {
   addWithErrors(req, res){
     return Stage
     .create(req.body,{
-      include: [{
-        model: Error,
-        as: 'errors'
-      }]
+      include: [Error]
     })
     .then((data) => res.status(201).send(data))
     .catch((error) => res.status(400).send(error));

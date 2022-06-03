@@ -113,10 +113,7 @@ module.exports = {
   addWithStages(req, res){
     return GroupProduct
     .create(req.body,{
-      include: [{
-        model: Stage,
-        as: 'stages'
-      }]
+      include: [Stage]
     })
     .then((data) => res.status(201).send(data))
     .catch((error) => res.status(400).send(error));
