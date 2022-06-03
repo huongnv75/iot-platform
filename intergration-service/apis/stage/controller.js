@@ -52,10 +52,7 @@ module.exports = {
   getById(req, res) {
     return Stage
       .findByPk(req.params.id, {
-        include: [{
-          model: Error,
-          as: 'errors'
-        }],
+        include: [Error],
       })
       .then((data) => {
         if (!data) {

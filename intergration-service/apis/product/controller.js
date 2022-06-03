@@ -52,10 +52,7 @@ module.exports = {
   getById(req, res) {
     return Product
       .findByPk(req.params.id, {
-        include: [{
-          model: GroupProduct,
-          as: 'group_products'
-        }],
+        include: [GroupProduct],
       })
       .then((data) => {
         if (!data) {
