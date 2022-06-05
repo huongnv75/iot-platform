@@ -19,13 +19,9 @@ const cron = require('node-cron');
 const scada = require('./scada-apis');
 
 cron.schedule(config.app.cronJob, () => {
-    try {
-        cronJobFunction.synchroUsersDatabase();
-        cronJobFunction.synchroDashboardsDatabase();
-        cronJobFunction.test();
-    } catch (error) {
-        log.error('cron error: ' + error.message);
-    }
+    cronJobFunction.synchroUsersDatabase();
+    cronJobFunction.synchroDashboardsDatabase();
+    cronJobFunction.test();
 });
 
 //resources cho các plugin add vào thư viện
@@ -39,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 //intergration apis là bổ sung các api cho các bảng mới
-db.sequelize.sync().then(()=>{
+db.sequelize.sync().then(() => {
     app.use('/api', require('./integration-apis'));
 });
 
