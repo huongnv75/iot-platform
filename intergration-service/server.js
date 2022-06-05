@@ -20,8 +20,8 @@ const scada = require('./scada-apis');
 
 cron.schedule(config.app.cronJob, () => {
     try {
-        // cronJobFunction.synchroUsersDatabase();
-        // cronJobFunction.synchroDashboardsDatabase();
+        cronJobFunction.synchroUsersDatabase();
+        cronJobFunction.synchroDashboardsDatabase();
         cronJobFunction.test();
     } catch (error) {
         log.error('cron error: ' + error.message);
@@ -38,13 +38,10 @@ app.get('/', (req, res) => {
     })
 });
 
-//intergration apis
-try{
-    db.sequelize.sync();
-} catch (error) {
-    log.error('db error: ' + error.message);
-}
-app.use('/api', require('./integration-apis'));
+//intergration apis là bổ sung các api cho các bảng mới
+db.sequelize.sync().then(()=>{
+    app.use('/api', require('./integration-apis'));
+});
 
 app.listen(config.app.port, () => {
     log.info('App running on port ' + config.app.port);
