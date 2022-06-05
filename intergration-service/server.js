@@ -2,7 +2,6 @@
 const config = require("./config/config");
 const global = require("./utils/globalFunction");
 const cronJobFunction = require("./cron-job");
-const apis = require("./apis");
 const log = global.getLogger(module);
 
 const express = require('express');
@@ -17,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors())
 
 const cron = require('node-cron');
-const scada = require('./cron-job/scada-api');
+const scada = require('./scada-apis');
 
 cron.schedule(config.app.cronJob, () => {
     try {
@@ -35,7 +34,7 @@ app.use('/resources', express.static(path.join(__dirname, 'resources')));
 //IP-SERVER:IP-PORT là redirect tới Oauth2 của hệ thống
 app.get('/', (req, res) => {
     scada.redirectOauth2().then(data => {
-        res.redirect(config.scada.baseUrl + data[0].url);
+        res.redirect(config.scada.baseUrl + data[0]?.url);
     })
 });
 
@@ -45,7 +44,7 @@ try{
 } catch (error) {
     log.error('db error: ' + error.message);
 }
-app.use('/api', require('./apis'));
+app.use('/api', require('./integration-apis'));
 
 app.listen(config.app.port, () => {
     log.info('App running on port ' + config.app.port);

@@ -1,6 +1,6 @@
 const global = require("../utils/globalFunction");
-const keycloak = require("./keycloak-apis");
-const scada = require("./scada-api");
+const keycloak = require("../keycloak-apis");
+const scada = require("../scada-apis");
 
 function synchroUsersDatabase() {
     scada.deleteGoogleTenant();
@@ -53,12 +53,12 @@ function synchroUsersDatabase() {
                                                 return obj.email == email;
                                             });
                                             if (user.additionalInfo.defaultDashboardId == null) {
-                                                scada.getCustomerDashboards(scadaToken,customer.id).then(dashboards =>{
+                                                scada.getCustomerDashboards(scadaToken, customer.id).then(dashboards => {
                                                     let db = dashboards.find(obj => {
                                                         return obj.name == 'Giám sát';
                                                     });
-                                                    if(db != undefined && db !=null){
-                                                        scada.updateDefaultDashboardUser(scadaToken, user, db.id).then(rs=>{
+                                                    if (db != undefined && db != null) {
+                                                        scada.updateDefaultDashboardUser(scadaToken, user, db.id).then(rs => {
 
                                                         });
                                                     }
@@ -133,11 +133,11 @@ function synchroDashboardsDatabase() {
     });
 }
 
-function test(){
+function test() {
     console.log('test');
 }
 module.exports = {
     synchroUsersDatabase: synchroUsersDatabase,
     synchroDashboardsDatabase: synchroDashboardsDatabase,
-    test:test
+    test: test
 }
