@@ -4,13 +4,18 @@ const global = require("./utils/globalFunction");
 const cronJobFunction = require("./cron-job");
 const apis = require("./apis");
 const log = global.getLogger(module);
+
 const express = require('express');
 const path = require('path');
 const bodyParser = require("body-parser");
+var cors = require('cors')
+
 const db = require("./db");
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors())
+
 const cron = require('node-cron');
 const scada = require('./cron-job/scada-api');
 

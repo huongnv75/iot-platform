@@ -4855,10 +4855,12 @@
   "version" "2.0.2"
 
 "flot.curvedlines@git://github.com/MichaelZinsmaier/CurvedLines.git#master":
+  "integrity" "sha512-pf5Pk5DOrezns3CBvoreT2fGE7PGM61ESUFhSRalX142n6SLgAa5kNLz+t49XxWn0iFpeBEApEBbCA6X3GaX9A=="
   "resolved" "git+ssh://git@github.com/MichaelZinsmaier/CurvedLines.git#22ed1fc2a6ccafc816c2d07b36027cc123825c4b"
   "version" "1.1.1"
 
 "flot@git://github.com/thingsboard/flot.git#0.9-work":
+  "integrity" "sha512-3i496XwbFvEL9oDZx4Oc+n+fGlI/XhSbZkotoCtWQ6UXoDeN+RwyLZSBIWEmeWDE7qOeYN49liFrxuiDy2+zpg=="
   "resolved" "git+ssh://git@github.com/thingsboard/flot.git#0ff0c775db7c74e705f6c3c2bba92080a202ccd4"
   "version" "0.9.0-alpha"
 
@@ -7125,6 +7127,7 @@
     "tslib" "^1.9.0"
 
 "ngx-flowchart@git://github.com/thingsboard/ngx-flowchart.git#master":
+  "integrity" "sha512-2obGlE6c8uO4hefNDx0yfPFgYdyGV4sKqp1gt6BGmDao+/K0ku9wLPQWp0CqwypZy1nkdPpJWEjBYkDLVnEsuw=="
   "resolved" "git+ssh://git@github.com/thingsboard/ngx-flowchart.git#078bfd2cedeeab412dee922e8066a19be6da7278"
   "version" "0.0.0"
   dependencies:
