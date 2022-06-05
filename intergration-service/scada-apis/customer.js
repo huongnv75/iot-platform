@@ -18,7 +18,7 @@ function getCustomers(token) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }

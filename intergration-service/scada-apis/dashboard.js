@@ -18,7 +18,7 @@ function getAllDashboards(token) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -36,7 +36,7 @@ function getCustomerDashboards(token, customerId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -53,7 +53,7 @@ function assignDashboard(token, customerId, dashboardId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -70,7 +70,7 @@ function unAssignDashboard(token, customerId, dashboardId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }

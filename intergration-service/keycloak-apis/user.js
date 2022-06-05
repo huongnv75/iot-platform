@@ -17,7 +17,7 @@ function getUsers(token) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -34,7 +34,7 @@ function getUserRoleMappings(token, userId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }

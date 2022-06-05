@@ -17,7 +17,7 @@ function getGroups(token) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -34,7 +34,7 @@ function getGroupRoleMappings(token, groupId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -51,7 +51,7 @@ function getGroupMembers(token, groupId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }

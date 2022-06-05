@@ -23,7 +23,7 @@ function getAccessToken() {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }

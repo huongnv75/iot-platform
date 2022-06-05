@@ -18,7 +18,7 @@ function getUsers(token, customerId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -64,7 +64,7 @@ function deleteUser(token, userId) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
@@ -82,7 +82,7 @@ function activeUser(token, user) {
             })
             .catch(function (error) {
                 log.error(error.message);
-                reject(null);
+                //reject(null);
             })
     });
 }
