@@ -21,7 +21,6 @@ const scada = require('./scada-apis');
 cron.schedule(config.app.cronJob, () => {
     cronJobFunction.synchroUsersDatabase();
     cronJobFunction.synchroDashboardsDatabase();
-    cronJobFunction.test();
 });
 
 //resources cho các plugin add vào thư viện
