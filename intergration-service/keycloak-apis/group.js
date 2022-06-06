@@ -6,51 +6,54 @@ const global = require('../utils/globalFunction');
 const log = global.getLogger(module);
 
 function getGroups(token) {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         axios({
-            url: config.keycloak.baseUrl + constants.KEYCLOAK_GROUPS.replace('master', config.keycloak.realmName),
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token }
-        })
-            .then(function (response) {
+                url: config.keycloak.baseUrl + constants.KEYCLOAK_GROUPS.replace('master', config.keycloak.realmName),
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token }
+            })
+            .then(function(response) {
                 resolve(response.data);
             })
-            .catch(function (error) {
+            .catch(function(error) {
                 log.error(error.message);
+                console.log(new Error().stack.split('\n')[1].slice(7));
                 //reject(null);
             })
     });
 }
 
 function getGroupRoleMappings(token, groupId) {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         axios({
-            url: config.keycloak.baseUrl + constants.KEYCLOAK_GROUP_ROLE_MAPPINGS.replace('master', config.keycloak.realmName).replace('groupId', groupId),
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token }
-        })
-            .then(function (response) {
-                resolve(response.data.map(function (a) { return a.name; }));
+                url: config.keycloak.baseUrl + constants.KEYCLOAK_GROUP_ROLE_MAPPINGS.replace('master', config.keycloak.realmName).replace('groupId', groupId),
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token }
             })
-            .catch(function (error) {
+            .then(function(response) {
+                resolve(response.data.map(function(a) { return a.name; }));
+            })
+            .catch(function(error) {
                 log.error(error.message);
+                console.log(new Error().stack.split('\n')[1].slice(7));
                 //reject(null);
             })
     });
 }
 
 function getGroupMembers(token, groupId) {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         axios({
-            url: config.keycloak.baseUrl + constants.KEYCLOAK_GROUP_MEMBERS.replace('master', config.keycloak.realmName).replace('groupId', groupId),
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token }
-        })
-            .then(function (response) {
+                url: config.keycloak.baseUrl + constants.KEYCLOAK_GROUP_MEMBERS.replace('master', config.keycloak.realmName).replace('groupId', groupId),
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token }
+            })
+            .then(function(response) {
                 resolve(response.data);
             })
-            .catch(function (error) {
+            .catch(function(error) {
                 log.error(error.message);
+                console.log(new Error().stack.split('\n')[1].slice(7));
                 //reject(null);
             })
     });

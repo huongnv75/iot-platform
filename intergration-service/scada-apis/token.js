@@ -21,8 +21,9 @@ function getToken(username, password) {
             })
             .catch(function(error) {
                 log.error(error.message);
+                console.log(new Error().stack.split('\n')[1].slice(7));
                 //reject(null);
             })
     });
 }
-module.exports = {getToken};
+module.exports = { getToken };
