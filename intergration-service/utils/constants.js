@@ -4,9 +4,9 @@ module.exports = Object.freeze({
     //keycloak
     KEYCLOAK_ACCESS_TOKEN: '/realms/master/protocol/openid-connect/token',
     KEYCLOAK_USERS: '/admin/realms/master/users?briefRepresentation=true&first=0&max=' + config.app.pageSize,
-    KEYCLOAK_USER_ROLE_MAPPINGS: '/admin/realms/master/users/userId/role-mappings/realm',
+    KEYCLOAK_USER_ROLE_MAPPINGS: '/admin/realms/master/users/userId/role-mappings/realm/composite',
     KEYCLOAK_GROUPS: '/admin/realms/master/groups?first=0&max=' + config.app.pageSize,
-    KEYCLOAK_GROUP_ROLE_MAPPINGS: '/admin/realms/QLSX/groups/groupId/role-mappings/realm',
+    KEYCLOAK_GROUP_ROLE_MAPPINGS: '/admin/realms/QLSX/groups/groupId/role-mappings/realm/composite',
     KEYCLOAK_GROUP_MEMBERS: '/admin/realms/QLSX/groups/groupId/members?first=0&max=' + config.app.pageSize,
     //scada
     SCADA_LOGIN: '/api/auth/login',
