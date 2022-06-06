@@ -3,6 +3,7 @@ var global = {};
 const winston = require("winston");
 const yaml = require('js-yaml');
 const fs = require('fs');
+const path = require('path');
 
 global.formUrlEncoded = function formUrlEncoded(x) {
     return Object.keys(x).reduce((p, c) => p + `&${c}=${encodeURIComponent(x[c])}`, '');
@@ -18,21 +19,21 @@ global.contain = function contain(a, obj) {
 }
 
 global.getLogger = function getLogger(module) {
-    let path = module.filename.split('/').slice(-2).join('/');
-
     return new winston.createLogger({
         transports: [
             new winston.transports.Console({
-                timestamp: () => {
-                    return new Date().toLocaleTimeString();
-                },
-                colorize: true,
-                level: 'debug',
-                label: path
+                format: winston.format.printf(options => {
+                    return `[${getLabel(module)}] ${options.level}: ${options.message}$`;
+                })
             })
         ]
     });
 }
+
+const getLabel = function(callingModule) {
+    const parts = callingModule.filename.split(path.sep);
+    return path.join(parts[parts.length - 2], parts.pop());
+};
 
 global.yamlToJson = function yamlToJson(fileLink) {
     try {
