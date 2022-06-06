@@ -1,0 +1,11 @@
+something:
+  - name: test.example
+    color: blue
+  - name: another.example
+    color: yellow
+others:
+  - name: blue
+    color: blue
+others2:
+  name: xxxx
+  color: blue

@@ -41,3 +41,9 @@ db.sequelize.sync().then(() => {
 app.listen(config.app.port, () => {
     log.info('App running on port ' + config.app.port);
 });
+//test
+// let x = global.yamlToJson(path.join(__dirname, 'test.yaml'));
+// console.log(x);
+// x.others[0].name = "blue";
+// x.others2.name = "xxxx";
+// global.jsonToYaml(x, path.join(__dirname, 'test2.yaml'));

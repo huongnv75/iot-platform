@@ -1,6 +1,8 @@
 var global = {};
 
 const winston = require("winston");
+const yaml = require('js-yaml');
+const fs = require('fs');
 
 global.formUrlEncoded = function formUrlEncoded(x) {
     return Object.keys(x).reduce((p, c) => p + `&${c}=${encodeURIComponent(x[c])}`, '');
@@ -29,6 +31,23 @@ global.getLogger = function getLogger(module) {
                 label: path
             })
         ]
+    });
+}
+
+global.yamlToJson = function yamlToJson(fileLink) {
+    try {
+        const doc = yaml.load(fs.readFileSync(fileLink, 'utf8'));
+        return doc;
+    } catch (e) {
+        return null;
+    }
+}
+
+global.jsonToYaml = function jsonToYaml(jsonData, fileLink) {
+    fs.writeFile(fileLink, yaml.dump(jsonData), (err) => {
+        if (err) {
+            console.log(err);
+        }
     });
 }
 
