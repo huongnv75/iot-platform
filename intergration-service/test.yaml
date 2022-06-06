@@ -1,0 +1,13 @@
+# ...is the same as this:
+something:
+  - name: test.example
+    color: blue
+  - name: another.example
+    color: yellow
+others:
+  - name: test.example
+    color: blue
+
+others2:
+    name: test.example
+    color: blue

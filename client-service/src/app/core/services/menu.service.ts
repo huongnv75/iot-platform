@@ -391,7 +391,14 @@ export class MenuService {
             icon: 'folder'
           }
         ]
-      }
+      },
+      {
+        id: guid(),
+        name: 'Product',
+        type: 'link',
+        path: '/product',
+        icon: 'settings_backup_restore'
+      } 
     );
     return sections;
   }

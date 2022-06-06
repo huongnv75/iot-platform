@@ -21,6 +21,7 @@
 export const environment = {
   appTitle: 'Nền tảng IOT platform', 
   production: false,
+  integration_service: 'http://localhost:3002',
 // @ts-ignore
   tbVersion: TB_VERSION,
 // @ts-ignore
