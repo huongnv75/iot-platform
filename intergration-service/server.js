@@ -8,6 +8,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require("body-parser");
 var cors = require('cors')
+const pgtools = require("pgtools");
 
 const db = require("./db");
 const app = express();
@@ -34,8 +35,10 @@ app.get('/', (req, res) => {
 });
 
 //intergration apis là bổ sung các api cho các bảng mới
-db.sequelize.sync().then(() => {
-    app.use('/api', require('./integration-apis'));
+pgtools.createdb(config.database, config.database.schemal).then(() => {
+    db.sequelize.sync().then(() => {
+        app.use('/api', require('./integration-apis'));
+    });
 });
 
 app.listen(config.app.port, () => {

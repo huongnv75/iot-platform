@@ -19,7 +19,7 @@ module.exports = {
         sysadminPassword: process.env.SCADA_SYSADMIN_PASSWORD
     },
     database: {
-        ip: process.env.SCADA_DATABASE_IP,
+        host: process.env.SCADA_DATABASE_HOST,
         port: process.env.SCADA_DATABASE_PORT,
         user: process.env.SCADA_DATABASE_USER,
         password: process.env.SCADA_DATABASE_PASSWORD,

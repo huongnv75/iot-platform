@@ -2,9 +2,9 @@ const Sequelize = require("sequelize");
 const config = require("../config/config");
 
 const sequelize = new Sequelize(config.database.schemal, config.database.user, config.database.password, {
-    host: config.database.ip,
+    host: config.database.host,
     port: config.database.port,
-    dialect: config.database.user,
+    dialect: 'postgres',
     operatorsAliases: false,
     pool: {
         max: 5,
