@@ -41,6 +41,24 @@ function getCustomerDashboards(token, customerId) {
     });
 }
 
+function getTenantDashboards(token, tenantId) {
+    return new Promise(function(resolve, reject) {
+        axios({
+                url: config.scada.baseUrl + constants.SCADA_TENANT_DASHBOARDS.replace('tenantId', tenantId),
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json', 'X-Authorization': 'Bearer ' + token }
+            })
+            .then(function(response) {
+                const data = response.data.data;
+                resolve(data.map(function(a) { return { name: a.name, id: a.id.id } }));
+            })
+            .catch(function(error) {
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+                //reject(null);
+            })
+    });
+}
+
 function assignDashboard(token, customerId, dashboardId) {
     return new Promise(function(resolve, reject) {
         axios({
@@ -95,4 +113,4 @@ function updateDefaultDashboardUser(token, user, defaultDashboardId) {
     });
 }
 
-module.exports = { getAllDashboards, getCustomerDashboards, assignDashboard, unAssignDashboard, updateDefaultDashboardUser };
+module.exports = { getAllDashboards, getCustomerDashboards, getTenantDashboards, assignDashboard, unAssignDashboard, updateDefaultDashboardUser };

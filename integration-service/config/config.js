@@ -16,7 +16,8 @@ module.exports = {
         tenant: process.env.SCADA_TENANT,
         tenantPassword: process.env.SCADA_TENANT_PASSWORD,
         sysadmin: process.env.SCADA_SYSADMIN,
-        sysadminPassword: process.env.SCADA_SYSADMIN_PASSWORD
+        sysadminPassword: process.env.SCADA_SYSADMIN_PASSWORD,
+        tenantName: process.env.SCACDA_TENANT_NAME || 'scada'
     },
     database: {
         host: process.env.SCADA_DATABASE_HOST,
