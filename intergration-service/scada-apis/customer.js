@@ -17,8 +17,7 @@ function getCustomers(token) {
                 resolve(data.map(function(a) { return { name: a.name, id: a.id.id } }));
             })
             .catch(function(error) {
-                log.error(error.message);
-                console.log(new Error().stack.split('\n')[1].slice(7));
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                 //reject(null);
             })
     });
@@ -38,8 +37,7 @@ function createCustomer(token, name) {
                 resolve(response.data);
             })
             .catch(function(error) {
-                log.error(error.message);
-                console.log(new Error().stack.split('\n')[1].slice(7));
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
             })
     });
 }

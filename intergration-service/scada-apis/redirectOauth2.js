@@ -16,8 +16,7 @@ function redirectOauth2() {
                 resolve(response.data);
             })
             .catch(function(error) {
-                log.error(error.message);
-                console.log(new Error().stack.split('\n')[1].slice(7));
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                 //reject(null);
             })
     });

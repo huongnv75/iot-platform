@@ -16,8 +16,7 @@ function getUsers(token) {
                 resolve(response.data);
             })
             .catch(function(error) {
-                log.error(error.message);
-                console.log(new Error().stack.split('\n')[1].slice(7));
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                 //reject(null);
             })
     });
@@ -34,8 +33,7 @@ function getUserRoleMappings(token, userId) {
                 resolve(response.data.map(function(a) { return a.name; }));
             })
             .catch(function(error) {
-                log.error(error.message);
-                console.log(new Error().stack.split('\n')[1].slice(7));
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                 //reject(null);
             })
     });

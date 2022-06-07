@@ -35,14 +35,18 @@ app.get('/', (req, res) => {
 });
 
 //intergration apis là bổ sung các api cho các bảng mới
-pgtools.createdb(config.database, config.database.schemal).then(() => {
+pgtools.createdb(config.database, config.database.schemal, function (error) {
+    if (error) {
+        log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+    }
     db.sequelize.sync().then(() => {
         app.use('/api', require('./integration-apis'));
     });
 });
 
+
 app.listen(config.app.port, () => {
-    log.info('App running on port ' + config.app.port);
+    log.info('@App running on port ' + config.app.port);
 });
 //test
 // let x = global.yamlToJson(path.join(__dirname, 'test.yaml'));
