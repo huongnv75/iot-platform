@@ -18,6 +18,7 @@ app.use(cors())
 
 const cron = require('node-cron');
 const scada = require('./scada-apis');
+const keycloak = require('./keycloak-apis');
 
 cron.schedule(config.app.cronJob, () => {
     cronJobFunction.synchroTenantUsersDatabase();
@@ -34,6 +35,17 @@ app.get('/', (req, res) => {
     })
 });
 
+//api roles là để show thông tin của user trên scada
+app.get('/roles', (req, res) => {
+    keycloak.getAccessToken().then((token)=>{
+        keycloak.getUsers(token, req.query.user).then((data)=>{
+            let userId = data[0]?.id;
+            keycloak.getUserRoleMappings(token, userId).then((data)=>{
+                res.status(200).send(data);
+            })
+        })
+    })
+});
 //intergration apis là bổ sung các api cho các bảng mới
 pgtools.createdb(config.database, config.database.schemal, function (error) {
     if (error) {

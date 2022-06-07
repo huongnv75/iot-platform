@@ -5,10 +5,14 @@ const constants = require("../utils/constants");
 const global = require('../utils/globalFunction');
 const log = global.getLogger(module);
 
-function getUsers(token) {
+function getUsers(token, search) {
+    let url = config.keycloak.baseUrl + constants.KEYCLOAK_USERS.replace('master', config.keycloak.realmName);
+    if(search){
+        url += '&search=' + search;
+    }
     return new Promise(function(resolve, reject) {
         axios({
-                url: config.keycloak.baseUrl + constants.KEYCLOAK_USERS.replace('master', config.keycloak.realmName),
+                url: url,
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token }
             })
