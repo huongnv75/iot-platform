@@ -20,6 +20,7 @@ module.exports = Object.freeze({
     SCADA_TENANT_INFO: '/api/tenantInfos?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_DELETE_TENANT: '/api/tenant/tenantId',
     SCADA_ALL_DASHBOARDS: '/api/tenant/dashboards?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
+    SCADA_HOME_DASHBOARD:'/api/dashboard/home',
     SCADA_CUSTOMER_DASHBOARDS: '/api/customer/customerId/dashboards?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_TENANT_DASHBOARDS: '/api/tenant/tenantId/dashboards?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_UPDATE_DASHBOARD: '/api/customer/customerId/dashboard/dashboardId',

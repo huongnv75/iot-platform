@@ -21,7 +21,7 @@ const scada = require('./scada-apis');
 const keycloak = require('./keycloak-apis');
 
 cron.schedule(config.app.cronJob, () => {
-    cronJobFunction.synchroTenantUsersDatabase();
+    // cronJobFunction.synchroTenantUsersDatabase();
     // cronJobFunction.synchroDashboardsDatabase();
 });
 
@@ -40,8 +40,29 @@ app.get('/roles', (req, res) => {
     keycloak.getAccessToken().then((token)=>{
         keycloak.getUsers(token, req.query.user).then((data)=>{
             let userId = data[0]?.id;
-            keycloak.getUserRoleMappings(token, userId).then((data)=>{
-                res.status(200).send(data);
+            keycloak.getUserRoleMappings(token, userId).then((roles)=>{
+                scada.getToken().then((scadaToken)=>{
+                    scada.getHomeDashboard(scadaToken).then((homeDashboard)=>{
+                        let widgets = homeDashboard.configuration.widgets;
+                        let states = homeDashboard.configuration.states.default.layouts.main.widgets;
+                        let newFilter = {};
+                        let newFilter2 = {};
+                        console.log(roles)
+                        for (let key in widgets) {
+                            let item = widgets[key];
+                            let item2 = states[key];
+                            console.log('name---->',item.config.settings.name, roles.indexOf(item.config.settings.name))
+                          if(roles.indexOf(item.config.settings.name) >= 0){
+                            newFilter[key]=item;
+                            newFilter2[key]=item2;
+                          }
+                        }
+                        homeDashboard.configuration.widgets=newFilter;
+                        homeDashboard.configuration.states.default.layouts.main.widgets=newFilter2;
+                        res.status(200).send(homeDashboard);
+
+                    })
+                })
             })
         })
     })

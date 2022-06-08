@@ -23,6 +23,23 @@ function getAllDashboards(token) {
     });
 }
 
+function getHomeDashboard(token) {
+    return new Promise(function(resolve, reject) {
+        axios({
+                url: config.scada.baseUrl + constants.SCADA_HOME_DASHBOARD,
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json', 'X-Authorization': 'Bearer ' + token }
+            })
+            .then(function(response) {
+                resolve(response.data);
+            })
+            .catch(function(error) {
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+                //reject(null);
+            })
+    });
+}
+
 function getCustomerDashboards(token, customerId) {
     return new Promise(function(resolve, reject) {
         axios({
@@ -113,4 +130,4 @@ function updateDefaultDashboardUser(token, user, defaultDashboardId) {
     });
 }
 
-module.exports = { getAllDashboards, getCustomerDashboards, getTenantDashboards, assignDashboard, unAssignDashboard, updateDefaultDashboardUser };
+module.exports = { getAllDashboards, getHomeDashboard, getCustomerDashboards, getTenantDashboards, assignDashboard, unAssignDashboard, updateDefaultDashboardUser };
