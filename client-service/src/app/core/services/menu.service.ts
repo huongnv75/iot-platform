@@ -25,6 +25,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Authority } from '@shared/models/authority.enum';
 import { guid } from '@core/utils';
 import { AuthState } from '@core/auth/auth.models';
+import { DashboardService } from '@core/http/dashboard.service';
 
 @Injectable({
   providedIn: 'root'
@@ -34,17 +35,23 @@ export class MenuService {
   menuSections$: Subject<Array<MenuSection>> = new BehaviorSubject<Array<MenuSection>>([]);
   homeSections$: Subject<Array<HomeSection>> = new BehaviorSubject<Array<HomeSection>>([]);
 
-  constructor(private store: Store<AppState>, private authService: AuthService) {
+  sectionAA: Array<MenuSection> = [];
+  ngOnInit() {
+
+  }
+  constructor(private store: Store<AppState>, private authService: AuthService, private dashboardService: DashboardService) {
     this.store.pipe(select(selectIsAuthenticated)).subscribe(
       (authenticated: boolean) => {
         if (authenticated) {
-          this.buildMenu();
+          this.dashboardService.getHomeDashboard().subscribe(data => {
+            this.buildMenu(data);
+          })
         }
       }
     );
   }
 
-  private buildMenu() {
+  private buildMenu(data) {
     this.store.pipe(select(selectAuth), take(1)).subscribe(
       (authState: AuthState) => {
         if (authState.authUser) {
@@ -56,7 +63,8 @@ export class MenuService {
               homeSections = this.buildSysAdminHome(authState);
               break;
             case Authority.TENANT_ADMIN:
-              menuSections = this.buildTenantAdminMenu(authState);
+              // menuSections = this.buildTenantAdminMenuOld(authState);
+              menuSections = this.buildTenantAdminMenu(authState, data);
               homeSections = this.buildTenantAdminHome(authState);
               break;
             case Authority.CUSTOMER_USER:
@@ -227,7 +235,7 @@ export class MenuService {
     return homeSections;
   }
 
-  private buildTenantAdminMenu(authState: AuthState): Array<MenuSection> {
+  private buildTenantAdminMenuOld(authState: AuthState): Array<MenuSection> {
     const sections: Array<MenuSection> = [];
     sections.push(
       {
@@ -308,7 +316,7 @@ export class MenuService {
         type: 'link',
         path: '/plc-machine',
         icon: 'touch_app'
-      }  
+      }
     );
     if (authState.edgesSupportEnabled) {
       sections.push(
@@ -398,8 +406,35 @@ export class MenuService {
         type: 'link',
         path: '/product',
         icon: 'settings_backup_restore'
-      } 
+      }
     );
+    return sections;
+  }
+  private buildTenantAdminMenu(authState: AuthState, data: any): Array<MenuSection> {
+    let sections: Array<MenuSection> = [];
+    sections.push(
+      {
+        id: guid(),
+        name: 'home.home',
+        type: 'link',
+        path: '/home',
+        notExact: true,
+        icon: 'home'
+      });
+    let widgets = data.configuration.widgets;
+    for (let index in widgets) {
+      let item = widgets[index];
+      sections.push(
+        {
+          id: guid(),
+          name: item.config.settings.name,
+          type: 'link',
+          path: item.config.settings.path,
+          notExact: true,
+          icon: item.config.settings.icon
+        }
+      )
+    }
     return sections;
   }
 

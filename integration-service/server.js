@@ -37,28 +37,31 @@ app.get('/', (req, res) => {
 
 //api roles là để show thông tin của user trên scada
 app.get('/roles', (req, res) => {
-    keycloak.getAccessToken().then((token)=>{
-        keycloak.getUsers(token, req.query.user).then((data)=>{
+    keycloak.getAccessToken().then((token) => {
+        keycloak.getUsers(token, req.query.user).then((data) => {
             let userId = data[0]?.id;
-            keycloak.getUserRoleMappings(token, userId).then((roles)=>{
-                scada.getToken().then((scadaToken)=>{
-                    scada.getHomeDashboard(scadaToken).then((homeDashboard)=>{
+            keycloak.getUserRoleMappings(token, userId).then((roles) => {
+                scada.getToken().then((scadaToken) => {
+                    scada.getHomeDashboard(scadaToken).then((homeDashboard) => {
                         let widgets = homeDashboard.configuration.widgets;
                         let states = homeDashboard.configuration.states.default.layouts.main.widgets;
-                        let newFilter = {};
-                        let newFilter2 = {};
-                        console.log(roles)
+                        let filterWidgets = {};
+                        let filterStates = {};
+                        let arrayFilterIndex = [];
+                        let arrayStates = [];
                         for (let key in widgets) {
                             let item = widgets[key];
-                            let item2 = states[key];
-                            console.log('name---->',item.config.settings.name, roles.indexOf(item.config.settings.name))
-                          if(roles.indexOf(item.config.settings.name) >= 0){
-                            newFilter[key]=item;
-                            newFilter2[key]=item2;
-                          }
+                            arrayStates.push(states[key]);
+                            if (roles.indexOf(item.config.settings.name) >= 0) {
+                                filterWidgets[key] = item;
+                                arrayFilterIndex.push(key);
+                            }
                         }
-                        homeDashboard.configuration.widgets=newFilter;
-                        homeDashboard.configuration.states.default.layouts.main.widgets=newFilter2;
+                        for (var ịndex = 0; ịndex < arrayFilterIndex.length; ịndex++) {
+                            filterStates[arrayFilterIndex[ịndex]] = arrayStates[ịndex];
+                        }
+                        homeDashboard.configuration.widgets = filterWidgets;
+                        homeDashboard.configuration.states.default.layouts.main.widgets = filterStates;
                         res.status(200).send(homeDashboard);
 
                     })

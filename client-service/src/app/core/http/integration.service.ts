@@ -38,6 +38,11 @@ export class IntegrationService {
       defaultHttpOptionsFromConfig(config));
   }
 
+  // public getViewRoles(config?: RequestConfig): Observable<Array<any>> {
+  //   return this.http.get<Array<any>>(env.integration_service + `/roles`,
+  //     defaultHttpOptionsFromConfig(config));
+  // }
+
   public getAsset(assetId: string, config?: RequestConfig): Observable<Asset> {
     return this.http.get<Asset>(`/api/asset/${assetId}`, defaultHttpOptionsFromConfig(config));
   }
