@@ -7,16 +7,18 @@ const log = global.getLogger(module);
 
 function deleteGoogleTenant(token) {
     getTenantInfos(token, 'gmail.com').then(data => {
-        axios({
-            url: config.scada.baseUrl + constants.SCADA_DELETE_TENANT.replace('tenantId', data[0].id.id),
-            method: 'DELETE',
-            headers: { 'Content-Type': 'application/json', 'X-Authorization': 'Bearer ' + token }
-        })
-            .then(function (response) {
+        if(data.length > 0){
+            axios({
+                url: config.scada.baseUrl + constants.SCADA_DELETE_TENANT.replace('tenantId', data[0].id.id),
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json', 'X-Authorization': 'Bearer ' + token }
             })
-            .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-            })
+                .then(function (response) {
+                })
+                .catch(function (error) {
+                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+                })
+        }
     });
 }
 function getTenantInfos(token, tenantName) {
