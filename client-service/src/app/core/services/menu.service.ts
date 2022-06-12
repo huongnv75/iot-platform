@@ -44,7 +44,13 @@ export class MenuService {
       (authenticated: boolean) => {
         if (authenticated) {
           this.dashboardService.getHomeDashboard().subscribe(data => {
-            this.buildMenu(data);
+            if(data == null){
+              this.dashboardService.getHomeDashboardOld().subscribe(data => {
+                this.buildMenu(data);
+              });
+            } else{
+              this.buildMenu(data);
+            }
           })
         }
       }

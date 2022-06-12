@@ -289,7 +289,6 @@ export class AuthService {
       if (publicId) {
         return this.publicLogin(publicId).pipe(
           mergeMap((response) => {
-            localStorage.setItem('user', username);
             this.updateAndValidateTokens(response.token, response.refreshToken, false);
             return this.procceedJwtTokenValidate();
           }),

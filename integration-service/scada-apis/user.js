@@ -82,7 +82,7 @@ function createTenantUser(token, tenantId, email) {
                 additionalInfo: {
                     description: "",
                     defaultDashboardId: null,
-                    defaultDashboardFullscreen: true,
+                    defaultDashboardFullscreen: false,
                     homeDashboardId: null,
                     homeDashboardHideToolbar: true
                 },

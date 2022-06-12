@@ -39,34 +39,38 @@ app.get('/', (req, res) => {
 app.get('/roles', (req, res) => {
     keycloak.getAccessToken().then((token) => {
         keycloak.getUsers(token, req.query.user).then((data) => {
-            let userId = data[0]?.id;
-            keycloak.getUserRoleMappings(token, userId).then((roles) => {
-                scada.getToken().then((scadaToken) => {
-                    scada.getHomeDashboard(scadaToken).then((homeDashboard) => {
-                        let widgets = homeDashboard.configuration.widgets;
-                        let states = homeDashboard.configuration.states.default.layouts.main.widgets;
-                        let filterWidgets = {};
-                        let filterStates = {};
-                        let arrayFilterIndex = [];
-                        let arrayStates = [];
-                        for (let key in widgets) {
-                            let item = widgets[key];
-                            arrayStates.push(states[key]);
-                            if (roles.indexOf(item.config.settings.name) >= 0) {
-                                filterWidgets[key] = item;
-                                arrayFilterIndex.push(key);
+            if(data.length > 0){
+                let userId = data[0].id;
+                keycloak.getUserRoleMappings(token, userId).then((roles) => {
+                    scada.getToken().then((scadaToken) => {
+                        scada.getHomeDashboard(scadaToken).then((homeDashboard) => {
+                            let widgets = homeDashboard.configuration.widgets;
+                            let states = homeDashboard.configuration.states.default.layouts.main.widgets;
+                            let filterWidgets = {};
+                            let filterStates = {};
+                            let arrayFilterIndex = [];
+                            let arrayStates = [];
+                            for (let key in widgets) {
+                                let item = widgets[key];
+                                arrayStates.push(states[key]);
+                                if (roles.indexOf(item.config.settings.name) >= 0) {
+                                    filterWidgets[key] = item;
+                                    arrayFilterIndex.push(key);
+                                }
                             }
-                        }
-                        for (var ịndex = 0; ịndex < arrayFilterIndex.length; ịndex++) {
-                            filterStates[arrayFilterIndex[ịndex]] = arrayStates[ịndex];
-                        }
-                        homeDashboard.configuration.widgets = filterWidgets;
-                        homeDashboard.configuration.states.default.layouts.main.widgets = filterStates;
-                        res.status(200).send(homeDashboard);
-
+                            for (var ịndex = 0; ịndex < arrayFilterIndex.length; ịndex++) {
+                                filterStates[arrayFilterIndex[ịndex]] = arrayStates[ịndex];
+                            }
+                            homeDashboard.configuration.widgets = filterWidgets;
+                            homeDashboard.configuration.states.default.layouts.main.widgets = filterStates;
+                            res.status(200).send(homeDashboard);
+    
+                        })
                     })
                 })
-            })
+            } else {
+                res.status(200).send(null);
+            }
         })
     })
 });
