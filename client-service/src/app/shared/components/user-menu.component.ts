@@ -57,9 +57,9 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if(localStorage.getItem('user') == null){
-      location.reload();
-    }
+    // if(localStorage.getItem('user') == null){
+    //   location.reload();
+    // }
   }
 
   ngOnDestroy(): void {

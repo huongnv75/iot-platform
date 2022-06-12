@@ -427,19 +427,23 @@ export class MenuService {
         notExact: true,
         icon: 'home'
       });
-    let widgets = data.configuration.widgets;
-    for (let index in widgets) {
-      let item = widgets[index];
-      sections.push(
-        {
-          id: guid(),
-          name: item.config.settings.name,
-          type: 'link',
-          path: item.config.settings.path,
-          notExact: true,
-          icon: item.config.settings.icon
-        }
-      )
+    if(data){
+      let widgets = data.configuration.widgets;
+      for (let index in widgets) {
+        let item = widgets[index];
+        sections.push(
+          {
+            id: guid(),
+            name: item.config.settings.name,
+            type: 'link',
+            path: item.config.settings.path,
+            notExact: true,
+            icon: item.config.settings.icon
+          }
+        )
+      }
+    } else{
+      location.reload();
     }
     return sections;
   }
