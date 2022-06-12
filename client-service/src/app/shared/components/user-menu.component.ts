@@ -57,6 +57,9 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem('user') == null){
+      location.reload();
+    }
   }
 
   ngOnDestroy(): void {
@@ -65,6 +68,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   getAuthorityName(user: User): string {
     let name = null;
     if (user) {
+      localStorage.setItem('user',user.email);
       const authority = user.authority;
       switch (authority) {
         case Authority.SYS_ADMIN:
@@ -107,6 +111,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   }
 
   logout(): void {
+    localStorage.removeItem('user');
     this.authService.logout();
   }
 

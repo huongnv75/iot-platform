@@ -32,14 +32,15 @@ app.use('/resources', express.static(path.join(__dirname, 'resources')));
 app.get('/', (req, res) => {
     scada.redirectOauth2().then(data => {
         res.redirect(config.scada.baseUrl + data[0]?.url);
-    })
+    }).catch((error) => { res.status(400).send(error); });
+
 });
 
 //api roles là để show thông tin của user trên scada
 app.get('/roles', (req, res) => {
     keycloak.getAccessToken().then((token) => {
         keycloak.getUsers(token, req.query.user).then((data) => {
-            if(data.length > 0){
+            if (data.length > 0) {
                 let userId = data[0].id;
                 keycloak.getUserRoleMappings(token, userId).then((roles) => {
                     scada.getToken().then((scadaToken) => {
@@ -64,7 +65,7 @@ app.get('/roles', (req, res) => {
                             homeDashboard.configuration.widgets = filterWidgets;
                             homeDashboard.configuration.states.default.layouts.main.widgets = filterStates;
                             res.status(200).send(homeDashboard);
-    
+
                         })
                     })
                 })
@@ -72,7 +73,8 @@ app.get('/roles', (req, res) => {
                 res.status(200).send(null);
             }
         })
-    })
+    }).catch((error) => { res.status(400).send(error); });
+
 });
 //intergration apis là bổ sung các api cho các bảng mới
 pgtools.createdb(config.database, config.database.schemal, function (error) {
