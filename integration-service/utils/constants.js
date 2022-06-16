@@ -6,8 +6,8 @@ module.exports = Object.freeze({
     KEYCLOAK_USERS: '/admin/realms/master/users?briefRepresentation=true&first=0&max=' + config.app.pageSize,
     KEYCLOAK_USER_ROLE_MAPPINGS: '/admin/realms/master/users/userId/role-mappings/realm/composite',
     KEYCLOAK_GROUPS: '/admin/realms/master/groups?first=0&max=' + config.app.pageSize,
-    KEYCLOAK_GROUP_ROLE_MAPPINGS: '/admin/realms/QLSX/groups/groupId/role-mappings/realm/composite',
-    KEYCLOAK_GROUP_MEMBERS: '/admin/realms/QLSX/groups/groupId/members?first=0&max=' + config.app.pageSize,
+    KEYCLOAK_GROUP_ROLE_MAPPINGS: '/admin/realms/master/groups/groupId/role-mappings/realm/composite',
+    KEYCLOAK_GROUP_MEMBERS: '/admin/realms/master/groups/groupId/members?first=0&max=' + config.app.pageSize,
     //scada
     SCADA_LOGIN: '/api/auth/login',
     SCADA_GET_CUSTOMERS: '/api/customers?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
