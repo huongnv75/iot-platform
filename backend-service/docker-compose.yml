@@ -2,29 +2,49 @@ version: "3.7"
 
 services:
     thingsboard:
-        image: ivanmorenoj/thingsboard:v3.2.2
+        image: thingsboard/tb-postgres
         ports:
             - 9090:9090
             # - 1883:1883
             # - 5683:5683/udp
         environment:
-            - LOAD_DEMO=false
-            - LOW_RAM_USAGE=true
-            - PG_HOST=db-postgres
-            - PG_USER=thingsboard
-            - PG_PASS=verysecret
+            - SPRING_DATASOURCE_USERNAME=thingsboard
+            - SPRING_DATASOURCE_PASSWORD=verysecret
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://db-postgres:5432/thingsboard
+            - TB_QUEUE_TYPE=in-memory
         volumes:
             - thingsboard-data:/data
-    
+        networks:
+          - docker-thingsboard    
     db-postgres:
-        image: postgres:12-alpine
+        image: postgres:11.5
+        # ports:
+            # - 5432:5432
         environment:
             - POSTGRES_USER=thingsboard
             - POSTGRES_DB=thingsboard 
             - POSTGRES_PASSWORD=verysecret
         volumes:
             - postgres-data:/var/lib/postgresql/data
-
+        networks:
+          - docker-thingsboard  
+    keycloak:
+        image: jboss/keycloak
+        command:
+            - " -b 0.0.0.0"
+        environment:
+            KEYCLOAK_USER: admin
+            KEYCLOAK_PASSWORD: admin
+        ports:
+            - 8888:8080
+        volumes:
+            - keycloak-data:/tmp
+        networks:
+          - docker-thingsboard  
 volumes:
     postgres-data:
     thingsboard-data:
+    keycloak-data:
+networks:
+  docker-thingsboard:
+    driver: bridge

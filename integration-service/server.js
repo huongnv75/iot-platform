@@ -77,7 +77,9 @@ app.get('/roles', (req, res) => {
                     })
                 })
             } else {
-                res.status(200).send(null);
+                let homeDashboard = {};
+                homeDashboard.roles = [];
+                res.status(200).send(homeDashboard);
             }
         })
     }).catch((error) => { res.status(400).send(error); });

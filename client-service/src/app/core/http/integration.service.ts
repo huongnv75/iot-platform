@@ -7,7 +7,7 @@ import { defaultHttpOptionsFromConfig, RequestConfig } from './http-utils';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Asset, AssetInfo, PageData } from '@app/shared/models/integration.models';
-import { environment as env } from '@env/environment';
+import { ilink } from '@shared/models/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -19,29 +19,24 @@ export class IntegrationService {
   ) { }
 
   public getProducts(config?: RequestConfig): Observable<PageData<AssetInfo>> {
-    return this.http.get<PageData<AssetInfo>>(env.integration_service + `/api/product`,
+    return this.http.get<PageData<AssetInfo>>(ilink.product,
       defaultHttpOptionsFromConfig(config));
   }
 
   public getGroupProducts(config?: RequestConfig): Observable<PageData<AssetInfo>> {
-    return this.http.get<PageData<AssetInfo>>(env.integration_service + `/api/group-product`,
+    return this.http.get<PageData<AssetInfo>>(ilink.groupProduct,
       defaultHttpOptionsFromConfig(config));
   }
 
   public getStages(config?: RequestConfig): Observable<PageData<AssetInfo>> {
-    return this.http.get<PageData<AssetInfo>>(env.integration_service + `/api/stage`,
+    return this.http.get<PageData<AssetInfo>>(ilink.stage,
       defaultHttpOptionsFromConfig(config));
   }
 
   public getErrors(config?: RequestConfig): Observable<PageData<AssetInfo>> {
-    return this.http.get<PageData<AssetInfo>>(env.integration_service + `/api/error`,
+    return this.http.get<PageData<AssetInfo>>(ilink.error,
       defaultHttpOptionsFromConfig(config));
   }
-
-  // public getViewRoles(config?: RequestConfig): Observable<Array<any>> {
-  //   return this.http.get<Array<any>>(env.integration_service + `/roles`,
-  //     defaultHttpOptionsFromConfig(config));
-  // }
 
   public getAsset(assetId: string, config?: RequestConfig): Observable<Asset> {
     return this.http.get<Asset>(`/api/asset/${assetId}`, defaultHttpOptionsFromConfig(config));
