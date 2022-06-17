@@ -171,6 +171,7 @@ export class UsersTableConfigResolver implements Resolve<EntityTableConfig<User>
     if ($event) {
       $event.stopPropagation();
     }
+    localStorage.setItem('user',user.email);
     this.authService.loginAsUser(user.id.id).subscribe();
   }
 

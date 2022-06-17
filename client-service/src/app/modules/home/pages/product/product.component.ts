@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
   }
 
   openDialog(element): void {
-    console.log("Open dialog:", element)
+    console.log("Open dialog:", element, this.asset.value.assetType)
     const dialogRef = this.dialog.open(ProductDialogComponent, {
       panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
       width: '600px',

@@ -43,14 +43,8 @@ export class MenuService {
     this.store.pipe(select(selectIsAuthenticated)).subscribe(
       (authenticated: boolean) => {
         if (authenticated) {
-          this.dashboardService.getHomeDashboard().subscribe(data => {
-            if(data == null){
-              this.dashboardService.getHomeDashboardOld().subscribe(data => {
-                this.buildMenu(data);
-              });
-            } else{
-              this.buildMenu(data);
-            }
+          this.dashboardService.getHomeDashboard().subscribe(homeDashboard => {
+            this.buildMenu(homeDashboard);
           })
         }
       }
@@ -418,6 +412,7 @@ export class MenuService {
   }
   private buildTenantAdminMenu(authState: AuthState, data: any): Array<MenuSection> {
     let sections: Array<MenuSection> = [];
+    console.log('authState---->', authState);
     sections.push(
       {
         id: guid(),
@@ -426,8 +421,31 @@ export class MenuService {
         path: '/home',
         notExact: true,
         icon: 'home'
-      });
-    if(data){
+      }
+    );
+    if (data.roles.includes('Quản lý đối tượng')) {
+      sections.push(
+        {
+          id: guid(),
+          name: 'asset.assets',
+          type: 'link',
+          path: '/assets',
+          icon: 'domain'
+        }
+      )
+    }
+    if (data.roles.includes('Quản lý sản phẩm_version2')) {
+      sections.push(
+        {
+          id: guid(),
+          name: 'Sản phẩm',
+          type: 'link',
+          path: '/product',
+          icon: 'settings_backup_restore'
+        }
+      )
+    }
+    if (data.configuration) {
       let widgets = data.configuration.widgets;
       for (let index in widgets) {
         let item = widgets[index];
@@ -442,8 +460,8 @@ export class MenuService {
           }
         )
       }
-    } else{
-      location.reload();
+    } else {
+      // location.reload();
     }
     return sections;
   }
