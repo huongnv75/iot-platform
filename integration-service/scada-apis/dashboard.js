@@ -113,7 +113,7 @@ function unAssignDashboard(token, customerId, dashboardId) {
 function updateDefaultDashboardUser(token, user, defaultDashboardId) {
     return new Promise(function(resolve, reject) {
         user.additionalInfo.defaultDashboardId = defaultDashboardId;
-        user.additionalInfo.defaultDashboardFullscreen = true;
+        user.additionalInfo.defaultDashboardFullscreen = false;
         user.additionalInfo.homeDashboardHideToolbar = true;
         axios({
                 url: config.scada.baseUrl + constants.SCADA_CREATE_AND_UPDATE_USER,

@@ -21,7 +21,8 @@ const scada = require('./scada-apis');
 const keycloak = require('./keycloak-apis');
 
 cron.schedule(config.app.cronJob, () => {
-    cronJobFunction.synchroTenantUsersDatabase();
+    cronJobFunction.synchroCustomerUsersDatabase();
+    // cronJobFunction.synchroTenantUsersDatabase();
     // cronJobFunction.synchroDashboardsDatabase();
 });
 
