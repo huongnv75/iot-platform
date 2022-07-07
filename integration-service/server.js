@@ -45,7 +45,7 @@ app.get('/roles', (req, res) => {
                 keycloak.getUserRoleMappings(token, userId).then((roles) => {
                     scada.getToken().then((scadaToken) => {
                         scada.getHomeDashboard(scadaToken).then((homeDashboard) => {
-                            if(homeDashboard){
+                            if (homeDashboard) {
                                 let widgets = homeDashboard.configuration.widgets;
                                 let states = homeDashboard.configuration.states.default.layouts.main.widgets;
                                 let filterWidgets = {};
@@ -83,8 +83,19 @@ app.get('/roles', (req, res) => {
             }
         })
     }).catch((error) => { res.status(400).send(error); });
-
 });
+
+//api roles là để show thông tin của user trên scada
+app.get('/publicAsset', (req, res) => {
+    scada.getToken().then((token)=>{
+        scada.getAssetIdByName(token, "COMMON").then((id)=>{
+            scada.getAssetAttributesById(token, id).then((data)=>{
+                res.status(200).send(data);
+            })
+        })
+    })
+})
+
 //intergration apis là bổ sung các api cho các bảng mới
 pgtools.createdb(config.database, config.database.schemal, function (error) {
     if (error) {

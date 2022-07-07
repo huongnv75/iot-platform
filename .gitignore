@@ -1,4 +1,4 @@
 */node_modules
 */target
 */e2e
-.env
+./integration-service/.env
