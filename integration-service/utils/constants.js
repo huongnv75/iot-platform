@@ -12,6 +12,7 @@ module.exports = Object.freeze({
     SCADA_LOGIN: '/api/auth/login',
     SCADA_GET_CUSTOMERS: '/api/customers?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_CREATE_CUSTOMER: '/api/customer',
+    SCADA_DETAIL_CUSTOMER: '/api/customer/customerId',
     SCADA_GET_CUSTOMER_USERS: '/api/customer/customerId/users?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_GET_TENANT_USERS: '/api/tenant/tenantId/users?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_CREATE_AND_UPDATE_USER: '/api/user?sendActivationMail=false',

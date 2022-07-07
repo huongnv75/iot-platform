@@ -89,7 +89,7 @@ app.get('/roles', (req, res) => {
 //api roles là để show thông tin của user trên scada
 app.get('/publicAsset', (req, res) => {
     scada.getToken().then((token)=>{
-        scada.getAssetIdByName(token, "COMMON").then((id)=>{
+        scada.getAssetIdByName(token, req.query.name || "COMMON").then((id)=>{
             scada.getAssetAttributesById(token, id).then((data)=>{
                 res.status(200).send(data);
             })
