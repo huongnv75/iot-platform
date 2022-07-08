@@ -54,7 +54,7 @@ function synchroCustomerUsersDatabase() {
                                                     return obj.email == email;
                                                 });
                                                 if (user.additionalInfo.defaultDashboardId == null) {
-                                                    scada.getCustomerDashboards(scadaToken, customer.id).then(dashboards => {
+                                                    scada.getCustomerDashboards(scadaToken, customer.id.id).then(dashboards => {
                                                         let db = dashboards.find(obj => {
                                                             return obj.name == 'Giám sát';
                                                         });

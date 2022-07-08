@@ -37,7 +37,7 @@ function createCustomerUser(token, customer, email) {
                 additionalInfo: {
                     description: "",
                     defaultDashboardId: null,
-                    defaultDashboardFullscreen: true,
+                    defaultDashboardFullscreen: false,
                     homeDashboardId: null,
                     homeDashboardHideToolbar: true
                 },
