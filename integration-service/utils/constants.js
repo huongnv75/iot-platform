@@ -1,4 +1,15 @@
 const config = require("../config/config");
+const maps = new Map();
+maps.set('Giám sát', 'Giám sát');
+maps.set('Quản lý Nhóm Sản phẩm', 'Quản lý nhóm Sản phẩm');
+maps.set('Quản lý Sản phẩm', 'Quản lý sản phẩm');
+maps.set('Quản lý thiết bị IOT', 'Danh mục thiết bị');
+maps.set('Quản lí công đoạn', 'Quản lí công đoạn');
+maps.set('Quản lý lỗi', 'Quản lý lỗi -WoLine');
+maps.set('Quản lí nhóm lỗi', 'Quản lí nhóm lỗi');
+maps.set('Khai báo lỗi', 'Quản lý và khai báo danh sách lỗi');
+maps.set('Khai báo lỗi HMI', 'Quản lý và khai báo lỗi HMI');
+maps.set('Khai báo lỗi cho lệnh sản xuất', 'Khai báo lỗi theo công đoạn');
 
 module.exports = Object.freeze({
     //keycloak
@@ -27,5 +38,7 @@ module.exports = Object.freeze({
     SCADA_UPDATE_DASHBOARD: '/api/customer/customerId/dashboard/dashboardId',
     SCADA_GET_ASSET_ID_BY_NAME: '/api/tenant/assetInfos?pageSize=' + config.app.pageSize + '&page=0&textSearch=name&sortProperty=createdTime&sortOrder=DESC&type=',
     SCADA_GET_ASSET_ATTRIBUTES_BY_ID: '/api/plugins/telemetry/ASSET/assetId/values/attributes/SERVER_SCOPE',
-    SCADA_OAUTH2: '/api/noauth/oauth2Clients?platform=WEB'
+    SCADA_OAUTH2: '/api/noauth/oauth2Clients?platform=WEB',
+    //others
+    MAPS:maps
 });

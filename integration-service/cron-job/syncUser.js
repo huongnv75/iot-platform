@@ -75,8 +75,8 @@ function synchroCustomerUsersDatabase() {
                                         });
                                         for (const element of oldUsers) {
                                             if (!global.contain(emailKeycloaks, element.email)) {
-                                                console.log('emailKeycloaks=====>', emailKeycloaks);
-                                                console.log('element.email=====>', element.email);
+                                                //console.log('emailKeycloaks=====>', emailKeycloaks);
+                                                //console.log('element.email=====>', element.email);
                                                 // scada.deleteUser(scadaToken, element.id.id);
                                             }
                                         }

@@ -23,7 +23,7 @@ const keycloak = require('./keycloak-apis');
 cron.schedule(config.app.cronJob, () => {
     cronJobFunction.synchroCustomerUsersDatabase();
     // cronJobFunction.synchroTenantUsersDatabase();
-    // cronJobFunction.synchroDashboardsDatabase();
+    cronJobFunction.synchroDashboardsDatabase();
 });
 
 //resources cho các plugin add vào thư viện

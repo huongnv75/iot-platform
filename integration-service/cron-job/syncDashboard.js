@@ -1,4 +1,5 @@
 const global = require("../utils/globalFunction");
+const constants = require("../utils/constants");
 const keycloak = require("../keycloak-apis");
 const scada = require("../scada-apis");
 
@@ -11,13 +12,14 @@ function synchroDashboardsDatabase() {
                     scada.getCustomerDashboards(scadaToken, customer.id).then(oldDashboards => {
                         keycloak.getGroups(keycloakToken).then(keycloakGroups => {
                             for (const group of keycloakGroups) {
-                                if (group.name == customer.name) {
-                                    keycloak.getGroupRoleMappings(keycloakToken, group.id).then(roles => {
+                                //if (group.name == customer.name) {
+                                if (group.name == "Check_12") {
+                                        keycloak.getGroupRoleMappings(keycloakToken, group.id).then(roles => {
                                         scada.getAllDashboards(scadaToken).then(dashboards => {
                                             // kiểm tra xem trong những roles của keycloak, scada chưa có dashboard nào thì thêm vào
                                             for (const role of roles) {
                                                 for (const dashboard of dashboards) {
-                                                    if (role == dashboard.name) {
+                                                    if (constants.MAPS.get(role) == dashboard.name) {
                                                         scada.assignDashboard(scadaToken, customer.id, dashboard.id).then(rs => {
                                                         });
                                                     }
@@ -25,7 +27,7 @@ function synchroDashboardsDatabase() {
                                             }
                                             //kiểm tra lại với dashboards cũ thì có những phần tử nào không có trong roles của keycloak thì xóa đi
                                             for (const element of oldDashboards) {
-                                                if (!global.contain(roles, element.name)) {
+                                                if (!global.contain(roles, element.name, true)) {
                                                     scada.unAssignDashboard(scadaToken, customer.id, element.id).then(rs => {
                                                     });
                                                 }

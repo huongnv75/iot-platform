@@ -1,4 +1,5 @@
 var global = {};
+const constants = require("../utils/constants");
 
 const winston = require("winston");
 const yaml = require('js-yaml');
@@ -9,7 +10,15 @@ global.formUrlEncoded = function formUrlEncoded(x) {
     return Object.keys(x).reduce((p, c) => p + `&${c}=${encodeURIComponent(x[c])}`, '');
 }
 
-global.contain = function contain(a, obj) {
+global.contain = function contain(a, obj, checkMap) {
+    if(checkMap){
+        for (var i = 0; i < a.length; i++) {
+            if (constants.MAPS.get(a[i]) == obj) {
+                return true;
+            }
+        } 
+        return false;
+    }
     for (var i = 0; i < a.length; i++) {
         if (a[i] == obj) {
             return true;
