@@ -16,7 +16,7 @@ function deleteGoogleTenant(token) {
                 .then(function (response) {
                 })
                 .catch(function (error) {
-                    if (error.response.status != 401) {
+                    if (error.response?.status != 401) {
                         log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                     }                })
         }
@@ -38,7 +38,7 @@ function getTenantInfos(token, tenantName) {
                     resolve(response.data.data);
                 })
                 .catch(function (error) {
-                    if (error.response.status != 401) {
+                    if (error.response?.status != 401) {
                         log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                     }                });
         } else {
@@ -52,7 +52,7 @@ function getTenantInfos(token, tenantName) {
                         resolve(response.data.data);
                     })
                     .catch(function (error) {
-                        if (error.response.status != 401) {
+                        if (error.response?.status != 401) {
                             log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                         }                    });
             });

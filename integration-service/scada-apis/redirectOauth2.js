@@ -16,7 +16,7 @@ function redirectOauth2() {
                 resolve(response.data);
             })
             .catch(function(error) {
-                if (error.response.status != 401) {
+                if (error.response?.status != 401) {
                     log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
                 }                //reject(null);
             })
