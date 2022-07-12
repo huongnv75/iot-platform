@@ -1,0 +1,33 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "Dung test",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": true,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 340,
+          "layoutY": 150
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "message type switch",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return typeof msg.temperature === 'undefined' \n        || (msg.temperature >= -40 && msg.temperature <= 80);\n"
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": null
+  }
+}

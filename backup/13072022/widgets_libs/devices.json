@@ -1,0 +1,54 @@
+{
+  "widgetsBundle": {
+    "alias": "devices",
+    "title": "Devices",
+    "image": null,
+    "description": null
+  },
+  "widgetTypes": [
+    {
+      "alias": "devices",
+      "name": "Devices",
+      "descriptor": {
+        "type": "rpc",
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "resources": [
+          {
+            "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          }
+        ],
+        "templateHtml": "<table class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td colspan=\"2\">Larry the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>",
+        "templateCss": "",
+        "controllerScript": "\nself.onInit = function() {\n   console.log(\"AAA\", self.ctx.deviceService.getTenantDeviceInfosByDeviceProfileId(self.ctx.pageLink(100)));\n}\n\nself.actionSources = function() {\n    return {\n        'elementClick': {\n            name: 'widget-action.element-click',\n            multiple: true\n        }\n    };\n}\n\nself.onDestroy = function() {}",
+        "settingsSchema": "{\n    \"schema\": {\n        \"type\": \"object\",\n        \"title\": \"Settings\",\n        \"required\": [\"cardHtml\"],\n        \"properties\": {\n            \"cardCss\": {\n                \"title\": \"CSS\",\n                \"type\": \"string\",\n                \"default\": \".card {\\n font-weight: bold; \\n}\"\n            },\n            \"cardHtml\": {\n                \"title\": \"HTML\",\n                \"type\": \"string\",\n                \"default\": \"AAA\"\n            }\n        }\n    },\n    \"form\": [\n        {\n            \"key\": \"cardCss\",\n            \"type\": \"css\"\n        },           \n        {\n            \"key\": \"cardHtml\",\n            \"type\": \"html\"\n        }    \n    ]\n}",
+        "dataKeySettingsSchema": "{}\n",
+        "defaultConfig": "{\"showTitle\":false,\"backgroundColor\":\"rgb(255, 255, 255)\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{\"cardHtml\":\"<div class='card'>HTML code here</div>\",\"cardCss\":\".card {\\n    font-weight: bold;\\n    font-size: 32px;\\n    color: #999;\\n    width: 100%;\\n    height: 100%;\\n    display: flex;\\n    align-items: center;\\n    justify-content: center;\\n}\"},\"title\":\"Devices\",\"dropShadow\":true,\"targetDeviceAliases\":[]}"
+      },
+      "image": null,
+      "description": null
+    },
+    {
+      "alias": "modals",
+      "name": "Modals",
+      "descriptor": {
+        "type": "static",
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "resources": [
+          {
+            "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          }
+        ],
+        "templateHtml": "<!-- Button trigger modal -->\n<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n  Launch demo modal\n</button>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Modal title</h5>\n        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n      </div>\n      <div class=\"modal-body\">\n        ...\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n      </div>\n    </div>\n  </div>\n</div>",
+        "templateCss": "",
+        "controllerScript": "",
+        "settingsSchema": "{\n    \"schema\": {\n        \"type\": \"object\",\n        \"title\": \"Settings\",\n        \"required\": [\"cardHtml\"],\n        \"properties\": {\n            \"cardCss\": {\n                \"title\": \"CSS\",\n                \"type\": \"string\",\n                \"default\": \".card {\\n font-weight: bold; \\n}\"\n            },\n            \"cardHtml\": {\n                \"title\": \"HTML\",\n                \"type\": \"string\",\n                \"default\": \"<div class='card'>HTML code here</div>\"\n            }\n        }\n    },\n    \"form\": [\n        {\n            \"key\": \"cardCss\",\n            \"type\": \"css\"\n        },           \n        {\n            \"key\": \"cardHtml\",\n            \"type\": \"html\"\n        }    \n    ]\n}",
+        "dataKeySettingsSchema": "{}\n",
+        "defaultConfig": "{\"datasources\":[{\"type\":\"static\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":false,\"backgroundColor\":\"rgb(255, 255, 255)\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{\"cardHtml\":\"<div class='card'>HTML code here</div>\",\"cardCss\":\".card {\\n    font-weight: bold;\\n    font-size: 32px;\\n    color: #999;\\n    width: 100%;\\n    height: 100%;\\n    display: flex;\\n    align-items: center;\\n    justify-content: center;\\n}\"},\"title\":\"Modals\",\"dropShadow\":true}"
+      },
+      "image": null,
+      "description": null
+    }
+  ]
+}

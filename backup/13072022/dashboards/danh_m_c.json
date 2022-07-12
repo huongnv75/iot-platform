@@ -1,0 +1,681 @@
+{
+  "title": "Danh mục",
+  "image": "data:image/png;base64,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",
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "a511f6e0-cfa6-f134-4060-36dc4e9c2844": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "person",
+            "path": "/customers",
+            "name": "Quản lý người dùng"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(109,141,46,0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a511f6e0-cfa6-f134-4060-36dc4e9c2844"
+      },
+      "64b23728-00ad-66fc-dc53-1746eaf588a9": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "memory",
+            "path": "/dashboards/b2a6c7c0-1534-11ec-a1bd-43279c85c3d5",
+            "name": "Quản lý thiết bị IOT"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "64b23728-00ad-66fc-dc53-1746eaf588a9"
+      },
+      "c01b3759-6c05-892a-d04a-f46e6aa1a7a6": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "settings_input_component",
+            "path": "/dashboards/c67441f0-59a0-11ec-83a4-875df4459841",
+            "name": "Quản lý công đoạn"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "c01b3759-6c05-892a-d04a-f46e6aa1a7a6"
+      },
+      "0876d513-b28e-4675-0988-7240f31d209c": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "timeline",
+            "path": "/dashboards/f263a750-01bc-11ed-8aca-2d6183e1008c",
+            "name": "Giám sát"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "0876d513-b28e-4675-0988-7240f31d209c"
+      },
+      "85ef08bb-52e7-3445-2e07-1d8dc0c79fed": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "import_export",
+            "path": "/dashboards/fcabe2c0-5e3a-11ec-b61f-a577844b4139",
+            "name": "Quản lý nhóm lỗi"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "85ef08bb-52e7-3445-2e07-1d8dc0c79fed"
+      },
+      "9fe6bc70-78bb-811d-1f34-17ace40d6613": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "settings",
+            "path": "/devices",
+            "name": "Cấu hình"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9fe6bc70-78bb-811d-1f34-17ace40d6613"
+      },
+      "53240790-acc8-9212-c740-ae2d278448b0": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "warning",
+            "path": "/dashboards/fcabe2c0-5e3a-11ec-b61f-a577844b4139",
+            "name": "Quản lý lỗi"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "53240790-acc8-9212-c740-ae2d278448b0"
+      },
+      "d7ac78a7-5eb6-88f0-5b76-9ad1130dd8ab": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "warning",
+            "path": "/dashboards/4b357800-596f-11ec-83a4-875df4459841",
+            "name": "Khai báo lỗi"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "d7ac78a7-5eb6-88f0-5b76-9ad1130dd8ab"
+      },
+      "5f6503e6-25ee-ee33-9770-3017931117c7": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "nfc",
+            "path": "/dashboards/e3280440-72f4-11ec-95d9-d754d4865a7b",
+            "name": "Khai báo lỗi cho lệnh sản xuất"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "5f6503e6-25ee-ee33-9770-3017931117c7"
+      },
+      "3d155b2e-ab53-d2db-29ab-bb34c3754782": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "computer",
+            "path": "/dashboards/be034c40-01bc-11ed-8aca-2d6183e1008c",
+            "name": "Khai báo lỗi HMI"
+          },
+          "title": "Khai báo lỗi và gán lỗi HMI",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "3d155b2e-ab53-d2db-29ab-bb34c3754782"
+      },
+      "5104e3ef-6066-ad1b-bddf-92a8ef9ce942": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "dashboards",
+            "path": "/dashboards/97238400-01bc-11ed-8aca-2d6183e1008c",
+            "name": "Quản lý Sản phẩm"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "5104e3ef-6066-ad1b-bddf-92a8ef9ce942"
+      },
+      "a89bba78-430b-33aa-8313-31deef0e60c9": {
+        "isSystemType": true,
+        "bundleAlias": "navigation_widgets",
+        "typeAlias": "navigation_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(82,153,73,0.96)",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "icon": "exit_to_app",
+            "path": "/dashboards/812ef0d0-01bc-11ed-8aca-2d6183e1008c",
+            "name": "Quản lý Nhóm Sản phẩm"
+          },
+          "title": "New Navigation card",
+          "dropShadow": false,
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "titleIcon": "dvr"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a89bba78-430b-33aa-8313-31deef0e60c9"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Danh mục",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "a511f6e0-cfa6-f134-4060-36dc4e9c2844": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              },
+              "64b23728-00ad-66fc-dc53-1746eaf588a9": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 0,
+                "col": 6
+              },
+              "c01b3759-6c05-892a-d04a-f46e6aa1a7a6": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 0,
+                "col": 12
+              },
+              "0876d513-b28e-4675-0988-7240f31d209c": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 5,
+                "col": 0
+              },
+              "85ef08bb-52e7-3445-2e07-1d8dc0c79fed": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 5,
+                "col": 6
+              },
+              "9fe6bc70-78bb-811d-1f34-17ace40d6613": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 10,
+                "col": 6
+              },
+              "53240790-acc8-9212-c740-ae2d278448b0": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 0,
+                "col": 18
+              },
+              "d7ac78a7-5eb6-88f0-5b76-9ad1130dd8ab": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 5,
+                "col": 12
+              },
+              "5f6503e6-25ee-ee33-9770-3017931117c7": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 10,
+                "col": 0
+              },
+              "3d155b2e-ab53-d2db-29ab-bb34c3754782": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 5,
+                "col": 18
+              },
+              "5104e3ef-6066-ad1b-bddf-92a8ef9ce942": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 10,
+                "col": 12
+              },
+              "a89bba78-430b-33aa-8313-31deef0e60c9": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 10,
+                "col": 18
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {},
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY"
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1631815294950,
+          "endTimeMs": 1631901694950
+        },
+        "quickInterval": "CURRENT_DAY"
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Danh mục"
+}

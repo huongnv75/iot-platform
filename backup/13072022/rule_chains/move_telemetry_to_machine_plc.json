@@ -1,0 +1,425 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": "xử lý cho line"
+    },
+    "name": "move_telemetry_to_machine_plc",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": true,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 13,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1431,
+          "layoutY": 197
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "kiem tra",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var profile = msg.Profile;\nvar value = msg.Value;\nvar new_msg = {};\nnew_msg = msg;\nnew_msg[\"assetName\"] = msg.Machine_Id;\nfor (var key in profile) {\n    var key1 = key;\n    new_msg[key1] = profile[key];\n}\nfor (var key in value) {\n    var key1 = key;\n    new_msg[key1] = value[key];\n}\nnew_msg.assetName = msg.Machine_Id;\nnew_msg.processType = \"telementry\";\nnew_msg[\"stage_in_out\"] =\"111111\";\nnew_msg.Type = msg.Type;\nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 824,
+          "layoutY": 675
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Parse_Lohan",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "msg.assetName = msg.Machine_Id;\nvar profile = msg.Profile;\nvar value = msg.Value;\ndelete msg.Value;\ndelete msg.Profile;\n        delete msg.Number_Of_Input;\n        delete msg.Number_Of_Output;\ndelete msg.Running_Time;\ndelete msg.Stop_Time;\ndelete msg.Start_Time;\nfor (var key in profile) {\n    var key1 = key;\n    // if(key.indexOf('Set_Pre')!==-1){\n    //     key1 = \"Set_Pre\";\n    // }\n    msg[key1] = profile[key];\n}\nfor (var key in value) {\n    var key1 = key;\n    // if(key.indexOf('Pre')!==-1){\n    //     key1 = \"Pre\";\n    // }\n    msg[key1] = value[key];\n}\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 823,
+          "layoutY": 738
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Parse_Dakenh",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "msg.assetName = msg.Machine_Id;\nvar profile = msg.Profile;\nvar value = msg.Value;\ndelete msg.Running_Time;\ndelete msg.Stop_Time;\ndelete msg.Stop_Time;\n// delete msg.Value;\n// delete msg.Profile;\n// delete msg.Number_Of_Input;\n// delete msg.Number_Of_Output;\n// delete msg.Running_Time;\n// delete msg.Stop_Time;\n// delete msg.Start_Time;\nvar new_msg = {};\nfor (var key in profile) {\n    var key1 = key;\n    // if(key.indexOf('Set_Pre')!==-1){\n    //     key1 = \"Set_Pre\";\n    // }\n    new_msg[key1] = profile[key];\n}\nfor (var key in value) {\n    var key1 = key;\n    // if(key.indexOf('Pre')!==-1){\n    //     key1 = \"Pre\";\n    // }\n    new_msg[key1] = value[key];\n}\nnew_msg.assetName = msg.Machine_Id;\ndelete new_msg.Start_Time;\ndelete new_msg.Stop_Time;\nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1375,
+          "layoutY": 67
+        },
+        "type": "org.thingsboard.rule.engine.node.Asset.PushToAsset",
+        "name": "push_asset",
+        "debugMode": true,
+        "configuration": {
+          "inputKey": "EntityName",
+          "outputKey": "EntityName"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 14,
+          "layoutY": 386
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "send_cmd",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var new_msg = {};\nnew_msg.method = \"control\";\nnew_msg.params = msg.state;\nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1532,
+          "layoutY": 411
+        },
+        "type": "org.thingsboard.rule.engine.node.Asset.PushToAsset",
+        "name": "push_asset",
+        "debugMode": true,
+        "configuration": {
+          "inputKey": "EntityName",
+          "outputKey": "EntityName"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1871,
+          "layoutY": 410
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save-database",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 858,
+          "layoutY": 520
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "alarm",
+        "debugMode": true,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn \"canh bao gi vay\";",
+          "useMessageAlarmData": false,
+          "alarmType": "General Alarm",
+          "severity": "WARNING",
+          "propagate": true,
+          "relationTypes": [],
+          "dynamicSeverity": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1199,
+          "layoutY": 521
+        },
+        "type": "org.thingsboard.rule.engine.mail.TbMsgToEmailNode",
+        "name": "tt",
+        "debugMode": false,
+        "configuration": {
+          "fromTemplate": "ecyber",
+          "toTemplate": "${userEmail}",
+          "ccTemplate": null,
+          "bccTemplate": null,
+          "subjectTemplate": "Device ${deviceType} temperature high",
+          "mailBodyType": "false",
+          "isHtmlTemplate": "",
+          "bodyTemplate": "Device ${deviceName} has high temperature ${temp}"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1119,
+          "layoutY": 412
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "edit_asset_name",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var profile = msg.Profile;\nvar value = msg.Value;\nvar new_msg = {};\nnew_msg = msg;\nnew_msg[\"assetName\"] = msg.Machine_Id;\nfor (var key in profile) {\n    var key1 = key;\n    new_msg[key1] = profile[key];\n}\nfor (var key in value) {\n    var key1 = key;\n    new_msg[key1] = value[key];\n}\nnew_msg.assetName = msg.Machine_Id;\nnew_msg.processType = \"telementry\";\nnew_msg[\"stage_in_out\"] =\"111111\";\nnew_msg.Type = msg.Type;\n//bo sung board la NG hay pass\nif(msg.Type==6){\n    \n}\n\nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 356,
+          "layoutY": 3
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmType": "General Alarm",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": false,
+          "useMessageAlarmData": false,
+          "dynamicSeverity": false,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 319,
+          "layoutY": 386
+        },
+        "type": "org.thingsboard.rule.engine.node.Device.ControlDevice",
+        "name": "push_cmd",
+        "debugMode": true,
+        "configuration": {
+          "inputKey": "EntityName",
+          "outputKey": "EntityName"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "Phân tích lỗi máy đa kênh",
+          "layoutX": 1014,
+          "layoutY": 10
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Parse_ERR",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var Err = msg.err;\n//OkBoard\nvar new_msg = {\n    \"total\":\"\",\n    \"total_hmi_error\":\"\",\n    \"assetName\":\"\",\n    \"processType\":\"err\",\n    errCommonHMI:\"\",\n    status_Wo:\"\"\n}\nif('Line_Id'in msg){\nnew_msg.assetName = msg.machine_Id;\n}else{\n    new_msg.assetName = msg.machine_Id;\n}\nvar total_hmi_error = parseInt(\"0\");\nfor (var key in Err) {\n    if(Err[key] !=null){\n    var v = parseInt(Err[key]);\n    total_hmi_error += v;\n        \n    }\n}\nnew_msg.total_hmi_error = total_hmi_error;\nvar key_err = \"totalErr_\"+new_msg.assetName;\nnew_msg[key_err] = total_hmi_error;\nnew_msg.Wo_Id = msg.wo_Id;\nnew_msg.Machine_Id = msg.machine_Id;\nnew_msg.Lot_Number = msg.lot_Number;\nnew_msg.errCommonHMI = msg.errCommonHMI\nnew_msg.status_Wo = msg.status_Wo\nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 231,
+          "layoutY": 150
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode",
+        "name": "is_type_device",
+        "debugMode": true,
+        "configuration": {
+          "version": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 753,
+          "layoutY": 83
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "switch_type_asset_line_machine",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "function nextRelation(metadata, msg) {\n    switch (msg.Type) {\n        case 0:\n            msg.assetName = msg.Machine_Id;\n            return \"line_hoanchinh\";\n        case 1:\n            msg.assetName = msg.Machine_Id;\n            return \"congdoan_smt\";\n        case 2:\n            msg.assetName = msg.Machine_Id;\n            return \"line_LRLKDT\";\n        case 3:\n            msg.assetName = msg.Machine_Id;\n            return \"congdoan_son\";\n        case 4:\n            // code\n            msg.assetName = msg.Machine_Id;\n            return \"congdoan_nhua\";\n        case 5:\n            msg.assetName = msg.Machine_Id;\n            return \"machine_Lohan\";\n        case 6:\n            msg.assetName = msg.Machine_Id;\n            return \"machine_Dakenh\";\n        case 7:\n            msg.assetName = msg.Machine_Id;\n            return \"machine_Printer\";\n        case 8:\n            msg.assetName = msg.Machine_Id;\n            return \"machine_ganlinhkien\";\n        case 9:\n            msg.assetName = msg.Machine_Id;\n            return \"machine_AOI\";\n        case 10:\n            msg.assetName = msg.Machine_Id;\n            return \"machine_SPI\";\n       case 11:\n           msg.assetName = msg.Machine_Id;\n        return \"machine_Dotdap\";\n        case 12:\n        msg.assetName = msg.Machine_Id;\n        return \"congdoan_banglaprap\";\n        case 13:\n        msg.assetName = msg.Machine_Id;\n        return \"congdoan_baogoi\";\n                case 14:\n        msg.assetName = msg.Machine_Id;\n        return \"congdoan_baogoi_nhua\";\n                case 15:\n        msg.assetName = msg.Machine_Id;\n        return \"congdoan_baogoi\";\n                case 16:\n        msg.assetName = msg.Machine_Id;\n        return \"congdoan_baogoi\";\n            case 99:\n                return \"machine_err\";\n        default:\n        return \"none\";\n            // code\n    }\n}\nmsg.assetName = msg.Machine_Id;\nreturn nextRelation(metadata, msg);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1682,
+          "layoutY": 64
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save-database",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 642,
+          "layoutY": 372
+        },
+        "type": "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode",
+        "name": "rpc-request",
+        "debugMode": true,
+        "configuration": {
+          "timeoutInSeconds": 60
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 475,
+          "layoutY": 81
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save-database",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1052,
+          "layoutY": 132
+        },
+        "type": "org.thingsboard.rule.engine.push.err.PushErrorWoLine",
+        "name": "change_err_to_common",
+        "debugMode": true,
+        "configuration": {
+          "inputKey": "Err",
+          "outputKey": "change_err_to_common"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 3,
+        "toIndex": 15,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 11,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 6,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 8,
+        "type": "Created"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 5,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 16,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 12,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 16,
+        "type": "RPC Request to Device"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 17,
+        "type": "Post telemetry"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 4,
+        "type": "Attributes Updated"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 4,
+        "type": "Post attributes"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 18,
+        "type": "machine_err"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 7,
+        "type": "machine_err"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 9,
+        "type": "congdoan_nhua"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 9,
+        "type": "congdoan_baogoi_nhua"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 9,
+        "type": "congdoan_banglaprap"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 9,
+        "type": "machine_Dakenh"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 9,
+        "type": "congdoan_baogoi"
+      },
+      {
+        "fromIndex": 14,
+        "toIndex": 9,
+        "type": "machine_Lohan"
+      },
+      {
+        "fromIndex": 17,
+        "toIndex": 14,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 18,
+        "toIndex": 12,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": [
+      {
+        "fromIndex": 6,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "ea421bb0-1928-11ec-8505-4bd3ff5a78fa"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 2124,
+          "layoutY": 85,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 15,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "ea421bb0-1928-11ec-8505-4bd3ff5a78fa"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 2124,
+          "layoutY": 85,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      }
+    ]
+  }
+}

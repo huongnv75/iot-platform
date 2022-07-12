@@ -1,0 +1,275 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "process_vline",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": true,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 6,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1341,
+          "layoutY": 149
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "test_atttribute",
+        "debugMode": true,
+        "configuration": {
+          "tellFailureIfAbsent": true,
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [],
+          "latestTsKeyNames": [
+            "Total_Pass",
+            "Total_Ng",
+            "COUNT_NUMBER_I_U",
+            "Sum_I",
+            "Sum_U"
+          ],
+          "getLatestValueWithTs": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 34,
+          "layoutY": 408
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "check_type_msg",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 81,
+          "layoutY": 518
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "error_atttribute",
+        "debugMode": true,
+        "configuration": {
+          "tellFailureIfAbsent": true,
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [],
+          "latestTsKeyNames": [
+            "list_stage"
+          ],
+          "getLatestValueWithTs": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 542,
+          "layoutY": 353
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "bonus_stage_in_out_false",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "//msg.list_stage = \"\";\nmetadata.Old_Number_Of_Output = 0;\n        var element_avarage_productivity = {\n            \"Time\": 1,\n            \"Avg_Productivity\": 0\n        }\n        \n        var Avarage_Productivity_Zero = [];\n        Avarage_Productivity_Zero.push(element_avarage_productivity);\nmetadata.Avarage_Productivity = JSON.parse(Avarage_Productivity_Zero);\nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 266,
+          "layoutY": 349
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "test_atttribute",
+        "debugMode": true,
+        "configuration": {
+          "tellFailureIfAbsent": true,
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [],
+          "latestTsKeyNames": [
+            "list_stage",
+            "Start_Time",
+            "Running_Time",
+            "Old_Number_Of_Output",
+            "Avarage_Productivity"
+          ],
+          "getLatestValueWithTs": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 617,
+          "layoutY": 147
+        },
+        "type": "org.thingsboard.rule.engine.node.wo_lot.PushToWoLine",
+        "name": "push_WO_LINE",
+        "debugMode": true,
+        "configuration": {
+          "inputKey": "EntityName",
+          "outputKey": "EntityName"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 278,
+          "layoutY": 150
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "move_to_vline_tele",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "// var list_cd = msg.list_cd;\n// var now_cd = msg.now_cd;\n// let stage_index = list_cd.indexOf(now_cd);\n// msg.stage_index = stage_index;\n// else (now_cd == list_cd[list_cd.size()-1]){\n//     new_msg.vitri = \"end\";\n// }\n//var stage_in_out = \nmsg.assetName = msg.Wo_Id +\"-\"+msg.Lot_Number;\n\ndelete msg.Stop_Time;\ndelete msg.Running_Time;\ndelete msg.Start_Time;\n return {msg: msg,metadata: metadata,msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 885,
+          "layoutY": 506
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 579,
+          "layoutY": 510
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "ttt",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var new_msg = {};\r\nnew_msg = msg;\r\nvar array = JSON.parse(metadata.list_stage);\r\nvar new_arr = []\r\n//new_msg[\"list_stage\"] = array[0];\r\n\r\n//var _data = metadata.list_stage;\r\nvar stageObject = {\r\n    \"stage_name\": \"\",\r\n    \"Number_Of_Input\": \"0\",\r\n    \"Number_Of_Output\": \"0\",\r\n    \"Number_Of_Error\": 0,\r\n    \"asset_Id\": \"\",\r\n    Error_Detail:\"\",\r\n    Error_Detail_HMI:\"\"\r\n}\r\nvar processType = msg.processType\r\nif (processType == \"err\") {\r\n    for (var key = 0; key < array.length; key++) {\r\n        if (array[key].stage_name == msg.Machine_Id) {\r\n            stageObject.Number_Of_Input = array[key].Number_Of_Input;\r\n            stageObject.Number_Of_Output = array[key].Number_Of_Output;\r\n            stageObject.stage_name = msg.Machine_Id\r\n            stageObject.asset_Id = array[key].asset_Id;\r\n            stageObject.Number_Of_Error = array[key].Number_Of_Error\r\n            stageObject.Number_Of_Hmi_Error = msg.total_hmi_error\r\n            stageObject.Error_Detail = array[key].Error_Detail;\r\n            stageObject.Error_Detail_HMI = msg.errCommonHMI\r\n            new_arr[key] = stageObject;\r\n        } else {\r\n            new_arr[key] = array[key];\r\n        }\r\n    }\r\n    new_msg[\"test\"] = array.length;\r\n    new_msg[\"list_stage\"] = new_arr;\r\n    return { msg: new_msg, metadata: metadata, msgType: msgType };\r\n\r\n} else {\r\n    var index_for_check;\r\n\r\n    \r\n    for (var key = 0; key < array.length; key++) {\r\n        if (array[key].stage_name == msg.Machine_Id) {\r\n            //if(false){\r\n            stageObject.Number_Of_Input = msg.Number_Of_Input;\r\n            stageObject.Number_Of_Output = msg.Number_Of_Output;\r\n            stageObject.stage_name = msg.Machine_Id\r\n            stageObject.asset_Id = array[key].asset_Id;\r\n            stageObject.Number_Of_Error = array[key].Number_Of_Error;\r\n            stageObject.Number_Of_Hmi_Error = array[key].Number_Of_Hmi_Error\r\n            new_arr[key] = stageObject;\r\n            index_for_check = key;\r\n        } else {\r\n            new_arr[key] = array[key];\r\n        }\r\n    }\r\n    new_msg.Number_Of_Input = new_arr[0].Number_Of_Input;\r\n    new_msg.Number_Of_Output = new_arr[new_arr.length-1].Number_Of_Output;\r\n//         var sum_err = 0;\r\n//     \tfor (let i = 0; i < new_arr.length; i++) {\r\n// \t    var hmi_eror = new_arr[i].Number_Of_Hmi_Error?new_arr[i].Number_Of_Hmi_Error:0\r\n// \t\tsum_err =sum_err + parseInt(new_arr[i].Number_Of_Error)+ parseInt(hmi_eror);\r\n// \t}\r\n// \tnew_msg[\"Sum_Error\"] = sum_err;\r\n// \t//var PPM = \r\n    \r\n    \r\n    new_msg[\"list_stage\"] = new_arr;\r\n    if (index_for_check == (array.length - 1)) {\r\n        //Tính toán cộng dồn sản lượng\r\n        var startTime = parseFloat(metadata.Start_Time ? metadata.Start_Time : 0);\r\n        var runningTime = parseFloat(metadata.Running_Time ? metadata.Running_Time : 0);\r\n        runningTime = Math.ceil((Date.now() - parseInt(startTime) + parseInt(runningTime)) / (3600*1000));\r\n        \r\n        var Number_Of_Output = new_arr[new_arr.length - 1].Number_Of_Output;\r\n        var element_avarage_productivity = {\r\n            \"Time\": 1,\r\n            \"Avg_Productivity\": 0\r\n        }\r\n        \r\n        var Avarage_Productivity_Zero = [];\r\n        Avarage_Productivity_Zero.push(element_avarage_productivity);\r\n        var Avarage_Productivity = metadata.Avarage_Productivity ? JSON.parse(metadata.Avarage_Productivity) : Avarage_Productivity_Zero;\r\n        //if()\r\n        var Old_Number_Of_Output = metadata.Old_Number_Of_Output ? metadata.Old_Number_Of_Output : 0\r\n        var count_running = parseInt((runningTime));\r\n        if(count_running==1){\r\n            Avarage_Productivity = Avarage_Productivity_Zero;\r\n        }\r\n        \r\n                    var element = {\r\n                \"Time\": 0,\r\n                \"Avg_Productivity\": 0\r\n            }\r\n        var index = 0;\r\n        if (count_running >= Avarage_Productivity.length) {\r\n            //Avarage_Productivity[count_running] =element;\r\n            Old_Number_Of_Output = msg.Number_Of_Output\r\n            index = Avarage_Productivity.length;\r\n            //new_msg[\"test\"] = Math.ceil(count_running);\r\n        } else {\r\n            index = Avarage_Productivity.length - 1;\r\n            //Avarage_Productivity[Avarage_Productivity.length - 1].Avg_Productivity = parseInt(Number_Of_Output) - parseInt(Old_Number_Of_Output);\r\n            //new_msg[\"vao day\"] = \"o day ne\"\r\n        }\r\n        new_msg[\"index\"] = index;\r\n        element.Time = index;\r\n        element.Avg_Productivity = parseInt(Number_Of_Output)-parseInt(Old_Number_Of_Output)\r\n        Avarage_Productivity[index] =element;\r\n\r\n        new_msg[\"Old_Number_Of_Output\"] = parseInt(Old_Number_Of_Output);\r\n        new_msg[\"Avarage_Productivity\"] = JSON.stringify(Avarage_Productivity);\r\n    }\r\n    return { msg: new_msg, metadata: metadata, msgType: msgType };\r\n}"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 952,
+          "layoutY": 149
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "switch_dakenh",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "function nextRelation(metadata, msg) {\n    switch (msg.Type) {\n        case 6:\n            if(msg.processType == \"err\"){\n                return \"err\";\n            }\n            msg.assetName = msg.Machine_Id;\n            return \"machine_Dakenh\";\n        default:\n        return \"normal\";\n            // code\n    }\n}\nmsg.assetName = msg.Machine_Id;\nreturn nextRelation(metadata, msg);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1609,
+          "layoutY": 156
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "if_fail",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "\nmetadata.Total_Ng = 0;\nmetadata.Total_Pass = 1;\nmetadata.Sum_I = 0;\nmetadata.Sum_U = 0;\nmetadata.COUNT_NUMBER_I_U = 0;\nmsg.Total_Ng = 0;\nmsg.Total_Pass = 1;\nmsg.Sum_I = 0;\nmsg.Sum_U = 0;\nmsg.COUNT_NUMBER_I_U = 0;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1283,
+          "layoutY": 304
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "NG/PASS TOTAL",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "\n//metadata.Total_Ng = 0;\n//.Total_Pass = 1;\nvar new_msg ={};\nif(msg.Value.OkBoard == \"PASS\"){\n    new_msg.Total_Pass = parseInt(metadata.Total_Pass) + 1;\n    new_msg.Total_Ng = parseInt(metadata.Total_Ng);\n    new_msg.Total = parseInt(new_msg.Total_Pass)+parseInt(new_msg.Total_Ng);\n   // new_msg.\n   new_msg.COUNT_NUMBER_I_U = parseInt(metadata.COUNT_NUMBER_I_U) +1;\n   new_msg.Sum_I = parseFloat(metadata.Sum_I) + parseFloat(msg.Value.Irms);\n   new_msg.Sum_U = parseFloat(metadata.Sum_U) + parseFloat(msg.Value.PI);\n}else if(msg.Value.OkBoard==\"NG\"){\n    new_msg.Total_Pass = parseInt(metadata.Total_Pass);\n    new_msg.Total_Ng = parseInt(metadata.Total_Ng)+1;\n    new_msg.Total_PASS_NG = parseInt(new_msg.Total_Pass)+parseInt(new_msg.Total_Ng);\n}\nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1642,
+          "layoutY": 306
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 11,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 10,
+        "type": "Failure"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 3,
+        "type": "Failure"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 8,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 9,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 5,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 8,
+        "toIndex": 7,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 0,
+        "type": "machine_Dakenh"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 11,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 12,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": "Rule cho hệ thống scada"
+    },
+    "name": "scada",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": true,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 594,
+          "layoutY": 125
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save-count",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 292,
+          "layoutY": 125
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Indoor Thermal",
+        "debugMode": true,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 1,
+          "jsScript": "//var msg = {temperature: (20 + 5 * Math.random()).toFixed(1)};\n//var time = Date.Now();\nvar msg = {count:Math.random()}\n//var metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata:{deviceType: \"indoor thermometer\"}, msgType: msgType };",
+          "originatorId": "db959720-78cf-11ec-82d9-63ea7cec5f19",
+          "originatorType": "ASSET"
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": null
+  }
+}

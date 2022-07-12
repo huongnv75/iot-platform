@@ -1,0 +1,139 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "count_error",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 266,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "checkPass-NG",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "if(msg.processType==\"err\"){\nswitch (msg.OkBoard) {\n    case 'PASS':\n        return \"OK\";\n    case 'NG':\n        return \"OK\";\n    case \"OkBoard\":\n        return \"OK\";\n        \n    default:\n    return \"NOK\";\n        // code\n}\n}\nelse if(msg.processType == \"cpk\"){\n    return \"CPK\";\n}else{\n    return \"NOK\";\n}"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 589,
+          "layoutY": 355
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "if_fail",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "metadata.total = msg.total;\nmetadata.total_hmi_error = msg.total_hmi_error;\nmetadata.Number_Of_Input = msg.Number_Of_Input;\n//metadata.totalErrors = msg.totalErrors;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 30,
+          "layoutY": 286
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "transform",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "//msg.quantity = parseInt(msg.quantity) + parseInt(metadata.quantity);\n//totalErr\nvar new_msg = {\n    \"totalErr\":\"\",\n    \"total\":\"\",\n    \"typeErr\":99,\n    \"total_hmi_error\":0\n};\nif(msg.OkBoard == \"PASS\"){\n    new_msg.total = 1;\n    new_msg.total_hmi_error = 0;\n    msg.typeErr = 0;\n}\nelse if(msg.OkBoard == \"NG\" ){\n    new_msg.total = 1;\n    new_msg.total_hmi_error = 1;\n    msg.typeErr = 0;\n}else if(msg.OkBoard == \"OkBoard\"){\n    //new_msg.totalErr = msg.totalErr;\n    new_msg.typeErr = 1;\n    new_msg.total = 0;\n    new_msg.total_hmi_error = msg.total_hmi_error;\n    //new_msg.totalErrors = msg.totalErr;\n   \n}else{\n    new_msg = {}\n}\n\n\n    \nreturn {msg: new_msg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 942,
+          "layoutY": 195
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save",
+        "debugMode": true,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 328,
+          "layoutY": 287
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "fetch_lastest_error",
+        "debugMode": true,
+        "configuration": {
+          "tellFailureIfAbsent": true,
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [],
+          "latestTsKeyNames": [
+            "total",
+            "Number_Of_Input",
+            "totalErrors",
+            "total_hmi_error"
+          ],
+          "getLatestValueWithTs": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 589,
+          "layoutY": 218
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "calc_error",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "//msg.quantity = parseInt(msg.quantity) + parseInt(metadata.quantity);\n//totalErr\n//if(msg.OkBoard == \"PASS\" ||msg.OkBoard == \"NG\" ){\nswitch (msg.typeErr) {\n    case 0:\n        // code\nmsg.total = parseInt(metadata.total)+parseInt(msg.total);\nmsg.total_hmi_error = parseInt(metadata.total_hmi_error)+parseInt(msg.total_hmi_error)+parseInt(metadata.totalErrors);\nmsg.totalPass = parseInt(msg.total) - parseInt(msg.total_hmi_error);\nmsg.errRate= 100* (parseInt(msg.total_hmi_error)/parseInt(msg.total));\nreturn {msg: msg, metadata: metadata, msgType: msgType};\ncase 1:\nmsg.total = parseInt(metadata.Number_Of_Input);\nmsg.lastestErr = parseInt(msg.total_hmi_error);\nmsg.PPM = 1000000*parseInt(msg.total_hmi_error)/parseInt(msg.total);\n//msg.totalErr = parseInt(metadata.totalErr)+parseInt(msg.totalErr);\nmsg.total_hmi_error = parseInt(msg.total_hmi_error);\nmsg.totalPass = parseInt(msg.total) - parseInt(msg.total_hmi_error);\nmsg.errRate= 100* (parseInt(msg.total_hmi_error)/parseInt(msg.total));\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n    \n    \n    default:\n        // code\n}\n"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "type": "OK"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 5,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 5,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 1,
+        "type": "Failure"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 3,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

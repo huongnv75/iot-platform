@@ -1,0 +1,1386 @@
+{
+  "title": "Biểu đồ dây chuyền LRLKĐT",
+  "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAeAB4AAD/4QBaRXhpZgAATU0AKgAAAAgABQMBAAUAAAABAAAASgMDAAEAAAABAAAAAFEQAAEAAAABAQAAAFERAAQAAAABAAASdFESAAQAAAABAAASdAAAAAAAAYagAACxj//bAEMAAgEBAgEBAgICAgICAgIDBQMDAwMDBgQEAwUHBgcHBwYHBwgJCwkICAoIBwcKDQoKCwwMDAwHCQ4PDQwOCwwMDP/bAEMBAgICAwMDBgMDBgwIBwgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/AABEIAQYBbgMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKZcXCWsJeQ7VXkn0oALi4S1iLyMFUdSaxtU1SK/NvNE3nQwSZlQdQORkirWvI09rDNEPNWJw5Qfxiq0ckep61BNaoylciYlccYPB/HFADdPnOo6p+7lFzAw/eKU+VB2xW1FCkCbUVVHoBinKgQcDFLQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVTu9btrSfynmVHPH0qdbuN7hoQ48xRkrWMkyac1zb3kbMJXLK+3O/NAFdbsW1tJbyytbztIzeYFyZQTkYrZ0m2MlpHJcRp5+OW2803w/atDpkayjkE7QeoXJx+lX6ACiiigAooooAKKw9Kj1tfFl4bpoTpRH7gDG4H+f51uUAFFFFABRRWHpUetr4svDdNCdKI/cAY3A/z/OgDcooooAKKKKACisPSo9bXxZeG6aE6UR+4AxuB/n+dblABRRUN7fJYRbnz6ADqx9qAHz3CWyguwXJwMnqayIta+06jJFIDnd5Qg28kf3j7VW1C+lnl+2xKWEI2PE45hP96svSbTWNY8X3EjTx/YY0HkzqBkH0x1/OgDfjsbqzlaC0kU27nkk5MHritWGLyYgvXAxk9TTLGyWwg2Lk9yT1Y+tebftX/tV+HP2S/hjca/rsytcMClhYq3729l7KB6dMnt9azq1YUoOpUdkt2aUqU6s1CC1f9fd3fQ2fjl+0T4P/AGcfCp1fxfrVtpVswbyUY7prkqMlY0HLHp7DIyRmvkDxf/wXo8HabqLx6J4K13VrdWws81ylruHrtKsa/Pn9o/8AaO8SftQ/Eq68SeJLp5ZJGItrYN+6s4+yIOgrgq/G858S6/tnTy6KUV1etz5DNeOcJhKroYGlGtbecnLlb/uqLi7ebeu9kfrt8FP+C0vwu+J2sxafrdvqng+4nOElvQJbbPHBkXofwr6707UrfWLCG6tJ4bq1uEEkU0Th0lUjIZWHBBHcV/OcRuHNfYH/AATg/wCCl1/+zbq1v4U8XTz6h4JupAscjEvLpbH+JfVPVf69fU4a8Q/rNVYbMUot7SW3zO/IuKMJm0/q04KjWfwpN8k/Jc13GXZNtS2unZP9eKKpeHfEVj4u0K11PTLuC+0++iE1vcQvuSVD0INXa/VL31R7rTi+WW4UUV8Sf8FLv+Cmcv7G9vqeh6Xd2V/4p1KErYwIQx01T0kfH8WOgP1rmxeLpYak61Z2ij2OH+H8fneYU8sy2m51ZuyS/N9kurPSP22f+CoHw+/Yugksr6V9d8T7cppVm4zH/wBdX5CfTBPtXwj4m/4OMfHtzrDtpXg3wza2O75Em82WTHu28D9K/Pvxz451T4j+Kb3WdZvJ7/Ub+VppppWLM7E5PNZFfk+Y8aY2rUf1Z8kenf5n+hPBv0Y+GMvwUVnMPrFdr3m21FPtFJrbu9T9cf2bv+DhfRfFWtQad8RPDX9irMQv9oae5eNCSB8yMc468g/hX6L+DPGmlfEPwxZ6zol/banpd/GJLe5t3DpIvsR3HQjqCCDX8u9fX/8AwTJ/4Kh63+xt4ri0TW5J9V8CahKBc2rNlrMnjzYs9CO46EDB7EerkPGk3UVHH7PaX+Z+f+LP0ZcLTwcsz4Si1OGsqTd7r+43rfy6n7u0Vw/wj+In/C2rdPEWj6nY6r4T1OES2M0DA5z2I6hh0IPQ13Ffpaaauj+H5wnTk4VE01o090FFFFMkKKKw9Kj1tfFl4100J0oj9wBjcP6/XNAG5WbrWtC1t/3RB+fy3cciL3NN1LWo33QK0i7vk85R8qNVCwvDYs9tdqF8tdojUf68nvQBbeJdVtVnicxzRHbHMePMP9RVvTYrmVzLdbVOMLGvRfeoNL0LyGVnZvLU7o4T/wAszWpQAUVh6VHra+LLw3TQnSiP3AGNwP8AP863KACiiigAoorBsYtdXxRemZ4DppH+jjjIOfz6Z60Ab1FFFABRRRQAUUUUAFFFFABRRRQAUUUUARXl2tjbPK/3UGTis2WNtZgifzEhusmSDa2cD3rVkjEqFWAKkYIPesvTtEfSdWZowHt5B/EeY/Ye1AEGiaZNI7uZpoZt/wC+VhlX+lbUMCWybUUIvXAGKfXBftG/tGeG/wBmD4Z3fibxLdCKCEFbe3Vh517LjiNB6+p6Ac1FSpGEXObskaUqU6k1Tpq7ZX/ad/aa8N/sq/DC68SeIrgAKClpaK376+lxwiD8snsPwB/FP9qL9p/xJ+1f8TrnxH4gnbZkrZWSn9zZRdlUfzNWf2sv2r/En7XPxOn1/XZmjtYyU0+wRj5NjFnhVHr6nqTXl9fgvGfGMswm8JhXakv/ACb/AIB8BxbxVBQllmWyvF6VJr7X92P9xdX9p/3bXKKK9X/Zn/Yq+IP7Wj37eD9Kils9NH768uphBBvPRAx6t7D+hr4jA5fiMZV9jhoOUuyPh8pyXGZnVdHBw5mld6pJLu5NpLtq9Xojyig81vfEz4Y678HPG194d8SadPper6e5SaCUfkynoVPUEdcisHNY16FShUdKqrSW6Zz47AYnA4iWGxUXGcd1+Vu6e6a0a1R9Yf8ABOf/AIKSaj+yvrkXhzxLLPqPgS9k+ZSd0mlseskef4fVe/15r9d/Cfi3TfHfhuz1fR7231HTNQiE1vcwNuSVT3B/mOoIINfjH/wT6/YD1b9sXxut5epNYeCNLlBvrzbj7URz5MfqT39B+v3z+3X+3H4P/wCCbXwQtPDXhyC0PiL7J9n0fS4yCLRMYEsg/Xnqf1/euDMXjaOWOtmbtTXwt72/rY/o7hXJM5zelhsBVg54yo0opfFyW0dTtLz35dZakn/BTX/gpVo/7FfgWXTNLlgv/HepxEWlqCGFkCP9bIP5D/J/C/4jfEXWPit4xvte129n1DU9RlaaaaVixYk5qf4q/FXXPjR461DxF4hv59R1TUpTLLLKxJyTnA9BXOV8dxBn9TMatlpTWy/Vn+n3g94Q4LgzAc07TxdRe/Pt/dj2S/EKKdHG00gVQWZjgADJJr7g/Yg/4Iq+JP2qfhzceJda1g+FLKVD/ZwktjIbp/fkYT3GfpXmZflmJxtT2eHjdn3PF/HOTcMYRYzOa3JFuy0u2/JLVnw7RXp37VX7KHiv9kf4mXXhzxPZSQvE37i4AzFcp2dW6EGvMa5a9CpQqOlVVpI9zKc3weZ4SGOwFRTpTV01sz6u/wCCa/8AwUz179ivxpHp9/JPqngjUZQL2xZs+R282P0YfrX7mfCn4r6D8bPAdh4k8NahDqekajGHimjOcHurDsw7iv5ha+nv+Cc3/BSPxH+xF48SGR5dT8G6hIq6hprucAf89E/usPX+eSD9rwxxS8M1hcW/c6Pt/wAA/mLx18BKedQnn3D8FHErWcFoqnmv7/5n7/UVyvwZ+NHhz4/fDyw8T+FtRi1LStQQMroRuibHKOP4WGeR9CMgg11VfrEZKS5o7H+fdajUo1JUqsXGUXZp6NNdGFUbnVP+JiLaPbkDdIWOAq1erO17Ql1aHKnZMo+Vh39j7UzIzb3SihjCSSPp8r7hs5KN/hWxZaZ5AHnSfaHQ/I7KMqPrUmnB1soxKio4GCq9BU9ABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUVyfxq+NPh/4A/Du/8TeJL2Oy06xQnk/PM+OEQd2NTKUYxcpOyRdOnOpNQgrtlb4+/Hvw7+zf8N73xN4lu1t7O1U+XGCPMupMcRoO5P6da/Fb9sH9r3xF+198TJtZ1eRoNNgJTTdOVj5VpFnjjux7nuf0uftp/tneIP2xfiRJqN88lpoVmxTTNNDfJAnZiO7HqT/keM1+E8a8ZSx0ng8G7Ulu/wCb/gHw3FvFUKUJZZl0r30qTXXvCL/l/mf2tl7u5RRXsX7GH7GviH9sf4lppWmq9polmyvqupsp8u0jz0Hq55wv8sEj4XL8vr42vHD4eN5M+EyTJcTmmJWGwy823tGPWUn2X3t6K7aRc/Ye/Yj1/wDbM+I62dsJLDw1p7q+q6mVO2FM/wCrT1duQB9emCR+0vwi+EegfAz4f6f4Z8NWEen6Vp0YREUfNI3d3P8AEx7n+QAFV/gj8EvD37Pfw5sPC/hmxSy02wTHA+ed8DdI5/iY45P0AwABXW1/RvDXDdDKcPyR1m/il3/4B+3YTCYbAYZYHBL3Fq295y/ml/7bHaK7ttvwX9uj9hDw9+2V4GKyCLTfFmnxn+zNUVeVPURSY5aMn8Vzkdwfzm/Zs/4JXeO/il8fr3w14q0+68P6J4cnA1W9ZeJ16qsJ6MXHIPQA554z+ydfPn/BQL9vvw7+xB8MZbu5khvfE9/GV0zTQ3zO3aRx2QH86WdZBlmIqxx+MVuTVvv69z28pyupm2OoYWjhlXxCdqXVpv8ABxW6UtIvXunyv7Y/7YPgX/gmD8AbTQPD9rZLrQtvJ0fSYsfLxjzpe/XnJ5Y1+HXxm+Muv/Hn4hah4l8SX82oanqMpkkeRiduTwB6AelWPjv8dfEX7RXxI1DxP4mv5r7Ub+QuS7cRjsqjsB6Vxtfm3EGfzx8/Z09KUdl+rP8ATHwd8IMNwjhPrWLtUxtVXnPe1/sx/V9QpUUyMAASScADvQBuOBX3t/wSg/4JX3n7Qeu2/jPxjay2nhOykDRRuNrX7D+Ffb1P4denl5ZllbHV1Ror1fY+84544y3hXLJ5lmMrJfDHrJ9Ev60NT/gkv/wSpuPjVq1t468b2klv4YtHD28DjDX7DsP9n1P4V+xOk6TbaDpkFlZQRWtpaoIoYo12pGo4AAqLw/olj4Z0e303ToILWzsEWGKCFQqwqAMKAOnGKu1+35TlVHAUFSpfN9z/AC18QfEDMuLc0lmGPlp9iPSMey/Vnkn7Yf7HPhX9sr4Yz6D4htkW7RGNhqCp+9s5O2D3XPUf1r8Gv2wf2OvFf7HPxPudA8Q2jiDcWs7xVJiuo+zK1f0gV5j+1b+yf4U/a8+GFz4b8TWiPuUm0vFUedZSdmU+nqO/6153EPDtLMafNHSotn38mfaeD3jLjuDcWqFa9TBzfvQ/l/vR8+66n82NFe0/trfsS+Kv2LfifPouuWzyafIxewv0UmG7jzwQf5jtXi1fjGJw1XD1XRrK0kf6ZZHnuBzjBU8xy6op0pq6a/rRrqj6O/4J7/8ABRDxN+xB8Qo5IZJNQ8LXzqupaZI52SLn7y/3WGTgjp7gkH92/gL8e/DP7SPw2sfFPhXUI77TrxRuAI8y2fHMci/wsP8A64yDmv5lq9//AGCv2+/FH7EXxJivtPme80C7ZU1LTJHPlXEeew7MOcHt9CRX13DPFEsI1hsS70+j7f8AAP518cvAejxDTnnWRxUcWleUdlU/+27Pr1P6HaK4P9nL9o7wv+1H8MrLxT4Uvku7O5UCWIkebaSY5jkHYj9a7yv1yE4zipwd0z/O/E4athq0qGIi4zi7NPRprowoooqjAKKKKACiiigAooooAKKKKAMPSotaXxZeNdPCdKI/cKMbh/WtyiigAooooAKw9Ki1pfFl4108J0oj9woxuH9a3KKACiiigAooooAw9Ki1pfFl4108J0oj9woxuH9a3KKwPid8TtE+Dvge/wDEXiG+i0/StOjMksrnr6Ko7segA60pSUVd7FU6cpyUIK7ZF8WvizoPwQ8A3/iXxJfR6fpenRl3dj8znsiD+Jj2Ffi9+3L+3Br37ZPxDa4maWx8Mae5XTNNDfKi5/1j+rn1/wABVv8Aby/bt1v9sjx82GlsPCOmyEabpwbgj/nrJ/ec/p0HFeA1+HcbcZvFyeBwT/drd/zf8D8z43izimOFjLLcvleb0qTXTvCL/CUlv8K0u2UUV6b+yj+yp4l/a5+KEHh7QITHboRJqGoOv7mwhyMsx9fQepHqM/nmBwNbGV44fDxvJn55k+T4nM8UsLhVq9W3tFLeUn0S/wCArtpFr9kH9kTxH+2D8TotD0aNrfTrch9T1J1PlWUWeee7nsK/av8AZ++AHhv9mr4aWPhfwzZrbWVquZJCP3t3Jj5pZD3Y/pwBwKr/ALN/7OPhr9l34Y2fhjw1arFBAA1xcMv769lxzI59T2Hau+r+jOF+GKOU0LLWo/if6LyP2/BYLDZdhvqOC+HeUus5d32S+zHovNthRRXjH7bP7avhj9ir4Uz65rU0c+qTqy6bpwb95dyduOoQdz/kfS1q0KUHUqOyR6OXZdicfiYYPBwc6k3ZJbts5f8AbZ/bjtf2IfDGpavrlxa3dxeRsuiaWjDzZ5OzMOoQdyevbvj8Lf2if2h/Ev7TfxO1DxR4nvpby9vZCyqT8kCdkUdgBVr9p39prxP+1Z8U7/xR4mvZLi4unPlRZ/d20f8ACiDoABXnVfjPEnEc8wqezp6U1+Pmz/S7wT8F8Nwhg1jcalPG1F7z/kT+zH9X19AoHNFfan/BLX/gmFqX7VHi6HxF4igmsvB+nSBpHZcG5Yc7F9Sf0rxMuy6tjayo0Vr+R+o8Z8ZZbwzlk8zzKdox2XWT6JGn/wAEqv8AglrfftLeJbfxZ4stprPwhYSBwrgq16w/hX29T2+vT9Dv2tf2vdP/AGA/BclhbRac88tt5Hh7RoAo8sDgSOByEHv1PTuR037V37U3g7/gnr8EbW1s7W2GoGD7Poejw8eYQMb2x0QY5PfGB3x+N3xg+L+v/Hb4g3/ibxLfSX+qahIWZmPyxL2RB2UDgD2r7nN81wvDeD+q4XWvL+rv9Ef5VeLvi3is6xbzjNXdO/saN9Ld3/dXV7yei6te2/szf8FMvHPwT+O2o+KdavbjX9N8TXIl1qylc4cdA8f91lHAx2GMY4r9fPg58ZPD/wAePANj4k8M38V/pl8gYMp+aJu6OP4WHcV/PhXtX7Ff7bXiP9jjx8t3YvJe+Hr1wNS0x2OyZf7y+jjsf/rg/N8JcdVKFT6tmMrwk/i7N/p+R+O8P8a/2hP6rm8kqjfu1NEv8E+iXSMvs7P3bOP7nUVxvwJ+O/hz9or4eWfiTwzfR3lldKN6ZHmWz45Rx2I/Wuyr9uhOM4qUXdM+uqU505uE1Zo8g/aF/ZesP2rPDmr+GvGdtbXGhzoTp86Kv2ixl7Oh6/UHg/y/Df8Abn/YT8U/sT/EyfS9Wge40idi+n6jGp8m6jzwQfX1HUGv6J64T9or9nTwx+1B8NLzwv4psUurO5UmKXaPNtJMYEiHsf0PevAz/h+lmNK+01s/0Z+w+EXi9mHBmN5W3Uws378P/bo9mvxP5nqK+g/2+f8Agn/4n/Yl+I0trewveeHrty2n6jGp8uZM8AnsR3B6fz+fK/FsXhKuFqujWVpI/wBOOHeIsvzzAU8yyyop05q6a/J9muqPcf2HP26fFX7E3xNh1bR53uNJnYJqOmyMfJu488gjsfQ1+5X7Jn7Ten/tY+Gz4q8P6hbXGiTIA1puH2iwlP8AA46+vPQ9u4H84ley/sXftq+K/wBi74oW+u6BdO9k7BL+wdiYLyLPKsv+T0IwQDX1HDXE88FJYfEa03+H/APwbxv8CsPxPSlm2URUMbFarZVF2f8Ae7P7z+jeivLv2TP2tvCf7YXwutvEnhi7UttVb2xdwZ7CUjlWHcdcN0PsQQPUa/X6dSFSKnB3TP8AObG4LEYOvPC4qDhUg7NPRpoKKKKs5TD0qLWl8WXjXTwnSiP3CjG4f1rcoooAKKKKACsGxi11fFF60zwHTSP9HHGRz+fTNb1FABRRRQAUUUUAFFFFABRRRQAUUVneLPFeneBfDV9rGrXcNjpunQtPcTythY0UZJ/wHc4FDdldjjFyajFXbK/xA8f6R8LvB99ruu3sOn6Xp0RlnmkOAAOw9SegHevxr/4KA/t86v8AtheOGtrR5rDwZpkhFhZbsef282T1Y/p297//AAUR/wCCg+p/tdeMH0rSZJrDwNpspFrb5w18w482THr2HYfr8y1+J8b8aOu3gMC/c+1Lv5LyPk+K+J44GMsuwEr1XpOa+z3hF9+kpf8Abq6sKKK7r9nb9njxJ+078TrPwv4ZtTNc3DBridh+5sov4pJG7Afr79K/NMJhK2KrRoUI3k9kfmmVZVicxxMcJhY3k/uS6tvolu2Wf2Y/2ZfEv7VvxQtfDXhy3JLEPeXjD9zYQ5+Z3P8AIdyR1JAP7Xfsvfsw+Gv2UPhfa+GvDluOAHvbx1/fX83d3P54HYepJJqfsl/sn+G/2RfhfB4f0KIS3UgEmo6g64mv5u7E9lGTtXsPckn1Kv6K4V4Wo5TQvLWrLd/ovI/cMvy/DZZhvqWD1v8AHPrN/pFfZj83q9CiivOf2qP2l9B/ZP8Ag5qXi/XnzDaLtt7dTh7qUj5UX+Z9ga+qqVIwi5zdkjuwmErYqvDDYeLlObSSW7b2Rlftj/tieF/2NPhTc+IdfnR7plZdPsFb97ey44AH931Nfgb+1h+1b4o/a6+Kt74m8SXbyNKxFtbA/urWP+FFHYAVa/bC/a+8Ufti/Fa78R+IbpzEWK2dmp/dWkWeFUV5NX45xLxJLHz9jR0pr8fM/wBKPA/wTw/CmGWZZklPGzWvVU0/sx8+7CiivrH/AIJof8E29a/bF8dw6hfxTWPhDT5Fe6umTHm99iZ6sf8A6/pn57AYCtjKyoUVds/YuLeLMu4cy2eZ5nPlhH72+iXds0v+CYX/AATP1b9rjxrFrGsQy2PhDTpA1xcMuPO77E9WP6da/cDwB4A0j4X+ELHQtDsodP0zT4xFDDGMAAdz6k9zUPwy+Gei/CDwTY+H9AsorDTNPjEcUUYxn1J9Se5rfr9uyXJaOXUeSGsnu+5/lx4neJmY8Y5m8XiXy0o/BDpFf5vqzzX9qX9ljwv+1n8NZvD3iO2G9Qz2N8ijz9PlI4dD6cDK98diAR+LX7Uv7K/ij9kr4lTeHvEduTExL2N/GD5F/F2ZT6+o69eBggfvfXn37Sn7NXhj9qb4aXPhrxNaLLE4LWt0o/fWMvaRD+WR3x9CPN4o4WoZtRv8NVbP9H5H5fj8Bhcyw31PG7L4ZLeDfbvF/aj13VmfgRRXqn7Wv7I3if8AZB+JEmia7C01jOS+nakinyb6PPBB7MO4ryuv52x+Ar4OvLD4iNpI/Ec5ybE5ZiXhsUtd01qpLpKL6p/8B2aaPXf2Pv2xvE37H/xDj1TSJWudKuGC6jprsfKuo+/HZvQ/5P7Qfs7/ALRPhr9pv4b2viXwzeLPbzALPAxHnWcmOY3HY+h6EcivwCr1P9kv9rbxL+yH8Sodc0SZ5bGRgmo6czfub2LPII9fQ9Qa+64N4zngZLB4x3pPZ/y/8A+84U4sjVjHLMyl5QqPp2jP+72f2f8ADt+8tFc18Hvippfxt+GWjeKtGffp2tWy3EWTkpnhkPurAg/Sulr95jJSSlHZn3VSnKnNwmrNaM4746/Anw3+0Z8Or7wx4psIr7TrxCASo3wNjh0PZhX4Uf8ABQ3/AIJ1eJf2I/iBJuil1DwpfOW0/UUU7Sv9xvRh3H/66/oIrl/jF8HPD3x5+H9/4Z8T6fFqOlaghR0cfNGezof4WHY14We5DRzGlZ6TWz/rofq/hT4s5jwZj+em3PDTfv0+j849pL8ep/MXRX1H/wAFHv8Agmz4h/Yn8dSXFvHNqfg3UJGaw1BEOFH/ADzf+6w9PxHFfLlfiuNwVbCVnRrqzR/p5wvxTl3EOXQzPK6inTn96fVNdGj1f9kT9r/xZ+x38ULXxF4avHRAwW7tHJMN3Hn5kde4P+BHIr95/wBjf9szwp+2f8L4Nf8AD1wkd7EqrqOnO4M1jJjkH1U9m7+x4r+cGvVP2Q/2rPEv7I/xg07xLoF5JEsUgW7tyx8q6iP3kZe4xX0fDXEs8DNUa2tN/h5o/GPG7wRwvFWGlmeXJQxsFv0qJfZl59mf0kUVzPwZ+KenfG34V6D4s0li1hrtml1FkcrnhlPurAj8K6av2SMlJKS2Z/mpWpTpVJUqitKLaa7NbhRRRTMwooooAKKKKACisPSodaXxZeNcvEdLI/cKMbgf51uUAFFFRXd5HZRbpDgZwPegCWimpIJFyKxdKh1pfFl41y8R0sj9woxuB/nQBuUUUUAFfn7/AMF1/jtd+H/B3hjwBZSmJNdL6hf4JBkiQ7UX6bt2fwr9Aq/MD/gvb4XuoPix4E1oq32K40uayVtvy+YkpcjP0Zfzr5njGtVpZPXnS3t+DeoVK1SjhcRXo/HGnNx8nbdeaV2vS58DUUUV/Mp/O52PwG+BHiP9pD4l2PhbwxZtdX942Xcj93ax/wAUjnsor9qv2Ov2PvDn7Hvwyi0bSI1udTuQJNT1Jl/e3sv16hBzgf1r8vf+CW/7XekfsnfG+8fxBCf7G8TwJYz3SjLWRD5V/wDdyeR/hX7KaHrln4l0e21DT7mG8sryMSwTwsGSVDyCCK/dvDjAYGOD+tUnzVXpLuvI/duGsLh8Nk9Opg9far95Lq5J/A+yjo1Hr8WulrdFFYelQ60viy8a5eI6WR+4UY3A/wA6/Sj0jcr8iv8Ag4l+Nd9qHxb8MeBoppE03TdPF9NEG+WSaRm5x/uqtfrrX45/8HEHwxutG/aJ8O+JxC32LWdKWEyhTt8yJipUnpnG0/QivmeL3NZXU5PK/pc/cfo6U8LPjvCLFW0U3G/83K7fqfnfRRRX4if6jn03/wAE1P8Agn7qn7bfxLO7db+GdHkRtRuscKDyEH+0cHA//Uf3d+E3wn0P4J+BLHw74esorHTbCMIiIOWPdmPcnua/D3/glR/wUXk/Yi+Itxp+rQfavB/iORF1FUA82BhkLKh9VyeOhBPTgj9zvAXj3R/if4Rsdd0G/t9T0nUohNb3ELZV1P8AIjoQeQRg1+v8FLB/VL0f4n2u/wDwx/nJ9J6txI+IeTMk1hP+XNvhatrf+9fc2KKKK+1P5iCiisPSodaXxZeNcvEdLI/cKMbgf50AYf7Qf7PXhn9pn4b3fhnxRZLc2lwCYpQB51pJjiSNuzD9e9fiD+1T+z9d/su/HfW/BV5eRag2lsjw3MfHmxSLvQkdm2kZFfrF+35/wUH0T9kvwfNY2EsOoeMb2MraWgORb548yT2HYd6/HPx9491b4n+ML/XtcvJb7VNSlMs80hyWJ7fQdq/JPEzFYB040bXr9+y8zw+NqmHpZMqOLs6kmnSX2o6+9Lyi0mrfadmvhuY9FFFfjau9EfisYylJRirtn6x/8ENPGVxrn7Lmr6VMWaPRdZdYSRwEkRWwD7EH86+1a+RP+CPfwT8QfCL9m+G51WEWsHiaVtTSJ/8AWBWACEjqOAT9CK+u6/qnIadSnl1GFX4lFX+4/pDGKUaihU+JRipf4lFKX/kyYUUUV6xynPfFT4V6D8avAl/4b8SafDqWk6jGY5YpB09GU/wsOxFfzp/tl/CXSfgZ+0v4u8K6HerqGmaPfvBBMDncB24446fhX6g/8Fcv+Cr0HwU0y9+HXw/vkl8UXKGHU9QhfI01TwY0I/5aep/h6dc4/HbUtSn1e/lubmV5p53LyO5yWJ5JJr8v44zHC1XHDU1ecd328j+7/orcF55gadXOsXJww1ZWjTf2nf47dF0T6+hBRRVnSNMfWNQjt49oLn5mY4WNRyWYngKBkkngAV+exi5SUY7s/sOvXp0KUq1Z8sYptt7JLdn7qf8ABDrxBda9+wLooumLCy1C5t4c54jBUgfmWr6/rxn/AIJ/fAv/AIZ1/ZK8IeG5IpYbxLQXV2ksRidZZfmIZG+ZSAQCCARjkA5FezV/Q2X0p0sLTpz3SV/uP8ceMcfQx2e4zGYX+HOpOUfRydgorD0qHWl8WXjXLxHSyP3CjG4H+dbldh82FFFFABRRWDYwa6PE9600kP8AZpH+jgYyDn8+maAN6iimXFwtrCzucKoyTQA27u0soTJI21R+tZd9fDUPs93bhphbOd8eMNzjsai1O9XVZYgBJBOjb4fMX5ZKboVvcyTyypMiSl/30TJwPp+FAE2jmS51QzRNceUwPmeaMAnsADW1SAYpaACiiigArxD9vv8AZJh/bA+BFzocRhh17T3+2aTcSdEmAwUJ7Bxwfwr2+iscRQp16UqNVXjJWZpRqunNTX47NbNPya0fkfzueOPA+rfDXxbfaFrtjPpurabKYri3mQqyMDjv296yq/ab/goD/wAE9tF/bD8JNf2Qg0vxvp8R+xX4XAuQBxDN6g9Ae306fjp8RfhzrXwl8aX3h7xDYT6Zq+myGOeCVcEY7j1U9jX878V8JVsqq+0p+9Sez7eTPzLivhJYWLzDL03Qe63dNvo+8X9mXylra+IRkV9df8E4/wDgpXqH7MusweF/Fc1xqHge8kChid0mlMT99PVfVf69fkWg814mTZzicsxCxGHfqujXZng8PcRV8prOUFzU5aTg9pL9JLpLdel0/wCirw14lsPGOgWmqaXdwX+nX8Qmt7iF9ySoehBq9X45/wDBOn/gpBqX7KevReHvEUk+o+BL6UB4yd0mmMf+Wkee3qvQ/rX69eEfF+mePfDVnrGj3sGoabfxia3uIW3JIp/z06iv6NyHP8NmuHVag9eq6pn7PRq0MTQjjMHLmpy++L/lkukl9zWq0NKvF/26v2N9G/bY+CF14Z1FvsuoW5Nxpd4B/wAe0+O/+y3AP0B7YPtFFexWpQqwdOorp7nbluY4nAYqnjcHNwqU2nFrdNH80P7R37N/ij9l74l33hjxRYS2d5aOQjlfknTs6noQRzxXA1/Rb+3F+wx4W/ba+Gcul6vDHa63aoTpuqKn7y2fsrdyhPUduo9/wa/ag/Zd8U/sofE+98M+J7GS2nt3PlTYzHcJ/C6t0II71+NcR8N1MBP2tLWm/wAPJn+lngv42YTi7DLA45qnjYLVdJr+aP6roeb19c/8Ezv+Cn2ufsZeL4tI1eSfVfAuoygXdmzZNqTx5sWejDuOhAwexHyNRXg4DH1sHWVeg7NfifrPFvCWW8SZbPLM0p80JffF9Gn0aP6fvhn8TND+MPgiw8ReHNQg1PSNSjEsE8TZBz2I7MO4PSt6vwM/4Jt/8FLvEH7FHjeOyvHm1TwTqMgF9YM/+q/6aR+jD9a/dD4T/FfQvjd8P9N8TeGr+PUdI1SISwyp1HqrDsw6Ef0r9syTPKOY0eaGkluv66H+X/il4WZlwZmHsMQuehN/u6nRrs+0l1XzR0dfOv7ev7f+gfsgeDZLeOWK+8XX8ZFjZA5EWeBJJ6Adh3q5+3Z+3boP7HfgOVnKX/ia9jIsbBTkgn/lo/oo/WvxW+LXxT1v41+N73xBrt/Le3WozGVpHOfLJPCj0Arx+LOKqeWUvZUtar2XbzZ+UZjmWHyjDLGYpc0pfw4fzP8Aml2gv/JnourUfxJ+JGs/FTxbe6xr93c32pX0rSvKxzuz0A9B7Vn2wZYF3/exzSW6Oq/Owb0IFSZr+e8Tialeo6tV3k92fhmZZlicwxMsVipc05bv9F2S2SWiWgE4FfYv/BMv/gm/d/tF69beM/FtvLa+CrCUPBC42vq0inOB/wBMx3NZ3/BNf/gnJeftSeIYfFHieCaz8CafKGAYbW1ZxzsX/Y9T/k/rzoOg2fhfRbbTtOtobOxsoxDBBEu1IkHAAFfqnBHBfNy5hj46bxi/zf6H6pwvwysrjHHYxf7Q9Yxf/Lv+8/7/AGX2d371rTWNjDpllFb28SQwQII440GFRQMAAelS0UV+xn0l76sK+Cf+CtP/AAVXtv2dNFvPAPga8jn8aXkZivbyJsjSVPBVSP8Alr6/3f8Ae+7p/wDBV7/gqfZ/steHbnwX4Nuorrx3fRlJ542yNIQjHb/lr/6D9en4p+IfEN74q1q41DULiW7vLuQySyyNuZ2PJJNfDcU8TrCp4XCv33u+3/BP6r8BfAueeVIZ/nsLYWLvCD/5eNdX/c/P0GaxrFz4g1Oa8vJpLi5uHLySOcsxPWqtFNmmjtreSaaWKCCBGllllcJHEijLOzHhVABJJ4AFfk/vTl3bP9Bv3OGo9IwivRJL8Ekh/AR2Z44o40aSSSRwiRIoyzMx4VQASSeABX6q/wDBGv8A4JSzWT6P8YPiTps9p5bx3/hbQruJopmZSHi1G7jbDIQQHggYAoQssg8zy0g5f/gjf/wSQk8fSaR8YvixpEtvoEbx3/hLwxfwFJNRZSHi1O+iYZVAQr29s4zkLNKN/lpF+t1frPC3C6wqWKxS/edF/L/wfyP89vHnx3nn9SeQZBO2Ei7Tmv8Al610X/Ttf+Tb7blFFFfcH8rhRRRQAUUUUAFFFFADJ51tomdzhVGSfSq2qWw1bS2VHHzDcrA8ZrP1u7u4WWaN9sBX95GyZK+5HXFGjW10khQrG9lOM5R+F+nOaACX7VrMcMMlsY3jdWMuRt45yPrW2q7f89abbwLawLGgwqDAGc8U+gAooooAKKKKACiiigAr57/b0/YE0H9snwWZUEOl+MdOjP8AZ2pBfv8A/TKXHJQ+vVfzB+hKKwxOGpYik6NaN4vdGtGtKnK8eujT1TT3TXVPqj+en4qfCrXvgp47v/DfiXT5tN1bTpCkkUg4YdmU9CpGCCPUVztfuF+3H+wt4d/bL8CGK4WLTvFFhGf7M1VV+aM9fLkxy0ZP4jOR3B/Gb4y/BnxF8AviFfeGfFGny6fqli5BDD5Jl7Oh6MpGDketfz7xbwhVyup7aj71F7Pt5P8ARn5rxXwjGhF5jlq/c/aju6bf5wfSW62l0cuWr6d/4J7f8FFNX/ZH8SR6Pq7z6l4GvpR59sWy1gx48yPPT3HQ/qPmKivnMpzfE5diFiMM7Nfc12Z81kHEGIyqv7Sl70JaSi9pLz7NdGtUz+iDwF4+0j4neErLXNCvoNR0vUIxJDPE2QwPY+hHcHpWxX4qfsC/8FA9b/Y+8WpZ3bTan4Mv5ALyxLc2/bzI/Qj8j/L9jfhn8TdE+MHgmx8Q+Hr+HUdK1CMPFLGenqrDsw6EHpX9GcPcRYfNsP7SlpJbx6r/AIB+04fEYfGYdY3BSvTemu8X/LLz7PaS1XVLerxv9tH9irwr+2l8MptF12COHUoEY6dqSp+9tH9CepQnqPxHNeyUV7lWlCrB06iumduX5jicBiYYzBzcKkHdNaNM/m2/ay/ZJ8Vfsh/E+78O+JLKSMIxNtcgZiuY+zK3QgivLK/pF/a8/ZA8Kfti/DG48P8AiK1QXCqTY3yp++s5OxB7rnqK/Lb4C/8ABDzxnrP7V1/4c8VRyWfg/wAPyJPPqir+7vomJKLEf4mYD8O/pX5Rm/B1eniUsIrwk/u9fI/0E8OfpJ5VjclqT4ikqeIoRu/+ni2vH+83ujhf+CXf/BMjVf2xPGsWua5FPYeBtLlDXM5XBvGHPlJnqT39B+Gf1Z/aZ/ae8D/8E+fgnb6fYW9nb3Ntb/Z9H0eAbS5AwGI9M8k9z7mo/wBoL9oXwJ/wT1+AsWm6bbwWhsrc2+k6bBjdNIB1b8eWY/zr8bfjx8d/FH7SPxHvPEXiW+N3qEzHykPCwJ2RB0AFelj8fhOGsH7GjaVeX9Xfkfxx4veLuIz7E/2xmulJXVChffzfl/NLr8MerS/G740eIfjn8StQ8Ta/cyXt3qDlihbiEdlUdgBXLWcJTezDG9s7fSnQRlgHdcSYwcGpa/E8Xi6uJqyrVneT3Z/IOa5ricxxMsXi5XnL7kuiS2SWyS2CvqX/AIJyf8E7tQ/az8Ux69r0U9j4D02UGWQja2puOfKj/wBn1P8Ak0P+CeX/AAT71T9r/wAYpqWppNYeBtMlBu7rGDesOfJj9c9z2/n+x3gvwXpfw78LWWi6LZQ6fpmnRCG3giXCoo/r6nvX6XwRwX7ZrMMdH3fsxfXzfkfpnCnDCy+Mcwx0f3z1hF/Y7Tkv5usY9PietiXwv4Y0/wAF+HrTStKtIbHTrCIQ28EK7UjUdABV+iiv2paaI+qlJyfNLcK+Lf8Agql/wVF0/wDZH8Lz+FfC1zDeePtQiKkowYaSjD77f9NPQduvpWl/wVG/4KcaZ+xt4Om0Dw/PBe+P9SiIijBDLpasOJHH9/uqn6njAP4c+N/G+qfEXxReazrF5Pf6jfytNNNK5ZnYnJJJr4rijiZYSLw2Gf7x7vt/wT+nfAjwNqcRVo53nUXHBxfuxf8Ay9a/9t7vqReK/FeoeN/EN3quqXU17f3shlmmlYszsTkkms6in29u93OkcaNJJIQqqoyWJ7CvyOUpTld6tn+idKlSw9FU6aUYRVktkkv0HWdnLqF1HDCjSyysFRFGSxPYV+hv/BG3/gkZJ8cbrR/jJ8WtHkh8FW8kd/4S8L38JR9ekUh4tTvomGRbqQHgt2HzELLIOI0W7/wR9/4JUL8YhZfE34gWIbwZxLpWnzLx4kI6SMP+fEf+TP8A1w/4+P18RBGgVQAoGAAOAK/VOFOGfq6WMxa9/ou3n6/l6n8B/SB8c3m85cOcP1P9mWlSa/5eP+VP+Rdf5/8ADutFFFfen8lBRRRQAUUUUAFFFFABSE4qO8vEsYC79OgA6k+grJ1mXUDIklo5CsvMZUZX35oAw9A03Xb3x9dXN0vlaYfuhmGT6Lj0rs7a2S0i2RqFUdhTxwKWgAooooAKw9Kg1pPFl491JEdLI/cKMZB/nW5RQAUUUUAFFFFAGHpUGtJ4svHupIjpZH7hRjIP863KKKACvFv20/2J/DX7ZPw9aw1JEsteskLaXqqL+8tn/ut3aMnqO2SR3B9porKvQp1qbpVVeL3RrRrTpS54f8Brqmtmns09Gj+fj46/AnxL+zj8Rrzwx4psXs9QtGOx8furqPtJGehU1x1fu1+2H+xx4Z/bD+HL6TrMS22q2yltN1NE/fWUnb6oe61+L37Qv7PPib9mP4k3fhnxRZtb3UBLQTqP3N7F/DJG3cH9OfSvwDi/g6pls3iMOr0X/wCS+T8vM/OuK+EYwhLMssj+73nDrDzXVw/GOz0s3w1e/wD7CP7emv8A7G/jZV3S6l4R1CQDUdNZ+AP+ekf91x+vQ14BRXymWZniMBiFiMM7Nfj5M+SyLPcTlWI9vQ1T0lF/DJdn+j3T1R/Qp8JvizoPxu8B2PiTw1fxajpWoJujkQ8oe6OP4WHcGukr8Ov2H/25vEP7G3jtZrdpNQ8MX7galpjMdrr/AH0/uuOx/wD1V+zXwX+NXh74/fD+y8SeGb+O/wBOvUB+U/PC3dHHZh6V/RfDfEuHzahzw0mvij2/4B+1YTFYbHYZY3BO8Nmn8UH/ACy/SW0l53Sv6VBrSeLLx7qSI6WR+4UYyD/OuA/a+/a+8Pfsh/Dd9b1d0uLmUMlnZo48y4kxxx/dHc1Z/aq/ao8OfsvfDW+1jWLpftQiYWdqrfvLmXHyqP6mvxN/aV/aU8TftK/EG617XpfkZiLe23EpCmeFUVjxRxPRyqjZa1Hsv1Y8ZjMNlmF+vY7VP4IdZvt5RX2pfJasr/tEftAeIf2kPiPf+IdfnlujeSl4IkbEduhOQijsBmuMtbXy0Ut94dPanWtv9nBwTtPIH92pa/nbG46tiq0q9aV5M/Ds4zjE5nipYrFO8n9yXRJdEuiCvoj/AIJ//sEax+2L46W4ukmsPBWmSA6hfYx55H/LGP1J7ntVP9g39hTW/wBsrx+oKzWHhDTZAdT1Erww/wCeUfqx/T+X6J/te/tbeBP+CYP7P1roWgWtmmrrbeVpGlR4yDjHnS45xnn/AGj6Dp97wjwnCcP7UzLSlHVJ9fP0/M/V/D3gDE4jE0Zuk6mIqNeyp2va+05r8Yp/4npZP6L+HPgvQvhn4WtfDfh63tbKw0eJYktoSMxDHBYDnJ65PWt6v5+/gb/wVH+I/wAJP2l7v4gz6rcaqdZm/wCJpZzuWhu4s/d29BgdMYxgYxgV+3f7LX7VHhT9rj4XWvifwteJKjqq3dozDzrGUjlHH54PQ49QQP1jJs+wuPThR0cenl3R+5+JPhJnvCLp18xXPTqJPnWqUnvF+d+vU9Jr5Q/4Kbf8FK9H/Yo8CyaZpcsF/wCPdTiItLXIYWCkcTSD1/uqfqeMBtD/AIKSf8FHdD/Yh+Hz29rJBqHjjU4iNPschvs4I/10g9B2B6/Tg/hJ8Vfiprnxn8dah4i8Q38+o6pqUrTTTSuWJJOe/avM4n4ljgoewoO9R/h/wT7rwM8Ea3FGIjm2axccFB/Oo10X93u/kQ/EX4i6x8VvGV/r2u30+oanqMrTTTTOWZmY5PJrDop0cZlcKoLMxwAO5r8fnOU5OUnds/0ew2Go4WhGhQiowgrJLRJIIYWuJVRFLu5wqgZJNfen/BIT/glS37VNzafEfx5ZsnwuhffYWkgwfGbg9v8AqHA8Fv8Al6IKr+4ybjnv+CSH/BKif9uDU7fx945tZbf4MWcp+zwNlH8eyKcGND1GmKQQ8g/4+iCinyQ7TfuDp2nW+kafBaWkENra2sawwwwoEjhRRhVVRwAAAABwAK/UOFeFvZWxmMXvfZXbzfn+Xrt/CXj749PMHU4a4bqfudqtVfb7wg/5O7+1svd+J1rax2VtHDDGkUMShI40UKqKBgAAcAAdqx9Kg1pPFl491JEdLI/cKMZB/nW5RX6Cfx6FFFFABRRRQBh6VBrSeLLx7qSI6WR+4UYyD/OtyiigApGcIOabcXCWsJdztVaytVjuLm8hnihE8IQFVZtoVvUj8qAG3l02sr5ar5d3aSb/AC2P3xyP61zVtpHiPU/Ft/Mw8iyYfut7jPUcV0VvbyaxeN5pRJ7YgrLF7/w1uDgUALRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAV5Z+1l+yV4X/a7+G8uh6/AI7qIF9P1GNf39hL2ZT3U8ZXv7EAj1Ois6tKFWDp1FdPdGtGtOlNTpuz/r70+q6n4E/tM/sy+J/2U/iVceHPE1qUIJazvEB8i/iycOjd+nTtg9CCB57X74/tP/su+F/2sPhrceHfEtqDwXsr1F/f2EvZ0P4DK9DjsQCPxb/aq/ZS8UfsjfEqbQPEUBeByXsNQjU+RfxZ4ZT6+o69fcD8F4x4Mnl8nisIr0n/AOS/8A+A4q4Rg4SzLK42itZ019n+9HvDut4f4dV5lXqf7K37bfjT9j3xTPd+F5I7yzuRi8026LG2n9yAchvcc/rXk087CURxgbsZyegquC7SllG2ZPvL2cV8Zl+NxGDrLEYeXLJHw+UZxi8tre3wkrNqzT1TXZp6Nfk9dz0P9pT9qfxV+1N47fXvElwFh3fubK33CGzH91QST+J5rhYk8473TB/hz2FNs4SoZ2GDIc49KnpY/H18XWdavLmk+os3zjFZlX+sYuXNK1l0SS2SS0S/4fcK9v8A2Hv2I9e/bK+Iq2lustj4ZsHDapqRX5Y1/wCeaern/PtT/Yw/Y08Q/tjfElNM05HtNDs2DapqTKdlsn91T3c9hX7T/BD4I+Hv2e/h1YeGPDVklnp9igGQPnnfvI57sa+84K4NeNksbjF+7Wy/m/4H5n6BwlwtGhCOZ5jG8nrTg/wnJdv5Y/a3fu25vFf2mfj14L/4JZ/suWtvo+mIjRxm20myRf8Aj4mAGZJW+uCT9BX4ZfH/AOP3iP8AaQ+JOoeJvEt9Le319KX+Y/LGOyqOwAr+jf43/A7w3+0N8O77wz4p0+LUNNvUIwyjfC2MB0PZhX4Vf8FEv+CcniP9iTx9Iwjl1HwjfuzafqKIdu3+4/ow7j/9dfZ8bYTGOlGVL+DHounr5H98fRcz7hqljatDGq2PqP3Zyd1Jfyx7S/M+Zq9F/Z7/AGrPHf7LmuT6h4K1670ea6jMUwjOUkU+qng9PTsK86or80o16lGaqUm011R/ceZ5Vg8yw0sHj6UalOW8ZK6Z0nxW+LfiH42+NbvxB4n1O61bVr598s877mNc3RSgbjioqVJ1JOc3ds2weDw+EoRw2GgoQirJJWSXkCqXbAGSeABX2f8A8Eyf+CQOp/tneMrfxL4/j+xfB7S2zd2qM6XPiy6V2DWGcDZaJtHnuhJkLGAFdswpP+CU3/BMbUf2wvGf/CR6+l1p3w80S5MV7eITHLqk6HDWVq45BBGJpl/1XMaHztzW/wC33hfwvp3gnw3YaPo9jaaXpWl26WtnZ2sQihtYkUKiIgwFUAAAD0r9L4T4YcbY7FrX7Kf5v9PvP4j+kH46quqnC3DtT3dq1SL3704vt/O1v8Pcm0bRrTw7pFrp+n2tvY2FjClvbW1vGI4reJAFREVQAqqAAABgAVZoor9GP4tCiiigAooooAKKKKACor28SwtzJIcKP1p1xOLaB5G+6ilj9BWNfX01xZeZcW6NZSddpyyD1oAbq12+oeWjxSWr7gYWY5Vz6Gn6TeyTA27I73DP+/3cKg9qYunXVwI7Rv3tqGWRJyeQo5ArdVQtADLa1js49sahV9qkoooAKKw9Kt9aTxZePcyRNpZH7hRjIP8AOtygAooooAKKKw9Kt9aTxZePcyRNpZH7hRjIP86ANyiiigAooooAKKw9Kt9aTxZePcyRNpZH7hRjIP8AOtygAooooAKKKw9Kt9aTxZePcyRNpZH7hRjIP86ANyvNf2ov2f8Aw1+0x8OpPCniKyjnW9J+y3OP3tjJjIkRux46d673WL9rRI0jwJJ32KzdFrOvLe4a8htrqXdvJaCdRgqw55FRUpxnFwmrpmlKrOlNVKbs0fhb+11+yV4j/ZL+J8mi6upmtJCW07VEQ+Rfx59ezDuOxrzKCBlkLuQXPHHav6Bfih8APD3x08JzaL4zsLbXNPlB2xumwxH+8rA5De4NfGPxM/4IM6LqesTT+E/Gt5pVrI5ZLW+thP5Iz0Dggn8q/Hs/8OazqurlluV/ZelvR9j5POeCsNjqjxGAqRoye8JJ8l+8XFStf+Vqy6O1kvzNr1n9kD9kHxJ+2B8S4dG0eN7fS4GD6lqTL+6tIs8892PYV9mfCv8A4IQWdh4nL+MPF0+oaZGARFYQiEzH0LEkgfhX3V8Ivgt4Y+BHhGHQ/CukWukafEBlIl+aUgY3Ox5Y+59anIPDesqyrZnblX2Vrf18hZLwVhsDVWJx1SNaS+GEU+S/eTko3t/KlZ9XbR0/gD8AvDn7Nvw2svDHhmzW2s7RR5kmP3l1J3kc9ya7Wiiv2SEIwioQVkj6yrVnUm5zd2wrmfi78IfD/wAdPAN/4a8TafDqWlajGUkjccoezqf4WHY/0rpqw9Kt9aTxZePcyRNpZH7hRjIP86coqS5ZbDpVqlGpGrSbUk7prdPufhR/wUf/AOCZ/iP9i3xvLeWcM+q+C7+QtZagiEiMdfLk/usPTv1FfK5GDX9RXivwjpfjrQZ9L1nT7PVNOuhtltrqISRyD3B4r5R+Jv8AwRB+BfxF1eW8i0vVdDeU7jHYXeIlPJ4DKx7+tfnObcDOpVdTBSST6P8AQ/tDw9+lTDC4GOC4npSnOCsqkLNyX95O2vmtz8JI42mcKqlmJwABkmvrD/gmL/wTF8QftxePhqeqJqGhfDHRblo9W1lMwzanLGxV9PsH6+YGBWa4XiDDRofP3GD9Qfg3/wAEbfgd8HNUS9i0G71u6j5RtSuTIFPqAoWvpzw54b0/wfoNnpWk2NppmmafCtva2lrCsMNvGowqIigBVA6ACunI+C1h6qr4xqTWyW3q+54nir9JqpnGBllXDUJUYT0nUlpNr+WNvhv1d722tuVvAfgPRvhd4L0vw74d0yy0XQtEtks7Cws4hFBaQoNqoijgAAVrVh6Vb60niy8e5kibSyP3CjGQf51uV98fyMFFFFABRRWHpVvrSeLLx7mSJtLI/cKMZB/nQBuUUUUAFIzbRn0pScVj/arzUvNmtpI0WFiojZfv49TQAv8AbQmtJZpRm2YtGkajLNg4NR2enz3Vl5UVxG1k/QkfOB6VheGNI1668R3lwbuKLSZiSkO0MUbODj0712dnaLY2yxp91f1oAfFEIIlReigAU6iigAoorBsbbXF8T3rTSwnTWH+jqMZBz+fTNAG9RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVVurvzmeCBwJwuQcZA+tQajrPkXy26lEO3e7P02+3vWbIjaZcLNvkNhM/mEgfOD2B9qALc2oQanp8kV5mGaI/Mo657FfWvy4/4KY/8ABc34i/sM/tka38PtE8K+D9d03RbWzuILnVFuftBM9tHK27y5VXguQOOlfqja2q6iy3E0Cq4P7vPUD3r+dn/g4c/5SoeN/wDsH6V/6Qw1994c5VhMwzSVDGQU4qDdn3vH/M8bPMRUo4dTpOzv/mf0LfC7xVN47+GXh3W7iOOG41nS7a+ljjzsRpYlchc84BbjNb1cb+zt/wAm/eBf+xe0/wD9Jo67Kvhq6Uasora7PXg7xTYUUUVkUFFFFABRRRQAUUUUAFFFFAHzr/wVG/bW1T9gL9lG7+IekaJYeILy31O1sRaXkrxRFZmILZXnIxXnX/BHf/gqDr3/AAUw8OeO73XPC+keGW8I3NnBCthcSTC4E6zMS2/pjyhjHqa5j/g5E/5Rlan/ANjDpv8A6G1eC/8ABqN/yIHxq/7CGk/+i7uv0LC5Pg58JVsxlD97GaSlrteHnbq+h4lTFVVmcaCfutbfJn64V5l+1r+1r4P/AGKfg/N458czX8GgwXUNm72dqbiXzJSQnyAjjjrXpteCf8FIv2If+Hg/7Mt18Of+En/4RH7TqNtf/wBof2d9v2+SxOzyvNi6567+PQ18VlscNLF044x2pXXM1ul16P8AJnrV3UVOTpK8ugfsQ/8ABSL4Zf8ABQb/AISf/hXN1rFz/wAIj9l/tD7fYNa7ftPneVtyTu/1EmfTA9a97r47/wCCTn/BJz/h17/wn3/Fff8ACcf8Jx/Z3/MD/sz7F9k+1f8ATxNv3/af9nGzvnj7ErpzyngIY2ccsk5UdOVu99lfdJ736GeEdZ0U8QrS6/f/AJBTLi4S1hLudqrTbu6FnbPK2cIMnFY8sja/bpiRBPnzYlXlQPRq8k6S3dapJYzpM3zWcgHIXmM+p9qhNml1qUn2O5eMuN0uwbkP/wBeo9JvJJwbdkaS4Z/3+8fKg9q1rOxisIdkSBF9BQAWVmlhbiNOg5+p71+cf/BVv/guB4q/4J5ftPweAtG8D+H/ABFaTaHbaqbq9u5opA0skyFMJxgeUPzr9Iq/n9/4Oav+Ujdl/wBidYf+j7qvt/D/ACvC5hmv1fGQ5o8rdtd1bseTnWIqUcNz0nZ3R+5f7M3xWuPjt+zf8PvHF3aQ2F14y8Nadrk1tCxaO3e6tY52jUnkhS5AJ5wK7evHf+Cd/wDyj/8AgZ/2T7QP/Tbb17FXyWOhGniakIaJSaX3npUW3Ti32QUUUVymgUUUUAQ6jqNvo+nz3d3PDa2trG0000zhI4UUZZmY8AAAkk8ACvxq/bi/4OXPEt/8Qrzwx8AdG0xdJgn+yw+ItTtHurvU33YD21uSFjQnhfMV2YEHah4r70/4LZePLz4cf8Etfi/qNjJJDPPptvphaM4Pl3d7b2kg+hSZgfYmvzG/4NfvhJonjb9sPxf4k1OygvdQ8IeHhJpRljDfZJp5ljaZPRxGHQH0lav0nhDKcBDK8RnuPp+1VJ2jHpfTf/wJLqlrozwczxNZ4iGDoy5ebVv+vQrWX7Xv/BTHxQket22m/FnyQm+IJ8PLaON0xuBERswJAQ3B2tnjk4rY+C//AAcTftAfs3/EiLQvjl4Vj8QWsLquoW95o/8AYWuWy9C6KFSPPU7WiAJGNy9a/dGvy8/4Om/hzpV5+yX4A8WtaQf25p3i5NIiuvLHm/Zp7O7lePd1277aM46ZrvyXP8szbGwy7FZfTjGponFWa+aSf4oyxWCxGGpOvTrSbXfVH6LfAv43+Gv2kPhJoXjfwhqKar4d8RWwurO4VSpIyQyMp5V1YMrKeQykdq2/GHi/TPh/4T1LXdavrfTNH0e1kvb27uH2xW0Malndj2AUE/hX51/8GvXjS7179hHxTpNzJJLFoXjK5S03NxDFLaWshjUdh5hkb6yGu3/4ONviBeeCf+CZes2lpNLCPE2uafpVwY+C0W9rgqT1AJtwDjr06E18hX4eUc//ALHjLTnUb9bN7+tvxPThjr4P6010v8z5C/a4/wCDlfx74/8AiLL4a+APhu0sdMa5NrZapqFg1/qurNu2q0Nv9yMN2Rlkc8Z2nK1wkX7W/wDwU2eL+2F0v4ulWTbs/wCFcW3Izji3+xdffZnHPSvTP+DVb4O6JrHij4seObyzgudd0SPT9K02d0y1lHP9oe4K+hfyoRkcgKwzhiK/Zuvss9zfK8ixcsswmBpz5LXlNczbaT6rz+/oeVg8NiMZSWIqVmr7JaH4l/sjf8HKXxF+HnxLg8N/HzQLLU9HW5Fpf6lZ6c1hq2ktu2s8sA+SQL3jVEcc4JOFr9qPD+v2XivQbLVNNuoL7TtSt47q1uYXDx3ETqGR1YcFWUgg+hr8q/8Ag4C/4JkfET9rH4+eAvFPwo8By+ItSudKm07XLm3uLW1UGKVDbmVpZEG7bLINxP3UAzhePub/AIJg/DTxv8Gf2Cvht4T+IunSaT4v8OadJp15ZveQ3ZgjiuJVt18yJnjI+ziHAVjtBA6g14fFVLKMRgKGaZeo06k3adNSTtvry9Fp2Sd0dmXSxMK08PWvJLaTX6n5sf8ABQv/AILJftMfsK/tt+KfAk934WvfD+mXyXulibRkVr7TZcSRAyA53BCY2YD76NgV+tvgP4u6b8YvhR4b8XaBcedoXijT7fUoLhOWSKaNZFyOxw2COoIIr82v+DoT9kQ+Mvg34V+Mul22b/wfMNC1qRRybG4cmB29o7hio97v8uo/4Nnf2rT8Xv2StV+GeozRtqXwzvSIUf782n3ZeSLqctslW4U9lXyx3FdWc5fhMZw5QzXB01GcHy1OVWu9rv52f/bxnha1Sljp4erJtPWN/wCv6sfoRG0WoRGGYz435tpmXOPxr8rf+Cv/APwWn+KP7Iv7Ys3w/wDhzfeH1t/D2k239qteaet032yYGbapJGAIXg49Wav1k1XUbD4eeGNS1S/uRbaXpdvJe3Esh+W2ijUu7fQKCfwr+cD9kPwbe/8ABUf/AIK5afea1BLPY+LfFFx4m1mN/mWGwidrloGPZdiJAPTeorHw/wAqwtapiMfj4KVKjBtp7Xev5J/gVnWIqQjCjRdpSZ/Qr+ylqnjHXv2bPA+o/ECSCTxpqejW97rAhthbpDcSoJGiCDp5e4IfUoT3r8DP+Dhz/lKh43/7B+lf+kMNf0aV/OX/AMHDn/KVDxv/ANg/Sv8A0hhrv8LantM8qzSteEnZbL3o6Ix4hVsHFea/Jnq+n/8ABcj9qT486FpHhb4GfD+SytPDen29ix0XQJfEWoSeXCEDSsY2jUHYWAEQxzlmArC8ef8ABRr/AIKH/s5xSeJPGo8d6VoweM3E+seA7WLTe6qjSC0VYyfRWUnrX7dfsp+F9M8H/s1+BLLSNOsdLsxoNjIILO3SCIM1vGWO1QBknknvXdajp1vrGnz2l3BDdWt1G0M0MyB45kYYZWU8EEEgg8EGuWXGOW0azp08tpuF9eb3pPX+Zp/qaLK8ROKlKvK/lovuPz1/4JH/APBdGx/bm8VRfDz4gaZp/hj4jSws+nTWRYWGv7ELSKisS0UwVS2wswYKxBBG2v0Qr+X74t2Fv+yH/wAFXNai8Jq1hZeA/iUz6VFEf+PeGHUN0cQyTkKgCc9QOetf1A1zce5FhMDWo4rArlp1o8yj2em3lqtOjv0NMmxlStCVOtrKLtc+Sf8Agqj/AMFYvDP/AATW8FWEJ0//AISbx54hjaTStFE3lJHECVNzcPglYgw2gAbnYEDADMv5faZ/wV//AG6P2w9WvZfhpY6v9hV2SW38I+C0vre0zyFaaWKd0OOhMgNeVf8ABezxve+NP+Cp3xKS6cmHRfsGm2kZORDEljAxA+sjyP8AVzX9CP7MPwq0T4I/s8+DPC3hywt9N0fR9It4YIYU2gnywzufVnYszMcksxJJJr3KtDLuHcow2JqYaNetXXNeeqWie2u10vvd+hxxnXx2JqU41HCMNNN/60PxJ1r/AIKZf8FBv2VbSLVfHNh4uTQrbl38SeBYo7Fsk8PcR28bZ9vNBAx2xX6Df8Ek/wDgtVo//BQ+9ufB/iXSbTwl8SrC2a7W2tpWax1qFcb3t9+WR0yN0TMx2/MGYBwn3Br2hWXinQ7zTNStLbUNO1GB7W7tbmISw3MTqVeN0OQyspIIIwQTX82f7EWmH4H/APBarwjo2hTPbwaL8SpdChYDk2xupbVl/wCBRMyn608Cst4kwOJ/2WNGtSjzKUNE9918tb330Cr7fAVqf7xzjJ2aZ/SvX49/8Fc/+C0Pxv8A2OP25/E3gHwVfeHIPD2l2ljNAl3pKXEoaa1jlfLk5PzMcV+wlfzl/wDBw5/ylQ8b/wDYP0r/ANIYa8Xw1y/DYzNZUsXTU48jdmrq946nXn1apSwylTdndbejPq/9qH/g5l1DwP4Q8P6D8NdB0XxD4qGiWb6/r+po/wBgi1B7eNp47a3jZS+yQuNzOF3KQFdRk9h/wRD/AOCh/wC0P+2r+11r9l8TdWu5fBNp4XutQtraLw7bWVmLxbqzRFE6wiQkRzSEKZDkckHFe+f8Env+CWnwj/Z4/Zt8C+Lj4Y0vxJ468R6NZa1d65qtstzNbSzwrMI7YOCsCpv2goAzYyxPb7ZpZxnOR0KNXL8vwib1XtJW5r33Ss7eVmvQMLhcXOUa9er58q2+f9M+Cf8Ag5E/5Rlan/2MOm/+htXgv/BqN/yIHxq/7CGk/wDou7r3r/g5E/5Rlan/ANjDpv8A6G1eC/8ABqN/yIHxq/7CGk/+i7uvTwX/ACQuI/6+L/0qBz1f+RxD/D+jP1wr5W/4LH/tbeMP2Kf2K73xz4GmsINeg1ezs0e8tRcReXKzB/kJHPHWvqmvgn/g5E/5Rlan/wBjDpv/AKG1fD8M0KdbNsPSqq8XOKaezVz18wnKGGnKLs0mY/8AwQX/AOCkXxN/4KDf8LV/4WNdaPc/8Ij/AGR/Z/2CwW12/aft3m7sE7v9RHj0wfWv0MllWIDJAycDJ6mvx5/4NOf+a+f9y9/7lK/W3X5ZdNv1u2j8+BVwo/55N616PHWEo4XPK9DDxUYLlsloleEX+Zhk9SdTCQnN3ev5s/ET9or/AIL6fHb4Rftx+N/Cjap4fh8JeFPHN/o5i/sZZJY9Pt7+SEgnOWfyk64ySK6L4m/8Fo/2m/2v/F+sR/sw/DTxHpfg+3n8gX9p4bbW7/PJDTuUktoCygHy9rbeRvbrXw1+154TT4hf8FP/AInaPPO0K6z8UtVspJogCUEurSoWA6HG7Nf09/DD4YaB8GPh/pPhbwvpVpomgaHbJa2VlbJtjhjUYHuSepY5LEkkkkmvu+Jf7IyahhaywcZ1Jx66R2jdtfaevXzPHwH1nFSqR9q1FP59dux+C/i//gqL+3x+ybcw3/jyTxZpOmzXG4L4k8D21vZXTnB2LL9mQ4/2Y5BjngV+kX/BIT/gshYf8FGbXUfC/iPSrTw18SdDtfts1vaOTZarbbgrTW4di6lGZQ8bFsb1IZgWC/YfxY+F2ifG34a634S8SWFvqeh+ILOSyvLaeMOro4xnBBG4HDKeoZQRyK/m4/4ImeLbjwd/wVG+Ec9u8i/a9TmsJAjY3pPazREH1Hz5x7Dvg1z4WGW8R5TiqkcLGjWoLmTgrJ6NrRW35Wne/dF1HXwOJpxdRzjN21+X+Z/TRX8/v/BzV/ykbsv+xOsP/R91X9AVfz+/8HNX/KRuy/7E6w/9H3VeN4W/8jv/ALcl+h1cQ/7p80eieGv+C4Pxc1j4F/DT4R/s2fDvUtb1bwd4L0nS9W1QaLNq961xBZRRTGC2iDKkSOjDzJA+7Gdqjrwvj/8Ab3/4KOfBezm8R+KB8R9J0u3QNc3V74As1sIUBH+sYWflx56ZypPrX6wf8EgvgJ4e+Av/AATw+FsehWFtaz+KfDtj4j1S4SPEt7dXluk7PI3ViokCDJ4VFAwBivpdlDqQRkHgg961xXFeWYTF1KNDL6c4qTu56ylrq7tO1+3Qmnl2Iq04ynWadtlokflb/wAEnP8Ag4F1H9pT4t6R8MfjBp2kWOu6+4tNF1/TUNvBeXJHywXETMQryHhHjwpcquwZzX6p1/Lx/wAFFtEsv2ev+CmXxKj8KWsOk23h3xdJfadbwKI4rRhIs6rGq4CorHCgYwAAOlf1D1z8f5Lg8LLDY3Ax5IV435eia5Xp8pLTbQ0yXFVainSrO7g7X+//ACMPSrbWU8WXj3MsTaWw/cIMZFblFFfnZ7Z8d/8ABfb/AJRK/Fj/ALg//p5sa/FT/gl/+zR8df2l/Hviix+BXji68D6tplhFPqk8HiK70Y3MDSbVQvbgl8NzhuB1r9y/+C1fgif4g/8ABLf4w2FvEZpINKh1MqDjCWl3BdO34LCx/CvzM/4NbviBp+gftfeOdAurmCC88Q+GN9kkj7WuHguI2ZEHc7HZsZzhGOMA4/ZOD8dUw3CeLrUUpShNuzV1a0N16Jny2aUlUzKlGeia/wAztv8Ah1L/AMFDf+jgdY/8ObrP/wATXMfFD/giH+2/8c9Ej0fxt8UrbxfpNtcLeQ2uueOtR1C2SYKyCVY5Y2AcK7qGwDh2GeTX7kV4h+35+3d4X/4J5fA+Dxz4r0/VdVsrvVIdJgtNO8r7RLNIkkgwJGUYCxOTznivnsFxzm9avGlhaNNzb0tBXv8Aed1XKMNGDlUlK3XU8d/4Ij/sCeOf+Ce/wB8WeGfHkugzajrXiA6nbnSrp7iMRfZoY/mLIhDbo24x0xzXBf8ABzX/AMo5bH/scbD/ANEXdfTv/BP79uvQf+ChnwRu/HfhzQtd0DTLbVptIWHVREJZmijhkaRfLdxs/e7eTnKNxjGfAP8Ag448CXPjL/gmVrN3bQzTDw3runapN5f8Ee9rcsRjkA3Azjp16A1y5dicTU4qpVcwXLUdSPMuz2NK9OmsulGjrHldj5//AODUb/kQPjV/2ENJ/wDRd3X64V+Of/BqV8QtNgufjL4VluYI9XuV0vVLaBpB5lxBH9pilZV6kI0kIJ/6bLX7GVn4hxceIMRfry/+kRKyRp4KFvP82YelW2sp4svHuZYm0th+4QYyK3K+Jv8Agqx/wWTs/wDgmV428I6AngVfHOoeJbGfUJ4/7d/sw6fEkixxkj7PNv8AMbzf7uPKPXPH0b+xx+0Fc/tWfsxeDfiLd+H28LS+LrD+0F0trz7WbaNnYR/vfLj3hkCvnYPv/jXz1fJcZRwdPMKsLUpu0Xda79L36PdHbDFUpVXQi/eW+5s/tEfBLSf2kfgX4s8B64udM8V6ZPp0zAZaEupCyr/tI21191Ffz/8A/BJD4sap/wAE9P8Agq7Y+F/FWLBL3U7jwJ4gjZiI45Hm8uOTPTatzHEdx/gLY61/RnX4S/8ABy/+yfL8If2qdB+LWjwyQab8QrYRXksKlRb6naKi7tw+6ZIfKI7lopTzzX23h3i6deVfI8Q/crxdvKSXT5a/9uo8nO6bgoYuG8H+H9fmfoN/wX4/aOX9n/8A4Jv+K7OCfydW+IEsXhezCthik2XueOpU20cyHtmRfXB+TP8Ag1o/ZknhHj74v3lsBFMB4V0yVhgkDy7i5K+oJ+zDI7o49cfJn/BWz/gpP/w334F+BdnBOZZ/Dvhf7Tr6qNudamfybgFeBjFqkiccLcH1r9x/+Ca37Mo/ZC/Yg+HngaSHydTsNMW71YFcN9uuCZ7gHudskjICf4UXp0HdmdCeRcLLA1NKuIm+b0i/y0j/AOBGNCaxmY+1j8MFp6v+n9x7nX85f/Bw5/ylQ8b/APYP0r/0hhr+jSv5y/8Ag4c/5SoeN/8AsH6V/wCkMNcvhP8A8jmf/XuX/pUTXiP/AHVf4l+TP6Av2dv+TfvAv/Yvaf8A+k0ddlXG/s7f8m/eBf8AsXtP/wDSaOuq1XVbXQtLub6+uYLOys4mnuLieQRxQRqCzO7HAVQASSeABX5xiLutJLu/zPcp/Aj+Yj/goJn/AIesfFDP/RQrr/0sNf0/1/L58VNRh/bD/wCCrGszeE/MvrPx98SXXSpIwczwTahtjl5AwChDnP3QTnpmv6g6/UfEz3MPl9KWklB3XbSC/Rnz2QazrSWzf+Z/M3/wW9/5SofF/wD7CFr/AOkNtX1x4f8A+CWH/BQW/wBBsp7T4+6xFaTW8ckEY+JesLsQqCowFwMDHFfMP/BfHwVc+Df+CqPxJeZW8jWRp+pWzt/y0R7C3Vj9BIki/wDAa/oZ/Z58d6d8TvgN4M8Q6Rcw3em6zolpd28sTh1ZXhU4yO46H0IIr2+I8/xGXZNl1TDRjJSgk+aPNa0Y2t26/ccmBwcK+KrxqNqz6O3Vn5H/APDqX/gob/0cDrH/AIc3Wf8A4mqn7H//AAQT/aE+Ef7a3gT4jeL9T8G6haaF4mttc1a6GtzXN3d7ZhJK+WhBeRjkksRknk1+1lfD3gf/AILtfDr4i/trD4IaT4S8Z3OuP4luPDSamv2U2EjwSyRvcAiUuYsRs4O3JXHGeK+VwfFue4yjWhhKMOVRfPywStGz8z0auW4OlKLqyd76XfU+4a/nL/4OHP8AlKh43/7B+lf+kMNf0aV/OX/wcOf8pUPG/wD2D9K/9IYa18J/+RzP/r3L/wBKiLiP/dV/iX5M/er9jL/kz74Uf9idpH/pFDXpVea/sZf8mffCj/sTtI/9Ioa9Kr87x3+81P8AE/zPbo/w4+iPzu/4OLrfWY/+Ce3iB7qWNtMbX9N+zqMZU+Y39M15B/wajf8AIgfGr/sIaT/6Lu6+gv8Ag440u41D/gmFr0sMZeOx1zTJ52H/ACzQz+WCf+BOg/4FXzB/waj+PrGK9+NHheW4gj1O4TStVtbct+9nhQ3UUzgf3UaSAE+swr9My9OXAuJ5elRf+lUzwKumbwv2/Rn7G18E/wDByJ/yjK1P/sYdN/8AQ2r72r4J/wCDkT/lGVqf/Yw6b/6G1fFcJf8AI6wv+OP5nq5n/ulT0Z82/wDBpz/zXz/uXv8A3KV+tenWWsN4pvTdyRPpTriFOMivyU/4NOf+a+f9y9/7lK/YivV8Rf8AkocR/wBuf+kROfJP9yh8/wA2fy//ALQcK2//AAV68cIgwq/GG/AHoP7akr+oCv5gv2if+Uv/AI6/7LFqH/p6kr+n2vovE3+DgP8AA/yicWQfFW9f8wr+YL/gj7/yk1+DP/Ywx/8AoD1/T7X8wX/BH3/lJr8Gf+xhj/8AQHo8Of8AkXZn/gX/AKTUDPP4+H9f1if0w6Vbayniy8e5libS2H7hBjIr8Gf+Dmr/AJSN2X/YnWH/AKPuq/oCr+f3/g5q/wCUjdl/2J1h/wCj7qvO8Lf+R3/25L9DbiH/AHT5o/aD/gnf/wAo/wD4Gf8AZPtA/wDTbb17FXjv/BO//lH/APAz/sn2gf8Aptt69ir4XMv98q/4pfmz2KH8KPoj+YL/AILBf8pNfjN/2MMn/oCV/S9Y2uuL4nvXmmiOnMP9HXjK8/4Zr+aH/gsF/wApNfjN/wBjDJ/6Alf0+1+leIv/ACLcs/wP/wBJpngZH/HxHr+sgooor8oPpCtrWjWniPR7vT7+3hvLG+he3uYJkDxzxupVkYHgggkEehr8MP2t/wDggx8bv2RPjl/wm/7PcupeI9Dsbv7bpEmm362+u6GTn92ysymYDO0NGWLqTuQDOf3Yor6Hh/ibGZRUlLD2cZ6SjJXizixuApYpJT0a2a3R+Emmft5/8FKvDNothL4Q+KN81ufKE0/wu81328ffW0Afp97knrk9a5Hx9+zH+3Z/wVc8Z6Ja/ELw74rt9P0+RzbSeI9NTw7pmlB8K8hh8uNnPyjlY3kx04Nf0E0V9HDj+FCXtcJgaNOp0ko6r0tY4HkzmuWrWk49rnkf7C/7JGlfsO/su+F/hvpNydQGiQs95fNH5bX91K5kmm25OAXYhVydqhRk4zXoXxF+H2kfFjwFrPhjxBZRalofiCyl0+/tZB8s8MqFHU+mQTyOR1FbVFfB1sVWq13iakrzbu31ve9/vPZjTjGCppaLQ/BX9o3/AIIZftE/sMfGSTxh8CL7XPFOj2EjT6Zqeh3otNesYz1imhDK0pwSp8kOsg5KJuKC0P26f+CmGj2EmnN4a+K0s6Nhbk/CyOWVQuBhWFiUYcfeIYnceelfvBRX3a8QataEVmOFpV5R0UpR1/X8LHj/ANixi26FSUE+iZ+Bvwd/4I5ftQf8FFPj/D4v+OR1vw3pd1JH/ams+IZkGoyQJ/ywtbQfMhxwoZI4lyTyRtP7v+CvB2m/DrwbpPh/RrWOw0fQrKHTrG2jztt4IUWONBnnCqoH4Vp0V8/xBxPis3cI1UoQhpGMVZL+v+GSO3BZfTwybjdt7t7hXyt/wWj/AGb9O/aV/wCCdPxCtLyS2trzwnYv4p025ncIsE9kjyMNx4HmQ+dFzx+9z2r374u/HXwV8APDker+OfFvhzwhpk8vkQ3OsajFZRzy7S3loZGG99qsdq5OFPHFfkf/AMFw/wDgtn4R+M/wivfg98HtUOuWetSiPxLr8cTR2zQRurC1tiwBk3uo3yAbNi7VLiQlejhHKMwxWZUamEi0oyTcraJJ667fLrsRmeJo06Eo1Xutup8S/wDBHv8AZhP7V/8AwUH8AaDPbm40XR7weIdYBUsn2W0IlKv/ALMkgii/7bCv6da/NH/g27/YOv8A4AfAbV/ip4nsJLLxB8SEij0qCeMrNa6VGSyuQcEefId+D1SKFh96v0ur1fEjOo47NnSpO8KS5V67yf36fI5siwro4bmlvLX/ACCvxK/4K+f8EyPjN+1n/wAFSdT1Twv4K1m48JeITo9h/wAJAIlaztF+zwQyyv8AMDtjO4t/umv21or53h7iCvk+JlisPFOTi46+bTv+B3Y3BQxVNU5vS9z8O9f/AGSv+Cgn/BNUnRvhp4m8S+MvBsLZsX0Ix6xbxKOQosbpHeE85KohTOfmbrXknxStP+Cg37eFv/wjPivw/wDGfUNOuGxLZXXh8+HNNn6LiX91bwOBgcOSAcnjk1/Q/RX01DxDqQftqmEoyq/z8tnfu7dfRo4J5JFrljVko9r6H5sf8Eb/APghtL+xl4ph+JvxQuNP1L4gxwvHpWl2hE1roAcFXlaX/lpcFSVG35UBbBcsCv6T0UV8fnGc4rM8S8Vi5Xk/uS7Jdv6ep6eFwtPD0/Z0lofDn/BZP/gkPF/wUX8L6b4j8L31novxL8MW7W1pJdgi11i1yz/ZZWAJRldiySYIBdwVw+5Pzg+F+i/8FDP+CcVj/wAIn4V8N/En+wbeVxFYWGiR+KNOTJLExFI5xErEljsKZJORkmv6AqK9/KeNcThMIsBiKUK1JbRmr29P+Cn5HHicqhVqe2hJwl3R+D+t/tqf8FKPiposmjReFfippsepJsN1Z/Ds6fIFI/huDbL5fsysp9DX0B/wQ8/4Is+Nf2cfjKnxh+L1pBo+tabbTRaBon2hLm5hlmRo5Lq4ZCyKfKZ1VAxOZCW2lQD+sFFbY3jipUwk8HgsPToRqaS5Fq12/TYillMVUVWrNza2uFfhp/wW3/4J0/G/9oX/AIKI+LPFPgr4beI/Efh69stOjgv7SJWilaOziRwCWB4ZSD9K/cuivF4b4hrZNiniqEVJuLjre2rT6W7HVjsFDFU/Zzdle+hwf7LHhu+8GfsxfDnR9UtpLLU9K8L6ZZ3dvIPnt5o7SJHRvcMCD9K7yiivEq1HUqSqPq7/AHnXGPLFRXQ4D9qb9nfRf2sv2efFvw68QF49L8V2DWbzIoZ7WTIeKdQeC0cqpIAeMoK/BLx1/wAEWP2tP2RfisbzwTouuanLZyMun+JPBureTK6nPI2yJcREgcgqBzjJ61/RZRX03DvF+NyeM6VFRlCe8ZK6v30a+ZwY7LKWKalO6a6o+Kv+CGuh/G2w/Zl8SXfx2u/Hcnii58RPFYW/iqSZ7qGyjtoNrr5pLBWkabtyUzk1d/4LsfAbxh+0f+wJqHhnwN4fv/EuvSa3YXCWVmoaVo0di7YJHAzX2RRXC88n/aqzWEIqSkpKK+HTp6G31RfV/qzbata/U/MD/g29/Y++Jv7KH/C5f+FjeDNZ8I/29/Yn9n/b0Vftfk/2h5u3BP3fNjz/AL4r9P6KKxzzN6maY2eOrJKU7aLbRJdfQrCYaOHoqjF3S/zufz8/G/8A4Ji/H3xF/wAFN/F/i+y+Fnii58NX3xPvdYt9RSJPJls31V5lmB3Z2mMhvoa/oGooruz/AIlr5tGjCtFR9krK19dt7vyMsFgIYZycG3zO4V/Pz/wTF/4Ji/H34Qft9/CzxN4m+FnijRtB0bW0uL29uIkEVtGEcFmIbpyK/oGooyPiWvldDEUKMU1WVne+mklpZ/3gxeAhiJwnJtcjv+X+QV+Ln/Bfb9gL4y/tMftzWniPwF8PPEHijQ08L2Vm15ZRq0YmSa4LJyw5AdfzFftHRWHD2fVsoxf1yhFSdmrO9tfQvG4OOKp+ym7I8v8A2IvB+p/Dz9i/4RaBrVlNp2s6H4K0bT7+0mGJLW4isYY5I291dWB9xXqFFFePXrOrVlVlvJt/edMI8sVFdD+fn/gp1/wTF+Pvxf8A2+/in4m8M/CzxRrOg6zrb3Fle28SGK5jKIAykt04Nf0DUUV72ecS180oYfD1opKirK19dIrW7/unHhMBDDznOLb5nf8AP/MKKKK+cO4KKKKACiiigAooooAKKKKACiiigD5g/wCCpf8AwTgH/BS74S+G/CjeMT4Mj0HWRq7XQ0r+0DcYhki8sJ50W3/WE7sn7uNvPHiX7KP/AAbe/BT4CeIrXW/F17q/xQ1SynE0MGpxpbaUpU5Xdapkye6ySMjdCmMglFe7huJs0w+E+o4es409dFZb76pc34nHPAYedX2043l/XTY/QmGFLaFY40WOONQqqowFA6AD0p9FFeEdgUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//Z",
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "widgets": {
+      "a64e68ed-d086-ed46-3b1b-d2aa7feb3f8c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(255,0,0,0.87)",
+          "padding": "16px",
+          "settings": {
+            "cardHtml": "<span style=\"font-size: 16px\">Người phụ trách: Đỗ Văn Phú\r\n<br>Điện thoại: 098.666.888\r\n<br>Số nhân viên lao động: 125\r\n<br><input id =\"start\" type=\"button\" value=\"start\">\r\n<button id =\"stop\">stop</button>\r\n<button id =\"restart\">restart</button>\r\n<button id =\"resume\">resume</button>\r\n</span>\r\n<script>\r\n    var btn_start = document.getElementById(\"start\");\r\n    btn_start.addEventListener(\"click\",process_rpc,false);\r\n    function process_rpc(){\r\n        console.log(\"a13131\");\r\n        document.getElementById(\"test\").innerHTML = \"1111\";\r\n    }\r\n</script>\r\n\r\n",
+            "cardCss": ".card {\n    font-weight: bold;\n    font-size: 10px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n"
+          },
+          "title": "New HTML Card",
+          "dropShadow": true,
+          "showTitleIcon": false,
+          "titleIcon": "",
+          "iconColor": "rgba(255,0,0,0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "1px",
+          "actions": {
+            "elementClick": [
+              {
+                "name": "control-action",
+                "icon": "more_horiz",
+                "type": "custom",
+                "customFunction": "function ($event, widgetContext, entityId, entityName, additionalParams, entityLabel) {\r\n    \r\n}",
+                "id": "291f7fb8-b735-61da-79d3-5d9853bbafce"
+              }
+            ]
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a64e68ed-d086-ed46-3b1b-d2aa7feb3f8c"
+      },
+      "35d9262a-2bf1-16f2-102a-1f4373a08170": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "pie_chart_js",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "entityAliasId": "70945a76-faed-b96a-4373-2ea1e64f4ecc",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "Lắp ráp",
+                  "type": "attribute",
+                  "label": "Lắp ráp",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9324237374770028,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 50;"
+                },
+                {
+                  "name": "Lò hàn",
+                  "type": "attribute",
+                  "label": "Lò hàn",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.7237355184390435,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 20;"
+                },
+                {
+                  "name": "Đo thông số",
+                  "type": "attribute",
+                  "label": "Đo thông số",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.174622473892301,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 20;"
+                },
+                {
+                  "name": "Kiểm tra ngoại quan",
+                  "type": "attribute",
+                  "label": "Kiểm tra ngoại quan",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.5457368038034298,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 10;"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "Cảnh báo công đoạn",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "35d9262a-2bf1-16f2-102a-1f4373a08170"
+      },
+      "04f4349b-3abc-6c39-143c-3760970f4f67": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "doughnut_chart_js",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "70945a76-faed-b96a-4373-2ea1e64f4ecc",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "err_01",
+                  "type": "attribute",
+                  "label": "err_01",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.49729841407758246,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 90;"
+                },
+                {
+                  "name": "err_02",
+                  "type": "attribute",
+                  "label": "err_02",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.038381558255589976,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 10;"
+                },
+                {
+                  "name": "err_03",
+                  "type": "attribute",
+                  "label": "err_03",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.9388352068091812,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 0;"
+                },
+                {
+                  "name": "err_04",
+                  "type": "attribute",
+                  "label": "err_04",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.6658822688984918,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 0;"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "borderWidth": 5,
+            "borderColor": "#fff",
+            "legend": {
+              "display": true,
+              "labelsFontColor": "#666666"
+            }
+          },
+          "title": "Kiểm tra thông số",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "04f4349b-3abc-6c39-143c-3760970f4f67"
+      },
+      "33d1125f-dca9-e75c-ea47-082b0372c737": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": false,
+            "displayPagination": false,
+            "defaultPageSize": 10,
+            "displayEntityName": false,
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": false,
+            "enableStickyHeader": false,
+            "enableStickyAction": false,
+            "defaultSortOrder": "Mã dây chuyền",
+            "useRowStyleFunction": false,
+            "rowStyleFunction": "result.background = '#FF0000';"
+          },
+          "title": "Dữ liệu đầu vào",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "a1a1842b-239c-b06c-8f4f-fd0ed71c6e1a",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "productName",
+                  "type": "attribute",
+                  "label": "Tên sản phẩm",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.14628600242483047,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": false,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "productCode",
+                  "type": "attribute",
+                  "label": "Mã sản phẩm",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.55297379706408,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "prodcutNote",
+                  "type": "attribute",
+                  "label": "Ghi chú",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.19686074303249068,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {
+            "color": "red",
+            "background": "#BBBBBB"
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "33d1125f-dca9-e75c-ea47-082b0372c737"
+      },
+      "6e03de53-10e7-d0b4-bd75-0f0803299efa": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": false,
+            "displayPagination": false,
+            "defaultPageSize": 10,
+            "displayEntityName": false,
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": false,
+            "enableStickyHeader": false,
+            "enableStickyAction": false,
+            "defaultSortOrder": "Mã dây chuyền"
+          },
+          "title": "Dữ liệu đầu vào",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "a1a1842b-239c-b06c-8f4f-fd0ed71c6e1a",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "commandCode",
+                  "type": "attribute",
+                  "label": "Lệnh sản xuất",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.49662397967089045,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "lotNumber",
+                  "type": "attribute",
+                  "label": "Số lô",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.2488398554810396,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "numberPlan",
+                  "type": "attribute",
+                  "label": "Số lượng kế hoạch",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.2848126927712795,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "order",
+                  "type": "attribute",
+                  "label": "Đơn hàng",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.34177972382963095,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {
+            "color": "red",
+            "background": "#BBBBBB"
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "6e03de53-10e7-d0b4-bd75-0f0803299efa"
+      },
+      "7d4e6df1-fbf6-d25f-ff6b-338168096bef": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": false,
+            "displayPagination": false,
+            "defaultPageSize": 10,
+            "displayEntityName": false,
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": false,
+            "enableStickyHeader": false,
+            "enableStickyAction": false,
+            "defaultSortOrder": "Mã dây chuyền"
+          },
+          "title": "Dữ liệu đầu vào",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "a1a1842b-239c-b06c-8f4f-fd0ed71c6e1a",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "inputQuantity",
+                  "type": "attribute",
+                  "label": "Sản lượng đầu vào",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.18291562147832896,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "finishQuantiy",
+                  "type": "timeseries",
+                  "label": "Sản lượng hoàn thành",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.01862836551651248,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "errorRatio",
+                  "type": "timeseries",
+                  "label": "Tỉ lệ lỗi",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.34670084101922116,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "cpk",
+                  "type": "timeseries",
+                  "label": "CPK",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.31125713310590286,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {
+            "color": "red",
+            "background": "#BBBBBB"
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "7d4e6df1-fbf6-d25f-ff6b-338168096bef"
+      },
+      "56eae6fd-4fbd-8375-b44e-2e713d91a75c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "a1a1842b-239c-b06c-8f4f-fd0ed71c6e1a",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "ppm",
+                  "type": "timeseries",
+                  "label": "PPM",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9913355491836819,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 30.67;"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#ff5722",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "New Simple card",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": 2,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "56eae6fd-4fbd-8375-b44e-2e713d91a75c"
+      },
+      "3448a6ae-c65c-ac77-2681-a6710f966e9b": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(255,0,0,0.87)",
+          "padding": "16px",
+          "settings": {
+            "cardHtml": "<span style=\"font-size: 16px\">Người phụ trách: Đỗ Văn Phú\r\n<br>Thời gian bắt đầu sản xuất: 18:30 19/09/2021\r\n<br>Thời gian chạy\r\n<br>Thời gian dừng\r\n<br> Năng suất bình quân\r\n<br> Tốc độ hàn\r\n\r\n</span>\r\n\r\n",
+            "cardCss": ".card {\n    font-weight: bold;\n    font-size: 10px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n"
+          },
+          "title": "New HTML Card",
+          "dropShadow": true,
+          "showTitleIcon": false,
+          "titleIcon": "",
+          "iconColor": "rgba(255,0,0,0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "1px",
+          "actions": {
+            "elementClick": [
+              {
+                "name": "control-action",
+                "icon": "more_horiz",
+                "type": "custom",
+                "customFunction": "function ($event, widgetContext, entityId, entityName, additionalParams, entityLabel) {\r\n    \r\n}",
+                "id": "291f7fb8-b735-61da-79d3-5d9853bbafce"
+              }
+            ]
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "3448a6ae-c65c-ac77-2681-a6710f966e9b"
+      },
+      "a860f75a-c6ad-c1c4-eaa4-2f542be736f7": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "196a2399-4897-1dca-1747-0a72ac9fc03f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "SetT1",
+                  "type": "timeseries",
+                  "label": "SetT1",
+                  "color": "#2196f3",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": "",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    }
+                  },
+                  "_hash": 0.7204998157202369
+                },
+                {
+                  "name": "T1",
+                  "type": "timeseries",
+                  "label": "T1",
+                  "color": "#4caf50",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": "",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    }
+                  },
+                  "_hash": 0.7342169870732427
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "New Timeseries Line Chart",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a860f75a-c6ad-c1c4-eaa4-2f542be736f7"
+      },
+      "5cae9cf2-6c58-e088-59aa-872d42c7be99": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "pie",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "7aa77f45-f060-4cdc-7b92-ab63f59f0df3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "1",
+                  "type": "attribute",
+                  "label": "1",
+                  "color": "#2196f3",
+                  "settings": {
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false
+                  },
+                  "_hash": 0.6800791427770958,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 50;"
+                },
+                {
+                  "name": "2",
+                  "type": "attribute",
+                  "label": "2",
+                  "color": "#4caf50",
+                  "settings": {
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false
+                  },
+                  "_hash": 0.5728327265528015,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 20;"
+                },
+                {
+                  "name": "3",
+                  "type": "attribute",
+                  "label": "3",
+                  "color": "#f44336",
+                  "settings": {
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false
+                  },
+                  "_hash": 0.9545372467838655,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 10;"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "radius": 1,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "innerRadius": 0,
+            "showLabels": true,
+            "stroke": {
+              "width": 5
+            },
+            "tilt": 1,
+            "animatedPie": false
+          },
+          "title": "San luong",
+          "dropShadow": false,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "left",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": false,
+            "showTotal": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "5cae9cf2-6c58-e088-59aa-872d42c7be99"
+      }
+    },
+    "states": {
+      "001": {
+        "name": "Rạng đông",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "a64e68ed-d086-ed46-3b1b-d2aa7feb3f8c": {
+                "sizeX": 6,
+                "sizeY": 3,
+                "row": 0,
+                "col": 0
+              },
+              "35d9262a-2bf1-16f2-102a-1f4373a08170": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "row": 3,
+                "col": 0
+              },
+              "04f4349b-3abc-6c39-143c-3760970f4f67": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "row": 7,
+                "col": 0
+              },
+              "33d1125f-dca9-e75c-ea47-082b0372c737": {
+                "sizeX": 9,
+                "sizeY": 2,
+                "row": 0,
+                "col": 6
+              },
+              "6e03de53-10e7-d0b4-bd75-0f0803299efa": {
+                "sizeX": 9,
+                "sizeY": 2,
+                "row": 2,
+                "col": 6
+              },
+              "7d4e6df1-fbf6-d25f-ff6b-338168096bef": {
+                "sizeX": 9,
+                "sizeY": 3,
+                "row": 4,
+                "col": 6
+              },
+              "56eae6fd-4fbd-8375-b44e-2e713d91a75c": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 7,
+                "col": 11
+              },
+              "3448a6ae-c65c-ac77-2681-a6710f966e9b": {
+                "sizeX": 9,
+                "sizeY": 4,
+                "row": 0,
+                "col": 15
+              },
+              "a860f75a-c6ad-c1c4-eaa4-2f542be736f7": {
+                "sizeX": 9,
+                "sizeY": 7,
+                "row": 4,
+                "col": 15
+              },
+              "5cae9cf2-6c58-e088-59aa-872d42c7be99": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 7,
+                "col": 6
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": true,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "0d88d80b-890d-28f8-3b95-cb4b8fdf306e": {
+        "id": "0d88d80b-890d-28f8-3b95-cb4b8fdf306e",
+        "alias": "scada_rangdong_01",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "c2bc65a0-0744-11ec-aa5c-4fb6a5ca2375"
+          },
+          "resolveMultiple": false
+        }
+      },
+      "91de942b-b0b7-97ba-fa85-1aa1d4287993": {
+        "id": "91de942b-b0b7-97ba-fa85-1aa1d4287993",
+        "alias": "IOT_Device_01",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "9f397610-071a-11ec-aa5c-4fb6a5ca2375"
+          },
+          "resolveMultiple": false
+        }
+      },
+      "70945a76-faed-b96a-4373-2ea1e64f4ecc": {
+        "id": "70945a76-faed-b96a-4373-2ea1e64f4ecc",
+        "alias": "sensor01",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "81437710-0962-11ec-aa5c-4fb6a5ca2375"
+          },
+          "resolveMultiple": false
+        }
+      },
+      "5e111bb8-82c5-0867-9722-93093d6f028a": {
+        "id": "5e111bb8-82c5-0867-9722-93093d6f028a",
+        "alias": "thietbi",
+        "filter": {
+          "type": "assetSearchQuery",
+          "resolveMultiple": true,
+          "rootStateEntity": true,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null,
+          "rootEntity": null,
+          "direction": "FROM",
+          "maxLevel": 3,
+          "fetchLastLevelOnly": false,
+          "relationType": "Contains",
+          "assetTypes": [
+            "vline"
+          ]
+        }
+      },
+      "dcc40d11-eef2-e940-e558-b7b907f55fe8": {
+        "id": "dcc40d11-eef2-e940-e558-b7b907f55fe8",
+        "alias": "search",
+        "filter": {
+          "type": "assetSearchQuery",
+          "resolveMultiple": true,
+          "rootStateEntity": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null,
+          "rootEntity": {
+            "entityType": "USER",
+            "id": "1cb151e0-0b43-11ec-86ad-b5696cf4e5da"
+          },
+          "direction": "FROM",
+          "maxLevel": 2,
+          "fetchLastLevelOnly": false,
+          "relationType": "",
+          "assetTypes": [
+            "vline"
+          ]
+        }
+      },
+      "171bab42-7d88-6789-7cb4-a2142df0840e": {
+        "id": "171bab42-7d88-6789-7cb4-a2142df0840e",
+        "alias": "total_asset_tenant",
+        "filter": {
+          "type": "assetSearchQuery",
+          "resolveMultiple": true,
+          "rootStateEntity": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null,
+          "rootEntity": {
+            "entityType": "CURRENT_TENANT",
+            "id": "13814000-1dd2-11b2-8080-808080808080"
+          },
+          "direction": "FROM",
+          "maxLevel": 1,
+          "fetchLastLevelOnly": false,
+          "relationType": null,
+          "assetTypes": [
+            "vline"
+          ]
+        }
+      },
+      "dc4c8389-3e0f-323d-9aed-cc5a944fc3a2": {
+        "id": "dc4c8389-3e0f-323d-9aed-cc5a944fc3a2",
+        "alias": "new_dash_machine",
+        "filter": {
+          "type": "assetType",
+          "resolveMultiple": true,
+          "assetType": "machine",
+          "assetNameFilter": ""
+        }
+      },
+      "a1a1842b-239c-b06c-8f4f-fd0ed71c6e1a": {
+        "id": "a1a1842b-239c-b06c-8f4f-fd0ed71c6e1a",
+        "alias": "line_common_info",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      },
+      "051b6058-93ba-9500-e3e4-16c21be6098f": {
+        "id": "051b6058-93ba-9500-e3e4-16c21be6098f",
+        "alias": "máy đo nhiệt độ",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": true,
+          "singleEntity": {
+            "entityType": "ASSET",
+            "id": "face23f0-07c8-11ec-aa5c-4fb6a5ca2375"
+          }
+        }
+      },
+      "41e034ea-0041-00c7-c088-224284b49ac6": {
+        "id": "41e034ea-0041-00c7-c088-224284b49ac6",
+        "alias": "abc",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "ASSET",
+            "id": "58ad92a0-12df-11ec-a690-a1d1b9d0f546"
+          }
+        }
+      },
+      "196a2399-4897-1dca-1747-0a72ac9fc03f": {
+        "id": "196a2399-4897-1dca-1747-0a72ac9fc03f",
+        "alias": "1111",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "ASSET",
+            "id": "58ad92a0-12df-11ec-a690-a1d1b9d0f546"
+          }
+        }
+      },
+      "7aa77f45-f060-4cdc-7b92-ab63f59f0df3": {
+        "id": "7aa77f45-f060-4cdc-7b92-ab63f59f0df3",
+        "alias": "sanluong",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "ASSET",
+            "id": "58ad92a0-12df-11ec-a690-a1d1b9d0f546"
+          }
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 1,
+      "history": {
+        "historyType": 1,
+        "fixedTimewindow": {
+          "startTimeMs": 1631414953084.0366,
+          "endTimeMs": 1631414953627.259
+        },
+        "interval": 1000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": true,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)",
+      "showDashboardLogo": true,
+      "dashboardLogoUrl": null,
+      "hideToolbar": false,
+      "showFilters": true,
+      "showUpdateDashboardImage": true
+    }
+  },
+  "name": "Biểu đồ dây chuyền LRLKĐT"
+}

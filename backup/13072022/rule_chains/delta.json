@@ -1,0 +1,243 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "delta",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 9,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 838,
+          "layoutY": 536
+        },
+        "type": "org.thingsboard.rule.engine.rest.TbRestApiCallNode",
+        "name": "api_test",
+        "debugMode": false,
+        "configuration": {
+          "restEndpointUrlPattern": "http://localhost/api/test",
+          "requestMethod": "POST",
+          "useSimpleClientHttpFactory": false,
+          "enableProxy": false,
+          "useSystemProxyProperties": false,
+          "proxyScheme": null,
+          "proxyHost": null,
+          "proxyPort": 0,
+          "proxyUser": null,
+          "proxyPassword": null,
+          "readTimeoutMs": 0,
+          "maxParallelRequestsCount": 0,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          "useRedisQueueForMsgPersistence": false,
+          "trimQueue": false,
+          "maxQueueSize": 0,
+          "credentials": {
+            "type": "anonymous"
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 958,
+          "layoutY": 229
+        },
+        "type": "org.thingsboard.rule.engine.action.TbLogNode",
+        "name": "logs",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return 'Incoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 537,
+          "layoutY": 421
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "delta transform",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "        var newMsg = {};\r\n        \r\n        newMsg.deltaTemperature = parseFloat(Math.abs(metadata.indoorTemperature - metadata.outdoorTemperature).toFixed(2));\r\n        \r\n        return {\r\n        \tmsg: newMsg,\r\n        \tmetadata: metadata,\r\n        \tmsgType: msgType\r\n        };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 903,
+          "layoutY": 375
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save db",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 877,
+          "layoutY": 76
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "to asset",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "fetchLastLevelOnly": false,
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": [
+              {
+                "relationType": "Contains",
+                "entityTypes": [
+                  "ASSET"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 652,
+          "layoutY": 261
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "save timeserries",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 240,
+          "layoutY": 414
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "fetch lastest",
+        "debugMode": false,
+        "configuration": {
+          "tellFailureIfAbsent": false,
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [],
+          "latestTsKeyNames": [
+            "indoorTemperature",
+            "outdoorTemperature"
+          ],
+          "getLatestValueWithTs": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 532,
+          "layoutY": 31
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "indoor",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "         var newMsg = {};\r\n          \r\n         newMsg.indoorTemperature = msg.temperature;\r\n          \r\n         return {\r\n          \tmsg: newMsg,\r\n          \tmetadata: metadata,\r\n          \tmsgType: msgType\r\n         };\r\n         \r\n"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 527,
+          "layoutY": 149
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "outdoor",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "var newMsg = {};\r\n               \r\n         newMsg.outdoorTemperature = msg.temperature;\r\n               \r\n         return {\r\n            msg: newMsg,\r\n           \tmetadata: metadata,\r\n           \tmsgType: msgType\r\n         };"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 260,
+          "layoutY": 130
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "switchbyType",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "function nextRelation(metadata, msg) {\n    if (metadata.deviceType === 'indoor thermometer') {\n        return ['indoor'];\n        \n    } else if (metadata.deviceType === 'outdoor thermometer')\n        \t\treturn ['outdoor'];\n        \t\telse{\n        \t\t    return ['unknow'];\n        \t\t}\n        \t\t\n}\nreturn nextRelation(metadata, msg);"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 5,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 1,
+        "type": "Failure"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 6,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 8,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 8,
+        "type": "outdoor"
+      },
+      {
+        "fromIndex": 9,
+        "toIndex": 7,
+        "type": "indoor"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

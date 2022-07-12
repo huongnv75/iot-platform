@@ -1,0 +1,754 @@
+{
+  "title": "Quản lý lỗi -WoLine",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "9401d973-0cd9-419e-217c-9b326b1a4842": {
+        "isSystemType": true,
+        "bundleAlias": "common",
+        "typeAlias": "table_linhnv10",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "ce230830-95f4-a259-61ad-283ebf376d8d",
+              "filterId": "5036dbe5-6179-8f4a-7a10-fefb79daa0b6",
+              "dataKeys": [
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "Tên Wo_line",
+                  "color": "#009688",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.021423023855644097,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Po_Id",
+                  "type": "attribute",
+                  "label": "Mã PO",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.5635608935642533,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "STATUS",
+                  "type": "attribute",
+                  "label": "Trạng thái",
+                  "color": "#00bcd4",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": true,
+                    "useCellContentFunction": false,
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled",
+                    "cellStyleFunction": "switch (value) {\n    case 'Chờ SX':\n        // code\n            return { \n    color :'red'\n    };\n    case 'Đang chạy':\n        return {\n        color: 'green'\n    };    \n    case 'Tạm dừng':\n                return {\n        color: 'blue'\n    };\n    case 'Kết thúc':\n                return {\n        color: 'white'\n    };\n    default:\n        return {\n        color: 'white'\n    };\n        // code\n}\n\nif(value==\"Chờ SX\"){\n    return { \n    color :'red'\n    };\n}else{\n    return {\n        color: 'green'\n    };\n}"
+                  },
+                  "_hash": 0.8923323678691739,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "switch (value) {\n    case 0:\n        // code\n        return \"Tạm dừng\";\n    case 1:\n        return \"Đang chạy\";\n    case 2:\n        return \"Kết thúc\";\n    case 3:\n    return \"Tạm dừng\";\n    case 4:\n    return \"Kết thúc\";\n    default:\n    return \"Chờ SX\";\n        // code\n}"
+                },
+                {
+                  "name": "BRANCH",
+                  "type": "attribute",
+                  "label": "Đơn vị Sản xuất",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7986993269522487,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Wo_Id",
+                  "type": "attribute",
+                  "label": "Mã WO",
+                  "color": "#9c27b0",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.17190633543790046,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Lot_Number",
+                  "type": "attribute",
+                  "label": "Số lô",
+                  "color": "#3f51b5",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7835870941437835,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Number_Of_Planning",
+                  "type": "attribute",
+                  "label": "Sản lượng kế hoạch",
+                  "color": "#00bcd4",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6542523762586689,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Product_Code",
+                  "type": "attribute",
+                  "label": "Mã hàng hóa",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7560987928186313,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Product_Name",
+                  "type": "attribute",
+                  "label": "Tên hàng hóa",
+                  "color": "#607d8b",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.9113772147584565,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "asset_type",
+                  "type": "entityField",
+                  "label": "Tên dây chuyền",
+                  "color": "#673ab7",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "disabled"
+                  },
+                  "_hash": 0.04862963811918464,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Line_Id",
+                  "type": "attribute",
+                  "label": "Line_Id",
+                  "color": "#ff5722",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.44447447529142137,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "list_stage",
+                  "type": "timeseries",
+                  "label": "Sản lượng đầu vào",
+                  "color": "#00bcd4",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6805648425683499,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "\t//var json = ${list_stage}\n\t\n\t//var input = value[0].Number_Of_Input;\nfunction cacluclateInput(d) {\n    try {\n    return d[0].Number_Of_Input;\n    }catch{\n        return 0;\n    }\n}\n\nreturn cacluclateInput(value);"
+                },
+                {
+                  "name": "Number_Of_Output",
+                  "type": "timeseries",
+                  "label": "Sản lượng hoàn thành",
+                  "color": "#ff5722",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6281839206727107,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "cycletime",
+                  "type": "attribute",
+                  "label": "Cycle time trunh bình",
+                  "color": "#e91e63",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.5522326632204182,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Tỉ lệ hoàn thành",
+                  "type": "attribute",
+                  "label": "Tỉ lệ hoàn thành",
+                  "color": "#db2323",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7552719898147848,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "Running_Time",
+                  "type": "timeseries",
+                  "label": "Thời gian chạy",
+                  "color": "#ffeb3b",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.5206980409755175,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "function secondsToHms(d) {\n    if(d==0) return \"00:00:00\"\n    d = Number(d)/1000;\n    var h = Math.floor(d / 3600);\n    var m = Math.floor(d % 3600 / 60);\n    var s = Math.floor(d % 3600 % 60);\n    //var hDisplay = h > 0 ? h + (h == 1 ? \" hour, \" : \" hours, \") : \"\";\n    //var mDisplay = m > 0 ? m + (m == 1 ? \" minute, \" : \" minutes, \") : \"\";\n    //var sDisplay = s > 0 ? s + (s == 1 ? \" second\" : \" seconds\") : \"\";\n    var hDisplay = h > 0 ? h + (h == 1 ? \":\" : \":\") : \"\";\n    var mDisplay = m > 0 ? m + (m == 1 ? \":\" : \":\") : \"\";\n    var sDisplay = s > 0 ? s + (s == 1 ? \"\" : \"\") : \"\";\n    return hDisplay + mDisplay + sDisplay; \n}\nreturn secondsToHms(value);"
+                },
+                {
+                  "name": "Stopping_Time",
+                  "type": "timeseries",
+                  "label": "Thời gian dừng",
+                  "color": "#03a9f4",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.953941820260148,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "function secondsToHms(d) {\n    if(d==0) return \"00:00:00\"\n    d = Number(d)/1000;\n    var h = Math.floor(d / 3600);\n    var m = Math.floor(d % 3600 / 60);\n    var s = Math.floor(d % 3600 % 60);\n    //var hDisplay = h > 0 ? h + (h == 1 ? \" hour, \" : \" hours, \") : \"\";\n    //var mDisplay = m > 0 ? m + (m == 1 ? \" minute, \" : \" minutes, \") : \"\";\n    //var sDisplay = s > 0 ? s + (s == 1 ? \" second\" : \" seconds\") : \"\";\n    var hDisplay = h > 0 ? h + (h == 1 ? \":\" : \":\") : \"\";\n    var mDisplay = m > 0 ? m + (m == 1 ? \":\" : \":\") : \"\";\n    var sDisplay = s > 0 ? s + (s == 1 ? \"\" : \"\") : \"\";\n    return hDisplay + mDisplay + sDisplay; \n}\nreturn secondsToHms(value);"
+                },
+                {
+                  "name": "createdTime",
+                  "type": "entityField",
+                  "label": "Ngày sản xuất",
+                  "color": "#ff9800",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.10807888713820657,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "time",
+                  "type": "attribute",
+                  "label": "time",
+                  "color": "#cddc39",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.9883869138639187
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#020202",
+          "color": "rgba(240,236,235,0.87)",
+          "padding": "2px",
+          "settings": {
+            "enableSearch": true,
+            "enableSelectColumnDisplay": true,
+            "enableStickyHeader": true,
+            "enableStickyAction": true,
+            "displayEntityName": false,
+            "displayEntityType": false,
+            "displayPagination": true,
+            "defaultPageSize": 30,
+            "useRowStyleFunction": true,
+            "entitiesTitle": "Danh sách Wo_Line",
+            "defaultSortOrder": "-createdTime",
+            "entityNameColumnTitle": "Tên Wo_Line",
+            "rowStyleFunction": "result = {background:\"white\"};\r\nif (entity.assetType.includes(\"LKDT\")==false) {\r\n   result.background = '#FF0000';\r\n} else {\r\n   result.background = '#00FF00';\r\n}\r\nreturn result;"
+          },
+          "title": "DANH SÁCH WO_LINE",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "border": "3px solode #0000",
+            "cusor": "pointer",
+            "fontWeight": 300
+          },
+          "titleStyle": {
+            "fontSize": "24px",
+            "fontWeight": 800,
+            "color": "red",
+            "font": "tahoma"
+          },
+          "showLegend": false,
+          "actions": {
+            "rowDoubleClick": [
+              {
+                "name": "$(name)",
+                "icon": "more_horiz",
+                "type": "updateDashboardState",
+                "targetDashboardStateId": "stage_err_list",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openRightLayout": false,
+                "id": "5ce99879-09ae-6f84-38d3-c8d943c4044b"
+              }
+            ]
+          },
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": false,
+            "showTotal": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9401d973-0cd9-419e-217c-9b326b1a4842"
+      },
+      "1161aa30-c972-fc0e-7506-670424832261": {
+        "isSystemType": false,
+        "bundleAlias": "ecyber",
+        "typeAlias": "tutt20",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "3f8476b5-1126-591f-a4b5-84f8c2a0fb6a",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "list_stage",
+                  "type": "timeseries",
+                  "label": "list_stage",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5812641497059274
+                },
+                {
+                  "name": "Product_Code",
+                  "type": "attribute",
+                  "label": "Product_Code",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.8163271060226267
+                },
+                {
+                  "name": "Product_Name",
+                  "type": "attribute",
+                  "label": "Product_Name",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.8690330729930207
+                },
+                {
+                  "name": "Wo_Id",
+                  "type": "attribute",
+                  "label": "Wo_Id",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.035451627600872726
+                },
+                {
+                  "name": "Lot_Number",
+                  "type": "attribute",
+                  "label": "Lot_Number",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.2881710619005897
+                },
+                {
+                  "name": "Note_9",
+                  "type": "timeseries",
+                  "label": "Note_9",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.05824742002361649,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return \"xxxxxx\";"
+                },
+                {
+                  "name": "errCommonHMI",
+                  "type": "timeseries",
+                  "label": "errCommonHMI",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.8238211140903844
+                },
+                {
+                  "name": "Group_Products",
+                  "type": "attribute",
+                  "label": "Group_Products",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.6763909880045493
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "Khai báo lỗi",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "1161aa30-c972-fc0e-7506-670424832261"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Quản lý lỗi -WoLine",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "9401d973-0cd9-419e-217c-9b326b1a4842": {
+                "sizeX": 25,
+                "sizeY": 18,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      },
+      "stage_err_list": {
+        "name": "stage_err_list",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "1161aa30-c972-fc0e-7506-670424832261": {
+                "sizeX": 24,
+                "sizeY": 8,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "ce230830-95f4-a259-61ad-283ebf376d8d": {
+        "id": "ce230830-95f4-a259-61ad-283ebf376d8d",
+        "alias": "day chuyen",
+        "filter": {
+          "type": "entityType",
+          "resolveMultiple": true,
+          "entityType": "ASSET"
+        }
+      },
+      "3f8476b5-1126-591f-a4b5-84f8c2a0fb6a": {
+        "id": "3f8476b5-1126-591f-a4b5-84f8c2a0fb6a",
+        "alias": "detail",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": true,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "filters": {
+      "5036dbe5-6179-8f4a-7a10-fefb79daa0b6": {
+        "id": "5036dbe5-6179-8f4a-7a10-fefb79daa0b6",
+        "filter": "vline",
+        "keyFilters": [
+          {
+            "key": {
+              "type": "ENTITY_FIELD",
+              "key": "type"
+            },
+            "valueType": "STRING",
+            "predicates": [
+              {
+                "keyFilterPredicate": {
+                  "operation": "STARTS_WITH",
+                  "value": {
+                    "defaultValue": "vline_",
+                    "dynamicValue": null
+                  },
+                  "ignoreCase": false,
+                  "type": "STRING"
+                },
+                "userInfo": {
+                  "editable": true,
+                  "label": "",
+                  "autogeneratedLabel": true,
+                  "order": 0
+                }
+              }
+            ]
+          }
+        ],
+        "editable": true
+      }
+    },
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY"
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1644742140202,
+          "endTimeMs": 1644828540202
+        },
+        "quickInterval": "CURRENT_DAY"
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Quản lý lỗi -WoLine"
+}
