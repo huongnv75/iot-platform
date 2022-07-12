@@ -22,8 +22,9 @@ function getAccessToken() {
                 resolve(response.data.access_token);
             })
             .catch(function(error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                //reject(null);
+                if (error.response.status != 401) {
+                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+                }                //reject(null);
             })
     });
 }

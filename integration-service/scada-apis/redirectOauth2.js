@@ -16,8 +16,9 @@ function redirectOauth2() {
                 resolve(response.data);
             })
             .catch(function(error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                //reject(null);
+                if (error.response.status != 401) {
+                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+                }                //reject(null);
             })
     });
 }

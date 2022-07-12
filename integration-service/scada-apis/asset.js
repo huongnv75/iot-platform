@@ -17,8 +17,9 @@ function getAssetIdByName(token, name) {
                 resolve(data.id.id);
             })
             .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                //reject(null);
+                if (error.response.status != 401) {
+                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+                }                //reject(null);
             })
     });
 }
@@ -35,8 +36,9 @@ function getAssetAttributesById(token, assetId) {
                 resolve(data.value);
             })
             .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                //reject(null);
+                if (error.response.status != 401) {
+                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+                }                //reject(null);
             })
     });
 }
