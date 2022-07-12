@@ -6,7 +6,7 @@ maps.set('Quản lý Sản phẩm', 'Quản lý sản phẩm');
 maps.set('Quản lý thiết bị IOT', 'Danh mục thiết bị');
 maps.set('Quản lí công đoạn', 'Quản lí công đoạn');
 maps.set('Quản lý lỗi', 'Quản lý lỗi -WoLine');
-maps.set('Quản lí nhóm lỗi', 'Quản lí nhóm lỗi');
+maps.set('Quản lý nhóm lỗi', 'Quản lí nhóm lỗi');
 maps.set('Khai báo lỗi', 'Quản lý và khai báo danh sách lỗi');
 maps.set('Khai báo lỗi HMI', 'Quản lý và khai báo lỗi HMI');
 maps.set('Khai báo lỗi cho lệnh sản xuất', 'Khai báo lỗi theo công đoạn');
