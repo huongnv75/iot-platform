@@ -3,7 +3,9 @@ module.exports = {
     app: {
         port: process.env.APP_PORT || 3002,
         pageSize: process.env.APP_PAGE_SIZE || 100,
-        cronJob: process.env.APP_CRONT_JOB || "* * * * * *"
+        cronJob: process.env.APP_CRONT_JOB || "* * * * * *",
+        enableCronJob: process.env.APP_ENBALE_CRON_JOB || false,
+        enableIntegrationApis: process.env.APP_ENABLE_INTEGRATION_APIS || false
     },
     keycloak: {
         baseUrl: process.env.KEYCLOAK_BASE_URL,

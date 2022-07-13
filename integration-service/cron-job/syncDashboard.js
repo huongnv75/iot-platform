@@ -12,8 +12,7 @@ function synchroDashboardsDatabase() {
                     scada.getCustomerDashboards(scadaToken, customer.id).then(oldDashboards => {
                         keycloak.getGroups(keycloakToken).then(keycloakGroups => {
                             for (const group of keycloakGroups) {
-                                //if (group.name == customer.name) {
-                                if (group.name == "Check_12") {
+                                if (group.name == customer.name) {
                                         keycloak.getGroupRoleMappings(keycloakToken, group.id).then(roles => {
                                         scada.getAllDashboards(scadaToken).then(dashboards => {
                                             // kiểm tra xem trong những roles của keycloak, scada chưa có dashboard nào thì thêm vào

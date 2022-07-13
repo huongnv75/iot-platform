@@ -19,13 +19,30 @@ app.use(cors())
 const cron = require('node-cron');
 const scada = require('./scada-apis');
 const keycloak = require('./keycloak-apis');
+const publics = require('./public-apis');
 
-cron.schedule(config.app.cronJob, () => {
-    cronJobFunction.synchroCustomerUsersDatabase();
-    // cronJobFunction.synchroTenantUsersDatabase();
-    cronJobFunction.synchroDashboardsDatabase();
-});
-
+// cronjob đồng bộ dữ liệu từ Keycloak sang Scada
+if (config.app.enableCronJob) {
+    cron.schedule(config.app.cronJob, () => {
+        cronJobFunction.synchroUsersDatabase();
+        // cronJobFunction.synchroCustomerUsersDatabase();
+        // cronJobFunction.synchroTenantUsersDatabase();
+        cronJobFunction.synchroDashboardsDatabase();
+    });
+}
+//intergration apis là bổ sung các api cho các bảng mới
+if (config.app.enableIntegrationApis) {
+    pgtools.createdb(config.database, config.database.schemal, function (error) {
+        if (error) {
+            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+        }
+        db.sequelize.sync().then(() => {
+            app.use('/api', require('./integration-apis'));
+        }).catch((error) => {
+            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
+        });
+    });
+}
 //resources cho các plugin add vào thư viện
 app.use('/resources', express.static(path.join(__dirname, 'resources')));
 
@@ -34,79 +51,21 @@ app.get('/', (req, res) => {
     scada.redirectOauth2().then(data => {
         res.redirect(config.scada.baseUrl + data[0]?.url);
     }).catch((error) => { res.status(400).send(error); });
-
 });
 
 //api roles là để show thông tin của user trên scada
 app.get('/roles', (req, res) => {
-    keycloak.getAccessToken().then((token) => {
-        keycloak.getUsers(token, req.query.user).then((data) => {
-            if (data.length > 0) {
-                let userId = data[0].id;
-                keycloak.getUserRoleMappings(token, userId).then((roles) => {
-                    scada.getToken().then((scadaToken) => {
-                        scada.getHomeDashboard(scadaToken).then((homeDashboard) => {
-                            if (homeDashboard) {
-                                let widgets = homeDashboard.configuration.widgets;
-                                let states = homeDashboard.configuration.states.default.layouts.main.widgets;
-                                let filterWidgets = {};
-                                let filterStates = {};
-                                let arrayFilterIndex = [];
-                                let arrayStates = [];
-                                for (let key in widgets) {
-                                    let item = widgets[key];
-                                    arrayStates.push(states[key]);
-                                    if (roles.indexOf(item.config.settings.name) >= 0) {
-                                        filterWidgets[key] = item;
-                                        arrayFilterIndex.push(key);
-                                    }
-                                }
-                                for (var ịndex = 0; ịndex < arrayFilterIndex.length; ịndex++) {
-                                    filterStates[arrayFilterIndex[ịndex]] = arrayStates[ịndex];
-                                }
-                                homeDashboard.configuration.widgets = filterWidgets;
-                                homeDashboard.configuration.states.default.layouts.main.widgets = filterStates;
-                                homeDashboard.roles = roles;
-                                res.status(200).send(homeDashboard);
-                            } else {
-                                let homeDashboard = {};
-                                homeDashboard.roles = roles;
-                                res.status(200).send(homeDashboard);
-                            }
-
-                        })
-                    })
-                })
-            } else {
-                let homeDashboard = {};
-                homeDashboard.roles = [];
-                res.status(200).send(homeDashboard);
-            }
-        })
+    publics.getRoles(req.query.user).then((data) => {
+        res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
 });
 
 //api roles là để show thông tin của user trên scada
 app.get('/publicAsset', (req, res) => {
-    scada.getToken().then((token)=>{
-        scada.getAssetIdByName(token, req.query.name || "COMMON").then((id)=>{
-            scada.getAssetAttributesById(token, id).then((data)=>{
-                res.status(200).send(data);
-            })
-        })
-    })
+    publics.getPublicAsset(req.query.name).then((data) => {
+        res.status(200).send(data);
+    }).catch((error) => { res.status(400).send(error); });
 })
-
-//intergration apis là bổ sung các api cho các bảng mới
-// pgtools.createdb(config.database, config.database.schemal, function (error) {
-//     if (error) {
-//         log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-//     }
-//     db.sequelize.sync().then(() => {
-//         app.use('/api', require('./integration-apis'));
-//     });
-// });
-
 
 app.listen(config.app.port, () => {
     log.info('@App running on port ' + config.app.port);
