@@ -16,9 +16,8 @@ function getGroups(token) {
                 resolve(response.data);
             })
             .catch(function (error) {
-                if (error.response?.status != 401) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                }
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+
                 //reject(null);
             })
     });
@@ -35,9 +34,8 @@ function getGroupRoleMappings(token, groupId) {
                 resolve(response.data.map(function (a) { return a.name; }));
             })
             .catch(function (error) {
-                if (error.response?.status != 401) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                }
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+
                                 //reject(null);
             })
     });
@@ -54,9 +52,8 @@ function getGroupMembers(token, groupId) {
                 resolve(response.data);
             })
             .catch(function (error) {
-                if (error.response?.status != 401) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                }                //reject(null);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                //reject(null);
             })
     });
 }
