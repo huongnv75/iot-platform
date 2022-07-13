@@ -70,7 +70,7 @@ app.get('/publicAsset', (req, res) => {
 })
 
 app.listen(config.app.port, () => {
-    log.info('@App running on port ' + config.app.port);
+    log.info('###App running on port ' + config.app.port);
 });
 //test
 // let x = global.yamlToJson(path.join(__dirname, 'test.yaml'));
