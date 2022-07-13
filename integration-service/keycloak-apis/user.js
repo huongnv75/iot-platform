@@ -20,7 +20,7 @@ function getUsers(token, search) {
                 resolve(response.data);
             })
             .catch(function(error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
                 //reject(null);
             })
     });
@@ -37,7 +37,7 @@ function getUserRoleMappings(token, userId) {
                 resolve(response.data.map(function(a) { return a.name; }));
             })
             .catch(function(error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
                 //reject(null);
             })
     });

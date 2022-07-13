@@ -17,7 +17,7 @@ function getCustomerUsers(token, customerId) {
                 resolve(response.data.data);
             })
             .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
                 //reject(null);
             })
     });
@@ -48,7 +48,7 @@ function createCustomerUser(token, customer, email) {
             })
             .catch(function (error) {
                 if (error.response?.status != 401 && error.response?.status != 400) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
 
                 }            })
     });
@@ -65,7 +65,7 @@ function getTenantUsers(token, tenantId) {
                 resolve(response.data.data);
             })
             .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
                 //reject(null);
             })
     });
@@ -94,9 +94,8 @@ function createTenantUser(token, tenantId, email) {
                 resolve(response.data);
             })
             .catch(function (error) {
-                if (error.response?.status != 401) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
-                }            })
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
+            })
     });
 }
 
@@ -111,7 +110,7 @@ function deleteUser(token, userId) {
                 resolve(response.data);
             })
             .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
                 //reject(null);
             })
     });
@@ -129,7 +128,7 @@ function activeUser(token, user) {
 
             })
             .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.response.data?.message);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response.data?.message);
 
                 //reject(null);
             })

@@ -32,7 +32,7 @@ global.getLogger = function getLogger(module) {
         transports: [
             new winston.transports.Console({
                 format: winston.format.printf(options => {
-                    return `[${getLabel(module)}:${options.message.split("@")[0]}] ${options.level}: ${options.message.split("@")[1]}`;
+                    return `[${getLabel(module)}:${options.message.split("###")[0]}] ${options.level}: ${options.message.split("###")[1]}`;
                 })
             })
         ]
