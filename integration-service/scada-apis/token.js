@@ -20,9 +20,7 @@ function getToken(username, password) {
                 resolve(response.data.token);
             })
             .catch(function(error) {
-                if (error.response?.status != 401) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                }                //reject(null);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);                //reject(null);
             })
     });
 }

@@ -17,9 +17,7 @@ function getCustomers(token) {
                 resolve(data.map(function (a) { return { name: a.name, id: a.id.id } }));
             })
             .catch(function (error) {
-                if (error.response?.status != 401) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                }                //reject(null);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);                //reject(null);
             })
     });
 }
@@ -35,9 +33,7 @@ function detailCustomer(token, customerId) {
                 resolve(response.data);
             })
             .catch(function (error) {
-                if (error.response?.status != 401) {
-                    log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '@' + error.message);
-                }
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);
                         });
     })
 }
