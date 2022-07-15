@@ -197,7 +197,6 @@ export class AuthService {
   public gotoDefaultPlace(isAuthenticated: boolean) {
     if (!isMobileApp()) {
       const authState = getCurrentAuthState(this.store);
-      localStorage.setItem('user',authState.userDetails.email);
 
       const url = this.defaultUrl(isAuthenticated, authState);
       this.zone.run(() => {

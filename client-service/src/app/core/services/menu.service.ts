@@ -40,43 +40,36 @@ export class MenuService {
 
   }
   constructor(private store: Store<AppState>, private authService: AuthService, private dashboardService: DashboardService) {
-    this.store.pipe(select(selectIsAuthenticated)).subscribe(
-      (authenticated: boolean) => {
-        if (authenticated) {
-          this.dashboardService.getHomeDashboard().subscribe(homeDashboard => {
-            this.buildMenu(homeDashboard);
+    this.store.pipe(select(selectAuth)).subscribe(
+      (authState: AuthState) => {
+        if (authState.authUser) {
+          this.dashboardService.getHomeDashboard(authState.userDetails?.email).subscribe(homeDashboard => {
+            this.buildMenu(homeDashboard, authState);
           })
         }
       }
     );
   }
 
-  private buildMenu(data) {
-    this.store.pipe(select(selectAuth), take(1)).subscribe(
-      (authState: AuthState) => {
-        if (authState.authUser) {
-          let menuSections: Array<MenuSection>;
-          let homeSections: Array<HomeSection>;
-          switch (authState.authUser.authority) {
-            case Authority.SYS_ADMIN:
-              menuSections = this.buildSysAdminMenu(authState);
-              homeSections = this.buildSysAdminHome(authState);
-              break;
-            case Authority.TENANT_ADMIN:
-              // menuSections = this.buildTenantAdminMenuOld(authState);
-              menuSections = this.buildTenantAdminMenu(authState, data);
-              homeSections = this.buildTenantAdminHome(authState);
-              break;
-            case Authority.CUSTOMER_USER:
-              menuSections = this.buildCustomerUserMenu(authState);
-              homeSections = this.buildCustomerUserHome(authState);
-              break;
-          }
-          this.menuSections$.next(menuSections);
-          this.homeSections$.next(homeSections);
-        }
-      }
-    );
+  private buildMenu(data, authState) {
+    let menuSections: Array<MenuSection>;
+    let homeSections: Array<HomeSection>;
+    switch (authState.authUser.authority) {
+      case Authority.SYS_ADMIN:
+        menuSections = this.buildSysAdminMenu(authState);
+        homeSections = this.buildSysAdminHome(authState);
+        break;
+      case Authority.TENANT_ADMIN:
+        menuSections = this.buildTenantAdminMenu(authState, data);
+        homeSections = this.buildTenantAdminHome(authState);
+        break;
+      case Authority.CUSTOMER_USER:
+        menuSections = this.buildCustomerUserMenu(authState, data);
+        homeSections = this.buildCustomerUserHome(authState);
+        break;
+    }
+    this.menuSections$.next(menuSections);
+    this.homeSections$.next(homeSections);
   }
 
   private buildSysAdminMenu(authState: AuthState): Array<MenuSection> {
@@ -410,9 +403,9 @@ export class MenuService {
     );
     return sections;
   }
+
   private buildTenantAdminMenu(authState: AuthState, data: any): Array<MenuSection> {
     let sections: Array<MenuSection> = [];
-    console.log('authState---->', authState);
     sections.push(
       {
         id: guid(),
@@ -423,28 +416,17 @@ export class MenuService {
         icon: 'home'
       }
     );
-    if (data.roles.includes('Quản lý đối tượng')) {
-      sections.push(
-        {
-          id: guid(),
-          name: 'asset.assets',
-          type: 'link',
-          path: '/assets',
-          icon: 'domain'
-        }
-      )
-    }
-    if (data.roles.includes('Quản lý sản phẩm_version2')) {
-      sections.push(
-        {
-          id: guid(),
-          name: 'Sản phẩm',
-          type: 'link',
-          path: '/product',
-          icon: 'settings_backup_restore'
-        }
-      )
-    }
+    // if (data.roles.includes('Quản lý sản phẩm_version2')) {
+    //   sections.push(
+    //     {
+    //       id: guid(),
+    //       name: 'Sản phẩm',
+    //       type: 'link',
+    //       path: '/product',
+    //       icon: 'settings_backup_restore'
+    //     }
+    //   )
+    // }
     if (data.configuration) {
       let widgets = data.configuration.widgets;
       for (let index in widgets) {
@@ -460,8 +442,17 @@ export class MenuService {
           }
         )
       }
-    } else {
-      // location.reload();
+    }
+    if (data.roles.includes('Quản lý đối tượng')) {
+      sections.push(
+        {
+          id: guid(),
+          name: 'asset.assets',
+          type: 'link',
+          path: '/assets',
+          icon: 'domain'
+        }
+      )
     }
     return sections;
   }
@@ -600,7 +591,7 @@ export class MenuService {
     return homeSections;
   }
 
-  private buildCustomerUserMenu(authState: AuthState): Array<MenuSection> {
+  private buildCustomerUserMenuOld(authState: AuthState): Array<MenuSection> {
     const sections: Array<MenuSection> = [];
     sections.push(
       {
@@ -611,6 +602,80 @@ export class MenuService {
         notExact: true,
         icon: 'home'
       },
+      {
+        id: guid(),
+        name: 'asset.assets',
+        type: 'link',
+        path: '/assets',
+        icon: 'domain'
+      },
+      {
+        id: guid(),
+        name: 'device.devices',
+        type: 'link',
+        path: '/devices',
+        icon: 'devices_other'
+      },
+      {
+        id: guid(),
+        name: 'entity-view.entity-views',
+        type: 'link',
+        path: '/entityViews',
+        icon: 'view_quilt'
+      }
+    );
+    if (authState.edgesSupportEnabled) {
+      sections.push(
+        {
+          id: guid(),
+          name: 'edge.edge-instances',
+          type: 'link',
+          path: '/edgeInstances',
+          icon: 'router'
+        }
+      );
+    }
+    sections.push(
+      {
+        id: guid(),
+        name: 'dashboard.dashboards',
+        type: 'link',
+        path: '/dashboards',
+        icon: 'dashboard'
+      }
+    );
+    return sections;
+  }
+
+  private buildCustomerUserMenu(authState: AuthState, data: any): Array<MenuSection> {
+    const sections: Array<MenuSection> = [];
+    sections.push(
+      {
+        id: guid(),
+        name: 'home.home',
+        type: 'link',
+        path: '/home',
+        notExact: true,
+        icon: 'home'
+      }
+    );
+    if (data.configuration) {
+      let widgets = data.configuration.widgets;
+      for (let index in widgets) {
+        let item = widgets[index];
+        sections.push(
+          {
+            id: guid(),
+            name: item.config.settings.name,
+            type: 'link',
+            path: item.config.settings.path,
+            notExact: true,
+            icon: item.config.settings.icon
+          }
+        )
+      }
+    }
+    sections.push(
       {
         id: guid(),
         name: 'asset.assets',
