@@ -5,5 +5,6 @@ module.exports = {
     ...require('./customer'),
     ...require('./dashboard'),
     ...require('./asset'),
-    ...require('./tenant')
+    ...require('./tenant'),
+    ...require('./log')
 };

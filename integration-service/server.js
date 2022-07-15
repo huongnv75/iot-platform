@@ -28,20 +28,19 @@ if (config.app.enableCronJob) {
         // cronJobFunction.synchroCustomerUsersDatabase();
         // cronJobFunction.synchroTenantUsersDatabase();
         cronJobFunction.synchroDashboardsDatabase();
+        cronJobFunction.deleteLogDatabase();
     });
 }
 //intergration apis là bổ sung các api cho các bảng mới
 if (config.app.enableIntegrationApis) {
     pgtools.createdb(config.database, config.database.schemal, function (error) {
         if (error) {
-            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);
-
+            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.message);
         }
         db.sequelize.sync().then(() => {
             app.use('/api', require('./integration-apis'));
         }).catch((error) => {
             log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);
-
         });
     });
 }

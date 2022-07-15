@@ -1,4 +1,5 @@
 module.exports = {
     ...require('./syncUser'),
-    ...require('./syncDashboard')
+    ...require('./syncDashboard'),
+    ...require('./syncLog')
 };
