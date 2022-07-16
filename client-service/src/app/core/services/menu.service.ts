@@ -443,7 +443,7 @@ export class MenuService {
         )
       }
     }
-    if (data.roles.includes('Quản lý đối tượng')) {
+    if(data.roles.includes('manager_scada')){
       sections.push(
         {
           id: guid(),
@@ -451,8 +451,82 @@ export class MenuService {
           type: 'link',
           path: '/assets',
           icon: 'domain'
+        },
+        {
+          id: guid(),
+          name: 'device.devices',
+          type: 'link',
+          path: '/devices',
+          icon: 'devices_other'
+        },
+        {
+          id: guid(),
+          name: 'device-profile.device-profiles',
+          type: 'link',
+          path: '/deviceProfiles',
+          icon: 'mdi:alpha-d-box',
+          isMdiIcon: true
+        },
+        {
+          id: guid(),
+          name: 'ota-update.ota-updates',
+          type: 'link',
+          path: '/otaUpdates',
+          icon: 'memory'
+        },
+        {
+          id: guid(),
+          name: 'entity-view.entity-views',
+          type: 'link',
+          path: '/entityViews',
+          icon: 'view_quilt'
+        },
+        {
+          id: guid(),
+          name: 'Device Management',
+          type: 'link',
+          path: '/device-management',
+          icon: 'devices_other'
+        },
+        {
+          id: guid(),
+          name: 'rulechain.rulechains',
+          type: 'link',
+          path: '/ruleChains',
+          icon: 'settings_ethernet'
+        },
+        {
+          id: guid(),
+          name: 'widget.widget-library',
+          type: 'link',
+          path: '/widgets-bundles',
+          icon: 'now_widgets'
+        },
+        {
+          id: guid(),
+          name: 'admin.system-settings',
+          type: 'toggle',
+          path: '/settings',
+          height: '80px',
+          icon: 'settings',
+          pages: [
+            {
+              id: guid(),
+              name: 'admin.home-settings',
+              type: 'link',
+              path: '/settings/home',
+              icon: 'settings_applications'
+            },
+            {
+              id: guid(),
+              name: 'resource.resources-library',
+              type: 'link',
+              path: '/settings/resources-library',
+              icon: 'folder'
+            }
+          ]
         }
-      )
+        )
     }
     return sections;
   }
