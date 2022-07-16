@@ -675,49 +675,49 @@ export class MenuService {
         )
       }
     }
-    sections.push(
-      {
-        id: guid(),
-        name: 'asset.assets',
-        type: 'link',
-        path: '/assets',
-        icon: 'domain'
-      },
-      {
-        id: guid(),
-        name: 'device.devices',
-        type: 'link',
-        path: '/devices',
-        icon: 'devices_other'
-      },
-      {
-        id: guid(),
-        name: 'entity-view.entity-views',
-        type: 'link',
-        path: '/entityViews',
-        icon: 'view_quilt'
-      }
-    );
-    if (authState.edgesSupportEnabled) {
-      sections.push(
-        {
-          id: guid(),
-          name: 'edge.edge-instances',
-          type: 'link',
-          path: '/edgeInstances',
-          icon: 'router'
-        }
-      );
-    }
-    sections.push(
-      {
-        id: guid(),
-        name: 'dashboard.dashboards',
-        type: 'link',
-        path: '/dashboards',
-        icon: 'dashboard'
-      }
-    );
+    // sections.push(
+    //   {
+    //     id: guid(),
+    //     name: 'asset.assets',
+    //     type: 'link',
+    //     path: '/assets',
+    //     icon: 'domain'
+    //   },
+    //   {
+    //     id: guid(),
+    //     name: 'device.devices',
+    //     type: 'link',
+    //     path: '/devices',
+    //     icon: 'devices_other'
+    //   },
+    //   {
+    //     id: guid(),
+    //     name: 'entity-view.entity-views',
+    //     type: 'link',
+    //     path: '/entityViews',
+    //     icon: 'view_quilt'
+    //   }
+    // );
+    // if (authState.edgesSupportEnabled) {
+    //   sections.push(
+    //     {
+    //       id: guid(),
+    //       name: 'edge.edge-instances',
+    //       type: 'link',
+    //       path: '/edgeInstances',
+    //       icon: 'router'
+    //     }
+    //   );
+    // }
+    // sections.push(
+    //   {
+    //     id: guid(),
+    //     name: 'dashboard.dashboards',
+    //     type: 'link',
+    //     path: '/dashboards',
+    //     icon: 'dashboard'
+    //   }
+    // );
     return sections;
   }
 
