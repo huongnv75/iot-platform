@@ -172,7 +172,7 @@ function synchroUsersDatabase() {
                                         // check group nếu có quyền admin
                                         keycloak.getGroupRoleMappings(keycloakToken, group.id).then(roles => {
                                             if (roles.length > 0) {
-                                                if (roles.includes('admin_scada')) {
+                                                if (roles.includes('admin_scada') || roles.includes('manager_scada')) {
                                                     keycloak.getGroupMembers(keycloakToken, group.id).then(keycloakUsers => {
                                                         let email = null;
                                                         // kiểm tra xem trong keycloak có user nào thêm mà scada chưa thêm thì thêm

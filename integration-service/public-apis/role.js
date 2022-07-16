@@ -17,12 +17,21 @@ function getRoles(username) {
                                     let filterStates = {};
                                     let arrayFilterIndex = [];
                                     let arrayStates = [];
-                                    for (let key in widgets) {
-                                        let item = widgets[key];
-                                        arrayStates.push(states[key]);
-                                        if (roles.indexOf(item.config.settings.name) >= 0) {
+                                    if(roles.includes('manager_scada')){
+                                        for (let key in widgets) {
+                                            let item = widgets[key];
+                                            arrayStates.push(states[key]);
                                             filterWidgets[key] = item;
                                             arrayFilterIndex.push(key);
+                                        }
+                                    } else {
+                                        for (let key in widgets) {
+                                            let item = widgets[key];
+                                            arrayStates.push(states[key]);
+                                            if (roles.indexOf(item.config.settings.name) >= 0) {
+                                                filterWidgets[key] = item;
+                                                arrayFilterIndex.push(key);
+                                            }
                                         }
                                     }
                                     for (var ịndex = 0; ịndex < arrayFilterIndex.length; ịndex++) {
