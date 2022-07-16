@@ -14,7 +14,11 @@
       ├── resources: các file js,css dùng cho widget library.
       ├── scada-apis: các api của Scada.
       ├── utils: chưa hàm dùng chung và các đường link API.
-      └──  dev.env: Biến môi trường khi sử dụng thì phải chuyển thành .env file.
+      ├── product.env: Biến môi trường khi sử dụng môi trường production.
+      ├── server.js: File chạy đầu tiên của chương trình.
+      ├── package-lock.json: Chứa version thư viện.
+      ├── package.json: Chứa version thư viện.      
+      └──  dev.env: Biến môi trường khi sử dụng môi trường dev.
 ```
 # Thông tin triển khai
 ## Pre-deployment:
