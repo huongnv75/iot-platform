@@ -35,6 +35,8 @@ module.exports = Object.freeze({
     SCADA_CUSTOMER_DASHBOARDS: '/api/customer/customerId/dashboards?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_TENANT_DASHBOARDS: '/api/tenant/tenantId/dashboards?pageSize=' + config.app.pageSize + '&page=0&sortProperty=createdTime&sortOrder=DESC',
     SCADA_UPDATE_DASHBOARD: '/api/customer/customerId/dashboard/dashboardId',
+
+    SCADA_GET_ASSETS: '/api/tenant/assetInfos?pageSize=_pageSize_&page=_page_&textSearch=_textSearch_&sortProperty=createdTime&sortOrder=DESC&type=_type_',
     SCADA_GET_ASSET_ID_BY_NAME: '/api/tenant/assetInfos?pageSize=' + config.app.pageSize + '&page=0&textSearch=name&sortProperty=createdTime&sortOrder=DESC&type=',
     SCADA_GET_ASSET_ATTRIBUTES_BY_ID: '/api/plugins/telemetry/ASSET/assetId/values/attributes/SERVER_SCOPE',
     SCADA_OAUTH2: '/api/noauth/oauth2Clients?platform=WEB',

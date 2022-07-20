@@ -24,11 +24,11 @@ const publics = require('./public-apis');
 // cronjob đồng bộ dữ liệu từ Keycloak sang Scada
 if (config.app.enableCronJob) {
     cron.schedule(config.app.cronJob, () => {
-        cronJobFunction.synchroUsersDatabase();
+        // cronJobFunction.synchroUsersDatabase();
         // cronJobFunction.synchroCustomerUsersDatabase();
         // cronJobFunction.synchroTenantUsersDatabase();
-        cronJobFunction.synchroDashboardsDatabase();
-        cronJobFunction.deleteLogDatabase();
+        // cronJobFunction.synchroDashboardsDatabase();
+        // cronJobFunction.deleteLogDatabase();
     });
 }
 //intergration apis là bổ sung các api cho các bảng mới
@@ -61,12 +61,19 @@ app.get('/roles', (req, res) => {
     }).catch((error) => { res.status(400).send(error); });
 });
 
-//api roles là để show thông tin của user trên scada
+//api publicAsset là để show thông tin của asset detail trên scada
 app.get('/publicAsset', (req, res) => {
     publics.getPublicAsset(req.query.name).then((data) => {
         res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
-})
+});
+
+//api assets là để show thông tin của assets trên scada
+app.get('/assets', (req, res) => {
+    publics.getAssets(req.query.pageSize || 10, req.query.page || 0, req.query.textSearch || '', req.query.type || '').then((data) => {
+        res.status(200).send(data);
+    }).catch((error) => { res.status(400).send(error); });
+});
 
 app.listen(config.app.port, () => {
     log.info('###App running on port ' + config.app.port);
