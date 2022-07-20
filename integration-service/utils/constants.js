@@ -1,5 +1,6 @@
 const config = require("../config/config");
 const maps = new Map();
+// name role in keycloak -- name dashboard in scada
 maps.set('Giám sát', 'Giám sát');
 maps.set('Quản lý Nhóm Sản phẩm', 'Quản lý nhóm Sản phẩm');
 maps.set('Quản lý Sản phẩm', 'Quản lý sản phẩm');
