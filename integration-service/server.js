@@ -33,16 +33,16 @@ if (config.app.enableCronJob) {
 }
 //intergration apis là bổ sung các api cho các bảng mới
 if (config.app.enableIntegrationApis) {
-    pgtools.createdb(config.database, config.database.schemal, function (error) {
-        if (error) {
-            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.message);
-        }
-        db.sequelize.sync().then(() => {
-            app.use('/api', require('./integration-apis'));
-        }).catch((error) => {
-            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);
-        });
-    });
+    // pgtools.createdb(config.database, config.database.schemal, function (error) {
+    //     if (error) {
+    //         log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.message);
+    //     }
+    //     db.sequelize.sync().then(() => {
+    //         app.use('/api', require('./integration-apis'));
+    //     }).catch((error) => {
+    //         log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);
+    //     });
+    // });
 }
 //resources cho các plugin add vào thư viện
 app.use('/resources', express.static(path.join(__dirname, 'resources')));
@@ -68,12 +68,32 @@ app.get('/publicAsset', (req, res) => {
     }).catch((error) => { res.status(400).send(error); });
 });
 
-//api assets là để show thông tin của assets trên scada
-app.get('/assets', (req, res) => {
+app.get('/asset', (req, res) => {
     publics.getAssets(req.query.pageSize || 10, req.query.page || 0, req.query.textSearch || '', req.query.type || '').then((data) => {
         res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
 });
+app.get('/asset/:assetId', (req, res) => {
+    publics.detailAsset(req.params.assetId).then((data) => {
+        res.status(200).send(data);
+    }).catch((error) => { res.status(400).send(error); });
+});
+app.post('/asset', (req, res) => {
+    publics.createAsset(req.body).then((data) => {
+        res.status(200).send(data);
+    }).catch((error) => { res.status(400).send(error); });
+});
+app.put('/asset', (req, res) => {
+    publics.updateAsset(req.body).then((data) => {
+        res.status(200).send(data);
+    }).catch((error) => { res.status(400).send(error); });
+});
+app.delete('/asset/:assetId', (req, res) => {
+    publics.deleteAsset(req.params.assetId).then((data) => {
+        res.status(200).send(data);
+    }).catch((error) => { res.status(400).send(error); });
+});
+
 
 app.listen(config.app.port, () => {
     log.info('###App running on port ' + config.app.port);
