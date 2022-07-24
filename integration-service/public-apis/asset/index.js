@@ -10,27 +10,27 @@ router.get('/publicAsset', (req, res) => {
     }).catch((error) => { res.status(400).send(error); });
 });
 
-router.get('/asset', (req, res) => {
+router.get('/', (req, res) => {
     func.getAssets(req.query.pageSize || 10, req.query.page || 0, req.query.textSearch || '', req.query.type || '').then((data) => {
         res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
 });
-router.get('/asset/:assetId', (req, res) => {
+router.get('/:assetId', (req, res) => {
     func.detailAsset(req.params.assetId).then((data) => {
         res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
 });
-router.post('/asset', (req, res) => {
+router.post('/', (req, res) => {
     func.createAsset(req.body).then((data) => {
         res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
 });
-router.put('/asset', (req, res) => {
+router.put('/', (req, res) => {
     func.updateAsset(req.body).then((data) => {
         res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
 });
-router.delete('/asset/:assetId', (req, res) => {
+router.delete('/:assetId', (req, res) => {
     func.deleteAsset(req.params.assetId).then((data) => {
         res.status(200).send(data);
     }).catch((error) => { res.status(400).send(error); });
