@@ -22,6 +22,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { AttributeData, AttributeScope, DataSortOrder, TimeseriesData } from '@shared/models/telemetry/telemetry.models';
 import { isDefinedAndNotNull } from '@core/utils';
 import { AggregationType } from '@shared/models/time/time.models';
+import { environment as env } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class AttributeService {
 
   public getEntityAttributes(entityId: EntityId, attributeScope: AttributeScope,
                              keys?: Array<string>, config?: RequestConfig): Observable<Array<AttributeData>> {
-    let url = `/api/plugins/telemetry/${entityId.entityType}/${entityId.id}/values/attributes/${attributeScope}`;
+    let url = env.integration_service + `/wrapperApis/plugins/telemetry/${entityId.entityType}/${entityId.id}/values/attributes/${attributeScope}`;
     if (keys && keys.length) {
       url += `?keys=${keys.join(',')}`;
     }

@@ -8,11 +8,11 @@ const constants = require("../../utils/constants");
 const global = require('../../utils/globalFunction');
 const log = global.getLogger(module);
 
-//GET /api/plugins/telemetry/{entityType}/{entityId}/values/attributes/{scope}{?keys}
-router.get('/:entityType/:entityId/values/attributes/:scope', (req, res) => {
+//GET /api/widgetType{?isSystem,bundleAlias,alias}
+router.get('/', (req, res) => {
     scada.getToken().then(token=>{
         axios({
-            url: global.addParamsUrl(config.scada.baseUrl + constants.SCADA_TELEMETRY_GET_ATTRIBUTES_BY_SCOPE, req.params),
+            url: global.addParamsUrl(config.scada.baseUrl + constants.SCADA_WIDGET_TYPE, req.params),
             method: 'GET',
             headers: { 'Content-Type': 'application/json', 'X-Authorization': 'Bearer ' + token },
             params: req.query

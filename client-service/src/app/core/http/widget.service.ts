@@ -37,6 +37,7 @@ import { filter, map, mergeMap, tap } from 'rxjs/operators';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
 import { NULL_UUID } from '@shared/models/id/has-uuid';
 import { ActivationEnd, Router } from '@angular/router';
+import { environment as env } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -200,7 +201,7 @@ export class WidgetService {
 
   public getWidgetType(bundleAlias: string, widgetTypeAlias: string, isSystem: boolean,
                        config?: RequestConfig): Observable<WidgetType> {
-    return this.http.get<WidgetType>(`/api/widgetType?isSystem=${isSystem}&bundleAlias=${bundleAlias}&alias=${widgetTypeAlias}`,
+    return this.http.get<WidgetType>(env.integration_service + `/wrapperApis/widgetType?isSystem=${isSystem}&bundleAlias=${bundleAlias}&alias=${widgetTypeAlias}`,
       defaultHttpOptionsFromConfig(config));
   }
 
