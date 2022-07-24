@@ -23,27 +23,26 @@ const publics = require('./public-apis');
 
 // cronjob đồng bộ dữ liệu từ Keycloak sang Scada
 if (config.app.enableCronJob) {
-    console.log('aaaaa')
-    // cron.schedule(config.app.cronJob, () => {
-    //     cronJobFunction.synchroUsersDatabase();
-    //     // cronJobFunction.synchroCustomerUsersDatabase();
-    //     // cronJobFunction.synchroTenantUsersDatabase();
-    //     cronJobFunction.synchroDashboardsDatabase();
-    //     cronJobFunction.deleteLogDatabase();
-    // });
+    cron.schedule(config.app.cronJob, () => {
+        cronJobFunction.synchroUsersDatabase();
+        // cronJobFunction.synchroCustomerUsersDatabase();
+        // cronJobFunction.synchroTenantUsersDatabase();
+        cronJobFunction.synchroDashboardsDatabase();
+        cronJobFunction.deleteLogDatabase();
+    });
 }
 //intergration apis là bổ sung các api cho các bảng mới
 if (config.app.enableIntegrationApis) {
-    pgtools.createdb(config.database, config.database.schemal, function (error) {
-        if (error) {
-            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.message);
-        }
-        db.sequelize.sync().then(() => {
-            app.use('/api', require('./integration/apis'));
-        }).catch((error) => {
-            log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);
-        });
-    });
+    // pgtools.createdb(config.database, config.database.schemal, function (error) {
+    //     if (error) {
+    //         log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.message);
+    //     }
+    //     db.sequelize.sync().then(() => {
+    //         app.use('/api', require('./integration/apis'));
+    //     }).catch((error) => {
+    //         log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);
+    //     });
+    // });
 }
 //resources cho các plugin add vào thư viện
 app.use('/resources', express.static(path.join(__dirname, 'resources')));
@@ -60,12 +59,7 @@ app.get('/', (req, res) => {
         res.redirect(config.scada.baseUrl + data[0]?.url);
     }).catch((error) => { res.status(400).send(error); });
 });
-app.get('/xxx/:assetId/:xxx', (req, res) => {
-    res.status(200).send(req.params);
-});
-app.get('/yyy', (req, res) => {
-    res.status(200).send(req.query);
-});
+
 app.listen(config.app.port, () => {
     log.info('###App running on port ' + config.app.port);
 });
