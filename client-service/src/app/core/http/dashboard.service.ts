@@ -125,7 +125,7 @@ export class DashboardService {
 
   public getHomeDashboard(email:String, config?: RequestConfig): Observable<HomeDashboard> {
     // return this.http.get<HomeDashboard>('/api/dashboard/home', defaultHttpOptionsFromConfig(config)); //old version
-    return this.http.get<HomeDashboard>(env.integration_service + `/publicApis/roles` +`?user=` + email, defaultHttpOptionsFromConfig(config));
+    return this.http.get<HomeDashboard>(env.integration_service + `/publicApis/role` +`?user=` + email, defaultHttpOptionsFromConfig(config));
   }
 
   public getTenantHomeDashboardInfo(config?: RequestConfig): Observable<HomeDashboardInfo> {
