@@ -1,8 +1,8 @@
 const axios = require("axios");
 
-const config = require("../config/config");
-const constants = require("../utils/constants");
-const global = require('../utils/globalFunction');
+const config = require("../../config/config");
+const constants = require("../../utils/constants");
+const global = require('../../utils/globalFunction');
 const log = global.getLogger(module);
 
 

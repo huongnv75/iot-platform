@@ -1,5 +1,5 @@
-const config = require("../config/config");
-const global = require('../utils/globalFunction');
+const config = require("../../config/config");
+const global = require('../../utils/globalFunction');
 const log = global.getLogger(module);
 const Sequelize = require("sequelize");
 

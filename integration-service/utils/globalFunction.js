@@ -11,12 +11,12 @@ global.formUrlEncoded = function formUrlEncoded(x) {
 }
 
 global.contain = function contain(a, obj, checkMap) {
-    if(checkMap){
+    if (checkMap) {
         for (var i = 0; i < a.length; i++) {
             if (constants.MAPS.get(a[i]) == obj) {
                 return true;
             }
-        } 
+        }
         return false;
     }
     for (var i = 0; i < a.length; i++) {
@@ -39,7 +39,7 @@ global.getLogger = function getLogger(module) {
     });
 }
 
-const getLabel = function(callingModule) {
+const getLabel = function (callingModule) {
     const parts = callingModule.filename.split(path.sep);
     return path.join(parts[parts.length - 2], parts.pop());
 };
@@ -59,6 +59,13 @@ global.jsonToYaml = function jsonToYaml(jsonData, fileLink) {
             console.log(err);
         }
     });
+}
+
+global.addParamsUrl = function addParamsUrl(url, params) {
+    Object.keys(params).forEach(item => {
+        url = url.replace(":" + item, params[item]);
+    });
+    return url;
 }
 
 module.exports = global;

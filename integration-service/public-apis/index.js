@@ -1,4 +1,6 @@
-module.exports = {
-    ...require('./role'),
-    ...require('./asset')
-};
+var router = require('express').Router();
+
+router.use('/role', require('./role'));
+router.use('/asset', require('./asset'));
+
+module.exports = router;

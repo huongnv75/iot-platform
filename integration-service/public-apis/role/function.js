@@ -1,8 +1,7 @@
-const scada = require('../scada-apis');
-const keycloak = require('../keycloak-apis');
-
+const scada = require('../../base/scada-apis');
+const keycloak = require('../../base/keycloak-apis');
 function getRoles(username) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         keycloak.getAccessToken().then((token) => {
             keycloak.getUsers(token, username).then((data) => {
                 if (data.length > 0) {
@@ -17,7 +16,7 @@ function getRoles(username) {
                                     let filterStates = {};
                                     let arrayFilterIndex = [];
                                     let arrayStates = [];
-                                    if(roles.includes('manager_scada')){
+                                    if (roles.includes('manager_scada')) {
                                         for (let key in widgets) {
                                             let item = widgets[key];
                                             arrayStates.push(states[key]);
@@ -46,7 +45,7 @@ function getRoles(username) {
                                     homeDashboard.roles = roles;
                                     resolve(homeDashboard);
                                 }
-    
+
                             })
                         })
                     })
@@ -59,4 +58,5 @@ function getRoles(username) {
         })
     });
 }
+
 module.exports = { getRoles };

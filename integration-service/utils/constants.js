@@ -44,6 +44,12 @@ module.exports = Object.freeze({
     SCADA_GET_ASSET_ID_BY_NAME: '/api/tenant/assetInfos?pageSize=' + config.app.pageSize + '&page=0&textSearch=name&sortProperty=createdTime&sortOrder=DESC&type=',
     SCADA_GET_ASSET_ATTRIBUTES_BY_ID: '/api/plugins/telemetry/ASSET/assetId/values/attributes/SERVER_SCOPE',
     SCADA_OAUTH2: '/api/noauth/oauth2Clients?platform=WEB',
+
+
+    SCADA_TELEMETRY_GET_ATTRIBUTES_BY_SCOPE:'/api/plugins/telemetry/:entityType/:entityId/values/attributes/:scope',
+
+
+
     //others
     MAPS:maps
 });

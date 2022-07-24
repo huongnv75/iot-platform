@@ -1,7 +1,7 @@
 const global = require("../utils/globalFunction");
 const constants = require("../utils/constants");
-const keycloak = require("../keycloak-apis");
-const scada = require("../scada-apis");
+const keycloak = require("../base/keycloak-apis");
+const scada = require("../base/scada-apis");
 
 function synchroDashboardsDatabase() {
     keycloak.getAccessToken().then(keycloakToken => {

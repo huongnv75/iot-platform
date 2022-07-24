@@ -1,6 +1,6 @@
 const global = require("../utils/globalFunction");
-const keycloak = require("../keycloak-apis");
-const scada = require("../scada-apis");
+const keycloak = require("../base/keycloak-apis");
+const scada = require("../base/scada-apis");
 const config = require("../config/config");
 
 function synchroCustomerUsersDatabase() {

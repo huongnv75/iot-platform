@@ -1,5 +1,4 @@
-const scada = require('../scada-apis');
-const keycloak = require('../keycloak-apis');
+const scada = require('../../base/scada-apis');
 
 function getAssets(pageSize, page, textSearch, type) {
     return new Promise(function (resolve, reject) {
