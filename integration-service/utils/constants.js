@@ -47,6 +47,7 @@ module.exports = Object.freeze({
 
 
     SCADA_TELEMETRY_GET_ATTRIBUTES_BY_SCOPE:'/api/plugins/telemetry/:entityType/:entityId/values/attributes/:scope',
+    SCADA_TELEMETRY_POST_ATTRIBUTES_BY_SCOPE_V1:'/api/plugins/telemetry/:entityType/:entityId/:scope',
     
     
     SCADA_WIDGET_TYPE:'/api/widgetType',

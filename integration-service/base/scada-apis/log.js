@@ -19,12 +19,14 @@ const sequelize = new Sequelize(config.database.schemal, config.database.user, c
 
 function deleteLog() {
     return new Promise(function (resolve, reject) {
-        sequelize.query('truncate event, audit_log')
+        sequelize.query('truncate event, audit_log', {
+            logging: false
+        })
             .then(function (data) {
                 resolve(data);
             })
             .catch(function (error) {
-                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.response?.data?.message);                //reject(null);
+                log.error(new Error().stack.split('\n')[1].slice(7).split(":")[1] + '###' + error.message);                //reject(null);
             })
     });
 }
